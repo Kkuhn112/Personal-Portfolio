@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Kestin Kuhn, a mechanical engineering student focused on aerospace manufacturing, composites, CAD, and CNC machining." />
+  <title>Kestin Kuhn | Mechanical Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">Kestin Kuhn</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section">
+      <div class="container">
+        <p class="eyebrow">Mechanical Engineering Portfolio</p>
+        <h1>Kestin Kuhn</h1>
+        <p class="hero-title">Mechanical Engineering Student | Aerospace Manufacturing | Composite Research</p>
+        <p class="hero-text">
+          Focused on aerospace manufacturing, structural design, CAD, CNC machining,
+          and computational toolpath development.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#" aria-label="Download resume">Download Resume (PDF)</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
+          <a href="#" aria-label="GitHub profile">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          I am a Mechanical Engineering student at the University of Colorado Denver (GPA 3.92,
+          expected graduation May 2028) with hands-on aerospace manufacturing and research experience.
+          My background includes AS9100 prototype machining at Lockheed Martin, CNC machining at Omni-X,
+          undergraduate research in continuous fiber-reinforced 3D printing, and teaching assistant work
+          supporting engineering programming. I enjoy solving practical design and manufacturing problems
+          through rigorous analysis, iterative prototyping, and clear technical communication.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-muted">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-intro">Selected projects highlighting engineering reasoning, manufacturability, and analysis.</p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Project image placeholder for Continuous Fiber 3D Printing Toolpath System">Image Placeholder</div>
+            <h3>Continuous Fiber 3D Printing Toolpath System</h3>
+            <p><strong>Problem:</strong> Improve strength and crack resistance in printed composite specimens.</p>
+            <p><strong>Constraints:</strong> Fiber steering limits, nozzle motion continuity, and testable sample geometry.</p>
+            <p><strong>Approach:</strong> Developed Python-based G-code workflows to control fiber path direction and loading response.</p>
+            <p><strong>Result:</strong> Produced repeatable toolpaths for comparative testing and improved control of crack propagation behavior.</p>
+            <p class="tools"><strong>Tools:</strong> Python, G-code, composite mechanics, experimental testing</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Project image placeholder for Lightweight Aerospace Structural Bracket">Image Placeholder</div>
+            <h3>Lightweight Aerospace Structural Bracket</h3>
+            <p><strong>Problem:</strong> Reduce mass while maintaining load-bearing reliability for aerospace mounting conditions.</p>
+            <p><strong>Constraints:</strong> Factor of safety targets, interface geometry, and machinable features.</p>
+            <p><strong>Approach:</strong> Combined CAD iterations, hand calculations, and FEA to optimize geometry and stress flow.</p>
+            <p><strong>Result:</strong> Delivered a weight-optimized concept with documented manufacturability and validation assumptions.</p>
+            <p class="tools"><strong>Tools:</strong> SolidWorks/Fusion 360, FEA, structural calculations, DFM</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Project image placeholder for Automated CNC Part Gripper">Image Placeholder</div>
+            <h3>Automated CNC Part Gripper</h3>
+            <p><strong>Problem:</strong> Minimize setup and transfer time in twin-turret CNC lathe operations.</p>
+            <p><strong>Constraints:</strong> Limited work envelope, repeatability requirements, and safe integration with existing workflow.</p>
+            <p><strong>Approach:</strong> Designed a mechanical gripping concept focused on robust clamping and quick handoff steps.</p>
+            <p><strong>Result:</strong> Created a practical automation concept targeting reduced setup variability and cycle interruption.</p>
+            <p class="tools"><strong>Tools:</strong> Mechanical design, CNC process planning, automation concepts</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Project image placeholder for Custom Slitting Saw Arbor">Image Placeholder</div>
+            <h3>Custom Slitting Saw Arbor</h3>
+            <p><strong>Problem:</strong> Increase rigidity and reliability for slitting operations on precision parts.</p>
+            <p><strong>Constraints:</strong> Tool holding geometry, spindle compatibility, and practical machining tolerances.</p>
+            <p><strong>Approach:</strong> Designed an arbor for stiffness and concentricity with a machining-first approach.</p>
+            <p><strong>Result:</strong> Produced a manufacturable design that improved stability and confidence during cutting operations.</p>
+            <p class="tools"><strong>Tools:</strong> Precision design, turning/milling, tolerance planning</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="experience-list">
+          <article>
+            <h3>Lockheed Martin — Prototype Machining Apprentice</h3>
+            <p>Supported AS9100 aerospace prototype machining with focus on process discipline, quality, and precision part production.</p>
+          </article>
+          <article>
+            <h3>Omni-X USA — CNC Machinist</h3>
+            <p>Performed CNC machining operations and setup tasks, emphasizing repeatability, tolerances, and throughput.</p>
+          </article>
+          <article>
+            <h3>University of Colorado — Undergraduate Researcher</h3>
+            <p>Contributed to continuous fiber-reinforced 3D printing research, including toolpath logic and specimen evaluation.</p>
+          </article>
+          <article>
+            <h3>University of Colorado — Engineering Programming Teaching Assistant</h3>
+            <p>Assisted students in engineering programming fundamentals, debugging, and computational problem-solving workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-muted">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <article>
+            <h3>CAD</h3>
+            <ul>
+              <li>SolidWorks</li>
+              <li>Fusion 360</li>
+              <li>Autodesk Inventor</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Programming</h3>
+            <ul>
+              <li>Python</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Manufacturing</h3>
+            <ul>
+              <li>CNC milling</li>
+              <li>Turning</li>
+              <li>Grinding</li>
+              <li>Manual milling</li>
+              <li>FDM printing</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Analysis</h3>
+            <ul>
+              <li>Finite Element Analysis (FEA)</li>
+              <li>Structural calculations</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Standards &amp; Quality</h3>
+            <ul>
+              <li>AS9100 familiarity</li>
+              <li>Metrology</li>
+              <li>GD&amp;T working knowledge</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>If you are recruiting for aerospace or defense internships, I would be glad to connect.</p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+          <li><strong>Phone:</strong> <a href="#">(555) 555-5555</a></li>
+          <li><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/your-profile</a></li>
+          <li><strong>GitHub:</strong> <a href="#">github.com/your-username</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Kestin Kuhn. Built for recruiter readability and engineering clarity.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
