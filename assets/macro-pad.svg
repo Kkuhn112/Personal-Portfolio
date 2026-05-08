@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Custom macro pad project illustration</title>
+  <desc id="desc">Engineering-style illustration of an eight-key custom macro pad with a printed enclosure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="34" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <path d="M260 280 L800 190 L980 430 L435 560 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="7"/>
+    <path d="M435 560 L980 430 L980 510 L435 640 Z" fill="#94a3b8"/>
+    <path d="M260 280 L435 560 L435 640 L260 360 Z" fill="#e2e8f0"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" text-anchor="middle" fill="#111827" stroke="#94a3b8" stroke-width="4">
+    <g transform="translate(380 285) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">1</text></g>
+    <g transform="translate(555 255) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">2</text></g>
+    <g transform="translate(730 225) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">3</text></g>
+    <g transform="translate(875 300) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">4</text></g>
+    <g transform="translate(435 405) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">5</text></g>
+    <g transform="translate(610 375) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">6</text></g>
+    <g transform="translate(785 345) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">7</text></g>
+    <g transform="translate(920 425) skewX(-12) rotate(-10)"><rect x="-58" y="-48" width="116" height="96" rx="18" fill="#f8fafc"/><text y="18" stroke="none">8</text></g>
+  </g>
+  <rect x="775" y="545" width="120" height="34" rx="9" fill="#f8fafc" stroke="#64748b" stroke-width="5"/>
+  <text x="70" y="95" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800">Custom Macro Pad</text>
+  <text x="72" y="145" fill="#2563eb" font-family="Inter, Arial, sans-serif" font-size="24">coding • 3D design • embedded workflow</text>
+</svg>
