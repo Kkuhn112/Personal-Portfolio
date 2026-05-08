@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="All engineering projects by Kestin Kuhn, including robotics, design for manufacturing, 3D printing, CNC machining, composites, and aerospace design." />
+  <title>Projects | Kestin Kuhn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html#home">Kestin Kuhn</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Featured Projects</a>
+        <a href="projects.html" aria-current="page">All Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero section">
+      <div class="container">
+        <p class="eyebrow">Project Portfolio</p>
+        <h1>All Projects</h1>
+        <p class="hero-text">
+          A broader project archive for robotics, design for manufacturing, additive manufacturing,
+          CNC machining, composites research, and structural design work.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="index.html#projects">Back to featured projects</a>
+          <a class="btn btn-secondary" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="project-grid all-projects-grid">
+          <article class="project-card">
+            <div class="project-image project-image-composite" role="img" aria-label="Continuous fiber toolpath visualization"><span>Fiber Toolpaths</span></div>
+            <h2>Continuous Fiber 3D Printing Toolpath System</h2>
+            <p><strong>Problem:</strong> Improve strength and crack resistance in printed composite specimens.</p>
+            <p><strong>Constraints:</strong> Fiber steering limits, nozzle motion continuity, printability, and testable sample geometry.</p>
+            <p><strong>Approach:</strong> Developed Python-based G-code workflows to control fiber path direction and loading response.</p>
+            <p><strong>Result:</strong> Produced repeatable toolpaths for comparative testing and improved control of crack propagation behavior.</p>
+            <p class="tools"><strong>Tools:</strong> Python, G-code, composite mechanics, experimental testing</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-robot" role="img" aria-label="Illustrated panel representing the PAROL 6 robotic arm project"><span>PAROL 6 Robotic Arm</span></div>
+            <h2>PAROL 6 Robotic Arm Build</h2>
+            <p><strong>Problem:</strong> Assemble and validate a multi-axis robotic arm as a platform for motion control experiments.</p>
+            <p><strong>Constraints:</strong> Printed-part tolerances, belt alignment, motor wiring, joint access, and reliable serviceability.</p>
+            <p><strong>Approach:</strong> Integrated 3D-printed mechanical parts, motors, belts, fasteners, wiring, and control software while debugging fit-up issues.</p>
+            <p><strong>Result:</strong> Advanced a functional robotic arm system for future controls, calibration, and end-effector development.</p>
+            <p class="tools"><strong>Tools:</strong> 3D printing, robotics assembly, controls, electromechanical troubleshooting</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-macropad" role="img" aria-label="Illustrated panel representing the custom macro pad project"><span>Custom Macro Pad</span></div>
+            <h2>Custom Computer Macro Pad</h2>
+            <p><strong>Problem:</strong> Create a compact input device for repeatable computer shortcuts and workflows.</p>
+            <p><strong>Constraints:</strong> Switch spacing, USB access, enclosure wall thickness, top-plate fit, and print quality.</p>
+            <p><strong>Approach:</strong> Designed and printed an enclosure around electronics packaging, assembly clearances, and ergonomic desk use.</p>
+            <p><strong>Result:</strong> Built a working macro pad that demonstrates practical CAD-to-print design for a functional product.</p>
+            <p class="tools"><strong>Tools:</strong> CAD, FDM printing, keyboard switches, electronics packaging</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-bracket" role="img" aria-label="Lightweight aerospace bracket concept representation"><span>Aerospace Bracket</span></div>
+            <h2>Lightweight Aerospace Structural Bracket</h2>
+            <p><strong>Problem:</strong> Reduce mass while maintaining load-bearing reliability for aerospace mounting conditions.</p>
+            <p><strong>Constraints:</strong> Factor of safety targets, interface geometry, fastener access, and machinable features.</p>
+            <p><strong>Approach:</strong> Combined CAD iterations, hand calculations, and FEA to optimize geometry and stress flow.</p>
+            <p><strong>Result:</strong> Delivered a weight-optimized concept with documented manufacturability and validation assumptions.</p>
+            <p class="tools"><strong>Tools:</strong> SolidWorks/Fusion 360, FEA, structural calculations, DFM</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-gripper" role="img" aria-label="Automated CNC part gripper concept representation"><span>CNC Gripper</span></div>
+            <h2>Automated CNC Part Gripper</h2>
+            <p><strong>Problem:</strong> Minimize setup and transfer time in twin-turret CNC lathe operations.</p>
+            <p><strong>Constraints:</strong> Limited work envelope, repeatability requirements, safe integration, and existing workflow constraints.</p>
+            <p><strong>Approach:</strong> Designed a mechanical gripping concept focused on robust clamping and quick handoff steps.</p>
+            <p><strong>Result:</strong> Created a practical automation concept targeting reduced setup variability and cycle interruption.</p>
+            <p class="tools"><strong>Tools:</strong> Mechanical design, CNC process planning, automation concepts</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-arbor" role="img" aria-label="Custom slitting saw arbor concept representation"><span>Slitting Saw Arbor</span></div>
+            <h2>Custom Slitting Saw Arbor</h2>
+            <p><strong>Problem:</strong> Increase rigidity and reliability for slitting operations on precision parts.</p>
+            <p><strong>Constraints:</strong> Tool holding geometry, spindle compatibility, concentricity, and practical machining tolerances.</p>
+            <p><strong>Approach:</strong> Designed an arbor for stiffness, tool access, and machinability with a machining-first approach.</p>
+            <p><strong>Result:</strong> Produced a manufacturable design that improved stability and confidence during cutting operations.</p>
+            <p class="tools"><strong>Tools:</strong> Precision design, turning/milling, tolerance planning</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Kestin Kuhn. Built for recruiter readability and engineering clarity.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
