@@ -7,6 +7,7 @@ A lightweight, recruiter-friendly personal portfolio for a mechanical engineerin
 - `index.html` — Main single-page portfolio layout and content sections.
 - `styles.css` — Visual style, responsive layout, typography, and component styling.
 - `script.js` — Mobile navigation toggle and footer year update.
+- `assets/projects/` — Per-project folders for cover images and any additional project photos/renders.
 
 ## Local Preview
 
@@ -40,7 +41,9 @@ Then visit `http://localhost:8000`.
 ## Editing Content
 
 - Update contact links, resume URL, and project details directly in `index.html`.
-- Replace each "Image Placeholder" block in the Projects section with real project images.
+- Add project photos and renders to the matching folder inside `assets/projects/`.
+- Use each project folder's `cover.svg` file for the image that should appear on that project card; the pages already point to these `cover.svg` paths and fall back to the CSS cover style until an image exists.
+- The text overlay on each project cover comes from the `.project-cover-title` span in `index.html` and `projects.html`.
 - Keep image sizes compressed for fast loading.
 
 ## Notes
