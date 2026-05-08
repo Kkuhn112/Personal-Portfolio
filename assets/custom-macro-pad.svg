@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Custom macro pad project illustration</title>
+  <desc id="desc">Stylized six-key white macro pad on a desk in front of a keyboard.</desc>
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6d3cc"/><stop offset="1" stop-color="#7a746b"/></linearGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>
+    <linearGradient id="key" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d1d5db"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#020617" flood-opacity="0.38"/></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#surface)"/>
+  <g opacity="0.26" stroke="#f8fafc" stroke-width="3" fill="none"><path d="M30 610c95-45 145 40 255-10s166-8 250 38 159-16 260-52 220 24 340-8"/><path d="M20 690c80-32 150 22 265-12s185 15 278 32 142-40 252-42 198 42 330-12"/></g>
+  <g transform="translate(80 68) rotate(-5)" opacity="0.74">
+    <rect x="0" y="0" width="1040" height="185" rx="22" fill="#e5e7eb" stroke="#94a3b8" stroke-width="6"/>
+    <g fill="#f8fafc" stroke="#94a3b8" stroke-width="3">
+      <rect x="35" y="28" width="70" height="46" rx="8"/><rect x="120" y="28" width="70" height="46" rx="8"/><rect x="205" y="28" width="70" height="46" rx="8"/><rect x="290" y="28" width="70" height="46" rx="8"/><rect x="375" y="28" width="70" height="46" rx="8"/><rect x="460" y="28" width="70" height="46" rx="8"/><rect x="545" y="28" width="70" height="46" rx="8"/><rect x="630" y="28" width="70" height="46" rx="8"/><rect x="715" y="28" width="70" height="46" rx="8"/><rect x="800" y="28" width="70" height="46" rx="8"/>
+      <rect x="65" y="94" width="70" height="46" rx="8"/><rect x="150" y="94" width="70" height="46" rx="8"/><rect x="235" y="94" width="70" height="46" rx="8"/><rect x="320" y="94" width="70" height="46" rx="8"/><rect x="405" y="94" width="70" height="46" rx="8"/><rect x="490" y="94" width="70" height="46" rx="8"/><rect x="575" y="94" width="70" height="46" rx="8"/><rect x="660" y="94" width="70" height="46" rx="8"/><rect x="745" y="94" width="70" height="46" rx="8"/><rect x="830" y="94" width="70" height="46" rx="8"/>
+    </g>
+  </g>
+  <g transform="translate(265 270) rotate(-7)" filter="url(#shadow)">
+    <path d="M35 170h590c36 0 65 29 65 65v150c0 36-29 65-65 65H75c-41 0-75-34-75-75V205c0-19 16-35 35-35Z" fill="url(#case)"/>
+    <path d="M35 170h590c36 0 65 29 65 65v45H0v-75c0-19 16-35 35-35Z" fill="#eef2f7"/>
+    <rect x="585" y="300" width="66" height="34" rx="8" fill="#475569"/><rect x="598" y="308" width="40" height="18" rx="4" fill="#e2e8f0"/>
+    <g font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" text-anchor="middle" fill="#111827">
+      <g transform="translate(42 0)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">5</text></g>
+      <g transform="translate(220 -30)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">2</text></g>
+      <g transform="translate(398 4)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">3</text></g>
+      <g transform="translate(80 142)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">6</text></g>
+      <g transform="translate(260 112)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">7</text></g>
+      <g transform="translate(440 145)"><rect x="0" y="0" width="145" height="116" rx="18" fill="url(#key)" stroke="#cbd5e1" stroke-width="5"/><text x="72" y="76">8</text></g>
+    </g>
+    <g opacity="0.35" stroke="#94a3b8" stroke-width="8"><path d="M38 376h580"/><path d="M80 410h500"/></g>
+  </g>
+</svg>
