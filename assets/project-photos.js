@@ -1174,9 +1174,9 @@
     },
   };
 
-  document.querySelectorAll('[data-project-photo]').forEach((image) => {
-    const photo = photos[image.dataset.projectPhoto];
+  document.querySelectorAll('[data-project-photo]').forEach((photoWindow) => {
+    const photo = photos[photoWindow.dataset.projectPhoto];
     if (!photo) return;
-    image.src = `data:${photo.mime};base64,${photo.data}`;
+    photoWindow.style.backgroundImage = `url("data:${photo.mime};base64,${photo.data}")`;
   });
 })();
