@@ -71,7 +71,8 @@ body {
   background: transparent;
 }
 
-.hero h1 {
+.hero h1,
+.page-hero h1 {
   margin: 0.4rem 0;
   font-size: clamp(2rem, 4vw, 3rem);
 }
@@ -138,6 +139,30 @@ h2 {
   gap: 1rem;
 }
 
+.featured-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.all-projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading .eyebrow {
+  margin: 0 0 0.3rem;
+}
+
 .project-card,
 .experience-list article,
 .skills-grid article {
@@ -148,18 +173,86 @@ h2 {
 }
 
 .project-image {
-  height: 150px;
-  border: 1px dashed #64748b;
+  min-height: 150px;
+  border: 1px solid #475569;
   border-radius: 0.6rem;
   display: grid;
   place-items: center;
-  color: var(--muted);
+  color: #e0f2fe;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-align: center;
   margin-bottom: 0.8rem;
+  overflow: hidden;
+  position: relative;
 }
 
+.project-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.14), rgba(15, 23, 42, 0.62));
+}
+
+
+.project-image span {
+  position: relative;
+  z-index: 2;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.project-image {
+  isolation: isolate;
+}
+
+.project-image-composite {
+  background:
+    repeating-linear-gradient(35deg, rgba(147, 197, 253, 0.22) 0 7px, transparent 7px 17px),
+    radial-gradient(circle at 20% 20%, #1d4ed8, #0f172a 70%);
+}
+
+.project-image-robot {
+  background:
+    radial-gradient(circle at 74% 28%, rgba(248, 250, 252, 0.34) 0 12%, transparent 13%),
+    linear-gradient(145deg, #475569, #1e293b 45%, #0f172a);
+}
+
+.project-image-macropad {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 0 18%, transparent 18% 26%, rgba(255, 255, 255, 0.22) 26% 44%, transparent 44% 52%, rgba(255, 255, 255, 0.2) 52% 70%, transparent 70%),
+    linear-gradient(145deg, #94a3b8, #334155 55%, #111827);
+}
+
+.project-image-bracket {
+  background:
+    radial-gradient(circle at 28% 34%, transparent 0 13%, rgba(125, 211, 252, 0.24) 14% 18%, transparent 19%),
+    radial-gradient(circle at 68% 64%, transparent 0 10%, rgba(125, 211, 252, 0.22) 11% 15%, transparent 16%),
+    linear-gradient(135deg, #0369a1, #0f172a);
+}
+
+.project-image-gripper {
+  background:
+    linear-gradient(90deg, rgba(96, 165, 250, 0.36) 0 20%, transparent 20% 35%, rgba(96, 165, 250, 0.28) 35% 55%, transparent 55%),
+    linear-gradient(145deg, #1e3a8a, #111827);
+}
+
+.project-image-arbor {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 14%, rgba(226, 232, 240, 0.32) 15% 26%, transparent 27%),
+    linear-gradient(145deg, #64748b, #172554);
+}
+
+.project-card h2,
 .project-card h3,
 .experience-list h3,
 .skills-grid h3 { margin-top: 0; }
+
+.project-card h2 {
+  font-size: 1.25rem;
+}
 
 .project-card p,
 .experience-list p { color: #d1d5db; }
@@ -189,6 +282,11 @@ li { margin: 0.35rem 0; }
 }
 
 @media (max-width: 760px) {
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
   .nav-toggle { display: block; }
   .site-nav {
     position: absolute;
