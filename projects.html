@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detailed engineering project portfolio for Kestin Kuhn." />
+  <title>Projects | Kestin Kuhn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html#home">Kestin Kuhn</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#featured-projects">Featured</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">Light</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Traditional Portfolio</p>
+        <h1>Engineering Projects</h1>
+        <p class="hero-text">
+          Detailed project summaries organized around problem definition, constraints, engineering approach,
+          results, and tools. This page supports quick recruiter review while leaving room to add photos,
+          drawings, test data, and CAD screenshots over time.
+        </p>
+        <a class="btn btn-secondary" href="index.html#featured-projects">← Back to home</a>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container portfolio-list">
+        <article class="portfolio-item" id="parol6">
+          <img src="assets/parol6-robotic-arm.svg" alt="PAROL6 robotic arm project" class="portfolio-media" />
+          <div>
+            <p class="tagline">Robotics • Controls • Fabrication</p>
+            <h2>PAROL6 Robotic Arm</h2>
+            <p><strong>Problem:</strong> Build a functional desktop robotic arm platform that could be assembled, wired, calibrated, and controlled reliably enough for repeatable motion testing.</p>
+            <p><strong>Constraints:</strong> Printed mechanical parts, compact wiring paths, joint alignment, stepper motor behavior, calibration accuracy, and safe benchtop operation.</p>
+            <p><strong>Approach:</strong> Assembled the PAROL6 arm, routed wiring through moving joints, configured controller software, checked each axis individually, and iterated on mechanical fit and cable management.</p>
+            <p><strong>Result:</strong> Produced a working robotics platform for learning six-axis motion, controller setup, system troubleshooting, and mechanical-electrical integration.</p>
+            <p class="tools"><strong>Tools:</strong> 3D printing, mechanical assembly, wiring, motion control software, calibration, troubleshooting</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item" id="macro-pad">
+          <img src="assets/macro-pad.svg" alt="Custom macro pad project" class="portfolio-media" />
+          <div>
+            <p class="tagline">Programming • 3D Design • Prototyping</p>
+            <h2>Custom Macro Pad</h2>
+            <p><strong>Problem:</strong> Create a compact programmable input device that improves repeated desktop workflows without taking much desk space.</p>
+            <p><strong>Constraints:</strong> Switch spacing, comfortable key layout, USB port access, enclosure printability, internal clearance, and reliable key mapping.</p>
+            <p><strong>Approach:</strong> Designed the enclosure in CAD, 3D printed the housing, assembled the keys and electronics, and wrote the macro logic for custom shortcuts.</p>
+            <p><strong>Result:</strong> Built a functional eight-key macro pad combining mechanical packaging, additive manufacturing, and programming into a practical tool.</p>
+            <p class="tools"><strong>Tools:</strong> CAD, FDM printing, keyboard switches, embedded-style programming, iterative fit checks</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item" id="fiber-toolpath">
+          <div class="portfolio-media placeholder-image large-placeholder">Toolpath + Composite Specimen Placeholder</div>
+          <div>
+            <p class="tagline">Research • Composites • Python</p>
+            <h2>Continuous Fiber 3D Printing Toolpath System</h2>
+            <p><strong>Problem:</strong> Improve printed composite behavior by controlling continuous fiber placement relative to expected crack growth and loading direction.</p>
+            <p><strong>Constraints:</strong> Fiber bending limits, nozzle path continuity, G-code compatibility, specimen geometry, and repeatable test conditions.</p>
+            <p><strong>Approach:</strong> Developed Python routines to generate and modify G-code, with emphasis on path planning, fiber steering, and experimental repeatability.</p>
+            <p><strong>Result:</strong> Created repeatable toolpath workflows for comparative specimens and research into crack propagation behavior in continuous fiber-reinforced prints.</p>
+            <p class="tools"><strong>Tools:</strong> Python, G-code generation, composites, continuous fiber 3D printing, experimental testing</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item" id="bracket">
+          <div class="portfolio-media placeholder-image large-placeholder">CAD + FEA Placeholder</div>
+          <div>
+            <p class="tagline">CAD • Analysis • DFM</p>
+            <h2>Lightweight Aerospace Structural Bracket</h2>
+            <p><strong>Problem:</strong> Reduce bracket mass while maintaining load-bearing reliability for representative aerospace mounting conditions.</p>
+            <p><strong>Constraints:</strong> Factor of safety targets, mounting interfaces, stress concentrations, machining access, and inspection-friendly geometry.</p>
+            <p><strong>Approach:</strong> Used CAD iterations, hand calculations, and FEA assumptions to compare load paths and remove material where structurally appropriate.</p>
+            <p><strong>Result:</strong> Produced a lightweight bracket concept with clear design rationale and manufacturability considerations.</p>
+            <p class="tools"><strong>Tools:</strong> SolidWorks/Fusion 360, FEA, structural calculations, DFM, factor of safety</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item" id="cnc-gripper">
+          <div class="portfolio-media placeholder-image large-placeholder">Automation Placeholder</div>
+          <div>
+            <p class="tagline">Mechanical Design • Automation • CNC Workflow</p>
+            <h2>Automated CNC Part Gripper</h2>
+            <p><strong>Problem:</strong> Reduce setup-time and operator-dependent handling steps in a twin-turret CNC lathe workflow.</p>
+            <p><strong>Constraints:</strong> Machine envelope, part access, clamping security, repeatability, chip/coolant exposure, and safe integration with existing operations.</p>
+            <p><strong>Approach:</strong> Developed a mechanical gripper concept focused on reliable part transfer, simple actuation, and practical maintenance.</p>
+            <p><strong>Result:</strong> Defined a manufacturable automation concept intended to improve consistency and reduce cycle interruption.</p>
+            <p class="tools"><strong>Tools:</strong> Mechanical design, CNC process planning, automation concepts, manufacturability review</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item" id="slitting-saw-arbor">
+          <div class="portfolio-media placeholder-image large-placeholder">Machining Fixture Placeholder</div>
+          <div>
+            <p class="tagline">Design for Machining • Rigidity • Tool Holding</p>
+            <h2>Custom Slitting Saw Arbor</h2>
+            <p><strong>Problem:</strong> Improve rigidity and tool holding reliability for precision slitting saw operations.</p>
+            <p><strong>Constraints:</strong> Spindle compatibility, arbor concentricity, saw retention, vibration control, and machinable tolerances.</p>
+            <p><strong>Approach:</strong> Designed the arbor around stiffness, practical machining operations, and repeatable tool clamping.</p>
+            <p><strong>Result:</strong> Produced a practical design that improved confidence and stability during cutting operations.</p>
+            <p class="tools"><strong>Tools:</strong> Turning, milling, tolerance planning, precision design, tool holding</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Kestin Kuhn. <a href="index.html#home">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

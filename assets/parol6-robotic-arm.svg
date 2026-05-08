@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">PAROL6 robotic arm project illustration</title>
+  <desc id="desc">Engineering-style illustration of a white six-axis robotic arm in front of a control interface.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="34" fill="url(#bg)"/>
+  <rect x="540" y="80" width="520" height="370" rx="22" fill="#111827" stroke="#334155" stroke-width="6"/>
+  <rect x="575" y="115" width="450" height="290" rx="12" fill="url(#screen)" opacity=".82"/>
+  <g stroke="#bfdbfe" stroke-width="10" stroke-linecap="round" opacity=".85">
+    <line x1="620" y1="165" x2="900" y2="165"/>
+    <line x1="620" y1="225" x2="940" y2="225"/>
+    <line x1="620" y1="285" x2="865" y2="285"/>
+    <line x1="620" y1="345" x2="970" y2="345"/>
+  </g>
+  <g fill="#e5e7eb" stroke="#94a3b8" stroke-width="10" stroke-linejoin="round">
+    <ellipse cx="250" cy="590" rx="160" ry="55" fill="#cbd5e1"/>
+    <rect x="95" y="515" width="310" height="90" rx="28"/>
+    <path d="M310 530 L465 430 L545 498 L402 625 Z"/>
+    <circle cx="460" cy="430" r="70"/>
+    <path d="M500 385 L690 255 L760 333 L590 505 Z"/>
+    <circle cx="700" cy="260" r="65"/>
+    <path d="M735 220 L875 165 L925 235 L770 315 Z"/>
+    <rect x="870" y="130" width="160" height="70" rx="16"/>
+  </g>
+  <g stroke="#0f172a" stroke-width="8" stroke-linecap="round">
+    <line x1="200" y1="515" x2="260" y2="470"/>
+    <line x1="500" y1="430" x2="585" y2="370"/>
+    <line x1="730" y1="252" x2="800" y2="220"/>
+  </g>
+  <g fill="#60a5fa">
+    <circle cx="460" cy="430" r="18"/>
+    <circle cx="700" cy="260" r="18"/>
+    <circle cx="930" cy="165" r="10"/>
+  </g>
+  <text x="70" y="95" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800">PAROL6 Robotic Arm</text>
+  <text x="72" y="145" fill="#93c5fd" font-family="Inter, Arial, sans-serif" font-size="24">3D printing • assembly • motion control</text>
+</svg>
