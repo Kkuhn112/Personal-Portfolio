@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Kestin Kuhn, a mechanical engineering student focused on aerospace manufacturing, composites, CAD, and CNC machining." />
+  <meta name="description" content="Portfolio of Kestin Kuhn, a mechanical engineering student focused on aerospace manufacturing, design for manufacturing, composites, 3D printing, and CNC machining." />
   <title>Kestin Kuhn | Mechanical Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,14 +13,15 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#home">Kestin Kuhn</a>
+      <a class="brand" href="index.html#home">Kestin Kuhn</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav id="siteNav" class="site-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Featured Projects</a>
+        <a href="projects.html">All Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -32,12 +33,13 @@
         <h1>Kestin Kuhn</h1>
         <p class="hero-title">Mechanical Engineering Student | Aerospace Manufacturing | Composite Research</p>
         <p class="hero-text">
-          Focused on aerospace manufacturing, structural design, CAD, CNC machining,
-          and computational toolpath development.
+          Focused on aerospace manufacturing, design for manufacturing, structural design, CAD,
+          3D printing, CNC machining, and computational toolpath development.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#" aria-label="Download resume">Download Resume (PDF)</a>
-          <a class="btn btn-secondary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#projects">View Featured Projects</a>
+          <a class="btn btn-secondary" href="projects.html">All Projects</a>
           <a class="btn btn-secondary" href="#contact">Contact</a>
         </div>
         <div class="social-links">
@@ -58,53 +60,61 @@
           supporting engineering programming. I enjoy solving practical design and manufacturing problems
           through rigorous analysis, iterative prototyping, and clear technical communication.
         </p>
+        <p>
+          I also have experience designing parts around real manufacturing constraints for both 3D printing
+          and CNC machining. That includes thinking through print orientation, support strategy, clearances,
+          fastener access, workholding, tool reach, tolerances, and how a CAD model will actually be made,
+          assembled, and tested.
+        </p>
       </div>
     </section>
 
     <section id="projects" class="section section-muted">
       <div class="container">
-        <h2>Projects</h2>
-        <p class="section-intro">Selected projects highlighting engineering reasoning, manufacturability, and analysis.</p>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured Work</p>
+            <h2>Biggest Projects</h2>
+          </div>
+          <a class="btn btn-secondary" href="projects.html">View all projects</a>
+        </div>
+        <p class="section-intro">Four front-page projects highlighting engineering reasoning, manufacturability, controls, and analysis.</p>
 
-        <div class="project-grid">
+        <div class="project-grid featured-grid">
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder for Continuous Fiber 3D Printing Toolpath System">Image Placeholder</div>
+            <div class="project-image project-image-composite" role="img" aria-label="Continuous fiber toolpath visualization"><span>Fiber Toolpaths</span></div>
             <h3>Continuous Fiber 3D Printing Toolpath System</h3>
             <p><strong>Problem:</strong> Improve strength and crack resistance in printed composite specimens.</p>
-            <p><strong>Constraints:</strong> Fiber steering limits, nozzle motion continuity, and testable sample geometry.</p>
             <p><strong>Approach:</strong> Developed Python-based G-code workflows to control fiber path direction and loading response.</p>
             <p><strong>Result:</strong> Produced repeatable toolpaths for comparative testing and improved control of crack propagation behavior.</p>
             <p class="tools"><strong>Tools:</strong> Python, G-code, composite mechanics, experimental testing</p>
           </article>
 
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder for Lightweight Aerospace Structural Bracket">Image Placeholder</div>
+            <div class="project-image project-image-robot" role="img" aria-label="Illustrated panel representing the PAROL 6 robotic arm project"><span>PAROL 6 Robotic Arm</span></div>
+            <h3>PAROL 6 Robotic Arm Build</h3>
+            <p><strong>Problem:</strong> Build, wire, and tune a multi-axis robotic arm for controlled motion testing.</p>
+            <p><strong>Approach:</strong> Integrated 3D-printed structures, motors, belts, wiring, and control software while troubleshooting mechanical fit-up.</p>
+            <p><strong>Result:</strong> Advanced a functional robotic arm platform for motion experiments and future end-effector work.</p>
+            <p class="tools"><strong>Tools:</strong> 3D printing, robotics assembly, controls, electromechanical troubleshooting</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-macropad" role="img" aria-label="Illustrated panel representing the custom macro pad project"><span>Custom Macro Pad</span></div>
+            <h3>Custom Computer Macro Pad</h3>
+            <p><strong>Problem:</strong> Create a compact, durable input device for repeatable computer shortcuts.</p>
+            <p><strong>Approach:</strong> Designed a printable enclosure around switch spacing, USB access, assembly clearance, and desk use.</p>
+            <p><strong>Result:</strong> Produced a working macro pad that combines electronics packaging with design for 3D printing.</p>
+            <p class="tools"><strong>Tools:</strong> CAD, FDM printing, keyboard switches, enclosure design</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image-bracket" role="img" aria-label="Lightweight aerospace bracket concept representation"><span>Aerospace Bracket</span></div>
             <h3>Lightweight Aerospace Structural Bracket</h3>
             <p><strong>Problem:</strong> Reduce mass while maintaining load-bearing reliability for aerospace mounting conditions.</p>
-            <p><strong>Constraints:</strong> Factor of safety targets, interface geometry, and machinable features.</p>
             <p><strong>Approach:</strong> Combined CAD iterations, hand calculations, and FEA to optimize geometry and stress flow.</p>
             <p><strong>Result:</strong> Delivered a weight-optimized concept with documented manufacturability and validation assumptions.</p>
             <p class="tools"><strong>Tools:</strong> SolidWorks/Fusion 360, FEA, structural calculations, DFM</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder for Automated CNC Part Gripper">Image Placeholder</div>
-            <h3>Automated CNC Part Gripper</h3>
-            <p><strong>Problem:</strong> Minimize setup and transfer time in twin-turret CNC lathe operations.</p>
-            <p><strong>Constraints:</strong> Limited work envelope, repeatability requirements, and safe integration with existing workflow.</p>
-            <p><strong>Approach:</strong> Designed a mechanical gripping concept focused on robust clamping and quick handoff steps.</p>
-            <p><strong>Result:</strong> Created a practical automation concept targeting reduced setup variability and cycle interruption.</p>
-            <p class="tools"><strong>Tools:</strong> Mechanical design, CNC process planning, automation concepts</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder for Custom Slitting Saw Arbor">Image Placeholder</div>
-            <h3>Custom Slitting Saw Arbor</h3>
-            <p><strong>Problem:</strong> Increase rigidity and reliability for slitting operations on precision parts.</p>
-            <p><strong>Constraints:</strong> Tool holding geometry, spindle compatibility, and practical machining tolerances.</p>
-            <p><strong>Approach:</strong> Designed an arbor for stiffness and concentricity with a machining-first approach.</p>
-            <p><strong>Result:</strong> Produced a manufacturable design that improved stability and confidence during cutting operations.</p>
-            <p class="tools"><strong>Tools:</strong> Precision design, turning/milling, tolerance planning</p>
           </article>
         </div>
       </div>
@@ -120,11 +130,11 @@
           </article>
           <article>
             <h3>Omni-X USA — CNC Machinist</h3>
-            <p>Performed CNC machining operations and setup tasks, emphasizing repeatability, tolerances, and throughput.</p>
+            <p>Performed CNC machining operations and setup tasks, emphasizing repeatability, tolerances, throughput, and design decisions that reduce machining difficulty.</p>
           </article>
           <article>
             <h3>University of Colorado — Undergraduate Researcher</h3>
-            <p>Contributed to continuous fiber-reinforced 3D printing research, including toolpath logic and specimen evaluation.</p>
+            <p>Contributed to continuous fiber-reinforced 3D printing research, including toolpath logic, print-aware specimen design, and specimen evaluation.</p>
           </article>
           <article>
             <h3>University of Colorado — Engineering Programming Teaching Assistant</h3>
@@ -155,11 +165,20 @@
           <article>
             <h3>Manufacturing</h3>
             <ul>
+              <li>Design for manufacturing (DFM)</li>
               <li>CNC milling</li>
               <li>Turning</li>
               <li>Grinding</li>
               <li>Manual milling</li>
               <li>FDM printing</li>
+            </ul>
+          </article>
+          <article>
+            <h3>DFM Focus Areas</h3>
+            <ul>
+              <li>3D print orientation and supports</li>
+              <li>Workholding and tool access</li>
+              <li>Assembly clearances and fastener access</li>
             </ul>
           </article>
           <article>
@@ -186,8 +205,8 @@
         <h2>Contact</h2>
         <p>If you are recruiting for aerospace or defense internships, I would be glad to connect.</p>
         <ul class="contact-list">
-          <li><strong>Email:</strong> <a href="mailto:your.email@example.com">kkuhn1129@gmail.com</a></li>
-          <li><strong>Phone:</strong> <a href="#">(303) 720-0118</a></li>
+          <li><strong>Email:</strong> <a href="mailto:kkuhn1129@gmail.com">kkuhn1129@gmail.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+13037200118">(303) 720-0118</a></li>
           <li><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/Kestin-Kuhn</a></li>
         </ul>
       </div>
