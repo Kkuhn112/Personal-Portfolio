@@ -235,6 +235,12 @@ h2 {
     linear-gradient(145deg, #94a3b8, #334155 55%, #111827);
 }
 
+.project-photo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .project-image-bracket {
   background:
     radial-gradient(circle at 28% 34%, transparent 0 13%, rgba(125, 211, 252, 0.24) 14% 18%, transparent 19%),
