@@ -17,7 +17,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex  # Change this to match your actual main .tex filename
+          root_file: Kestin-Kuhn-Resume.tex  # Change this to match your actual main .tex filename
 
       # Step 3: Upload the finished PDF so you can download it
       - name: Upload Compiled PDF
