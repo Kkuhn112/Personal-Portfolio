@@ -3,242 +3,544 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Kestin Kuhn, a mechanical engineering student focused on aerospace manufacturing, design for manufacturing, composites, 3D printing, and CNC machining." />
-  <title>Kestin Kuhn | Mechanical Engineering Portfolio</title>
+  <meta name="description" content="Kestin Kuhn — Mechanical engineer specializing in aerospace manufacturing, robotics, controls, CNC machining, composites, and rapid prototyping. Incoming Production Engineering Intern at True Anomaly." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Kestin Kuhn — Mechanical Engineer" />
+  <meta property="og:description" content="Robotics · Aerospace · Controls · Manufacturing. Engineering work from concept to hardware." />
+  <meta property="og:type" content="website" />
+  <title>Kestin Kuhn — Mechanical Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0d12'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="assets/project-photos.css" />
+  <link rel="stylesheet" href="assets/photos.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html#home">Kestin Kuhn</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
-        <a href="index.html#about">About</a>
-        <a href="index.html#projects">Featured Projects</a>
-        <a href="projects.html">All Projects</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#contact">Contact</a>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Kestin Kuhn — home">
+        <span class="mark">K</span>
+        <span>Kestin Kuhn</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#education">Education</a>
+        <a href="#resume">Résumé</a>
+        <a class="nav-cta" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero section">
-      <div class="container">
-        <p class="eyebrow">Mechanical Engineering Portfolio</p>
-        <h1>Kestin Kuhn</h1>
-        <p class="hero-title">Mechanical Engineering Student | Aerospace Manufacturing | Composite Research</p>
+  <main id="top">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero section" aria-labelledby="hero-name">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <span class="status-line"><span class="status-dot" aria-hidden="true"></span> Available for 2026–2027 aerospace &amp; robotics roles</span>
+        <h1 class="display" id="hero-name">Kestin Kuhn</h1>
+        <p class="hero-role">
+          <span>Mechanical Engineer</span>
+          <span class="sep">/</span><span>Robotics</span>
+          <span class="sep">/</span><span>Aerospace</span>
+          <span class="sep">/</span><span>Controls</span>
+          <span class="sep">/</span><span>Manufacturing</span>
+        </p>
         <p class="hero-text">
-          Focused on aerospace manufacturing, design for manufacturing, structural design, CAD,
-          3D printing, CNC machining, and computational toolpath development.
+          I design and build robotic systems, precision hardware, and aerospace-focused
+          engineering projects — with an emphasis on manufacturing, controls, and rapid
+          prototyping. I take work from concept and CAD to a machined, wired, tested part.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary"
-   href="Kestin-Kuhn-Resume.pdf"
-   target="_blank"
-   aria-label="Download resume">
-    Download Resume (PDF)
-</a>
-          <a class="btn btn-secondary" href="#projects">View Featured Projects</a>
-          <a class="btn btn-secondary" href="projects.html">All Projects</a>
-          <a class="btn btn-secondary" href="#contact">Contact</a>
+        <div class="hero-actions btn-row">
+          <a class="btn btn--accent" href="Kestin-Kuhn-Resume.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Résumé
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/kkuhn112" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/kestin-kuhn/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn btn--ghost" href="mailto:kkuhn1129@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Email
+          </a>
         </div>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/kestin-kuhn/"
-   target="_blank"
-   rel="noopener noreferrer">
-    LinkedIn
-</a>
+        <div class="scroll-cue"><span class="line" aria-hidden="true"></span> Scroll to explore the work</div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <div class="stats container-wide" aria-label="Quick facts">
+      <div class="stat reveal"><div class="num">5<span class="unit">+</span></div><div class="label">Years in the shop</div></div>
+      <div class="stat reveal"><div class="num">3.9<span class="unit">/4.0</span></div><div class="label">GPA · Dean's List</div></div>
+      <div class="stat reveal"><div class="num">9<span class="unit">-axis</span></div><div class="label">CNC programming</div></div>
+      <div class="stat reveal"><div class="num">AS<span class="unit">9100</span></div><div class="label">Aerospace quality</div></div>
+    </div>
+
+    <!-- ===================== FEATURED WORK ===================== -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Featured Work</p>
+          <h2 class="title" id="work-title">Engineering, start to finished hardware.</h2>
+          <p class="lead">A selection of projects across robotics, aerospace structures, controls, and manufacturing — each one carried from a requirement to a part you can hold.</p>
+        </div>
+
+        <div class="projects-stack">
+
+          <!-- Project 01 — PAROL 6 (real photo + video) -->
+          <article class="project reveal">
+            <div class="project-media">
+              <span class="media-tag">Robotics</span>
+              <div class="media-photo ph-parol6" role="img" aria-label="Assembled PAROL 6 six-axis robotic arm on a workbench in front of its control software" data-lightbox></div>
+            </div>
+            <div class="project-body">
+              <div class="project-index">PROJECT 01 — SIX-DOF MANIPULATOR</div>
+              <h3>PAROL 6 Robotic Arm</h3>
+              <p class="desc">Kitted, assembled, calibrated, and commissioned a six-degree-of-freedom industrial arm, then wrote the motion software to drive it — a full-stack electromechanical platform for controls experiments and end-effector work.</p>
+              <div class="chips">
+                <span class="chip chip--accent">Robotics</span>
+                <span class="chip chip--accent">Controls</span>
+                <span class="chip">3D Printing</span>
+                <span class="chip">Kinematics</span>
+              </div>
+              <div class="meta-grid">
+                <div class="meta"><div class="k">Stack</div><div class="v">Python · Serial · Steppers</div></div>
+                <div class="meta"><div class="k">Highlight</div><div class="v">Forward &amp; inverse kinematics</div></div>
+                <div class="meta"><div class="k">Duration</div><div class="v">2025</div></div>
+                <div class="meta"><div class="k">Status</div><div class="v live"><span class="status-dot" aria-hidden="true"></span>Operational</div></div>
+              </div>
+              <div class="project-links btn-row">
+                <a class="btn btn--primary btn--sm" href="https://youtube.com/shorts/sV4nwKh9tP0?feature=share" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Watch demo
+                </a>
+                <a class="btn btn--ghost btn--sm" href="projects.html#parol6">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02 — CNC Part Extraction (blueprint) -->
+          <article class="project project--flip reveal">
+            <div class="project-media">
+              <span class="media-tag">Automation</span>
+              <div class="blueprint" aria-label="Schematic of an automated CNC lathe part-extraction gripper">
+                <svg viewBox="0 0 300 300" role="img">
+                  <path class="ln" d="M40 150 h60"/>
+                  <circle class="fill" cx="140" cy="150" r="52"/>
+                  <circle class="ln" cx="140" cy="150" r="52"/>
+                  <circle class="acc" cx="140" cy="150" r="30"/>
+                  <circle class="dot" cx="140" cy="150" r="3"/>
+                  <path class="ln" d="M192 118 h44 v-24 h34 v112 h-34 v-24 h-44"/>
+                  <path class="acc" d="M212 130 v40 M226 124 v52"/>
+                  <path class="ln" d="M140 66 v-22 M118 44 h44"/>
+                  <path class="ln" d="M140 234 v22 M118 256 h44"/>
+                  <text x="40" y="140">EXTRACT AXIS</text>
+                  <text x="205" y="250">ACTUATOR</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-index">PROJECT 02 — LIGHTS-OUT MACHINING</div>
+              <h3>Automated CNC Part Extraction System</h3>
+              <p class="desc">Designed and manufactured a custom part-extraction attachment for a CNC turning center that removed the operator from the loop — reducing idle time between cycles and improving production consistency on a live production line.</p>
+              <div class="chips">
+                <span class="chip chip--accent">Automation</span>
+                <span class="chip chip--accent">Machine Design</span>
+                <span class="chip">CAD</span>
+                <span class="chip">Carbon Fiber</span>
+              </div>
+              <div class="meta-grid">
+                <div class="meta"><div class="k">Context</div><div class="v">Omni-X production floor</div></div>
+                <div class="meta"><div class="k">Materials</div><div class="v">Chem-resistant CF, additive</div></div>
+                <div class="meta"><div class="k">Result</div><div class="v">Eliminated manual handling</div></div>
+                <div class="meta"><div class="k">Status</div><div class="v live"><span class="status-dot" aria-hidden="true"></span>Deployed</div></div>
+              </div>
+              <div class="project-links btn-row">
+                <a class="btn btn--ghost btn--sm" href="projects.html#extraction">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03 — Continuous Fiber Toolpaths (blueprint) -->
+          <article class="project reveal">
+            <div class="project-media">
+              <span class="media-tag">Research</span>
+              <div class="blueprint" aria-label="Schematic of continuous fiber toolpaths inside a printed tensile specimen">
+                <svg viewBox="0 0 300 300" role="img">
+                  <rect class="fill" x="70" y="70" width="160" height="160" rx="6"/>
+                  <rect class="ln" x="70" y="70" width="160" height="160" rx="6"/>
+                  <path class="acc" d="M84 96 h132 M84 118 h132 M84 140 h132 M84 162 h132 M84 184 h132 M84 206 h132"/>
+                  <path class="ln" d="M150 40 v30 M150 230 v30"/>
+                  <path class="ln" d="M120 34 h60 M120 266 h60"/>
+                  <circle class="dot" cx="84" cy="96" r="3"/>
+                  <circle class="dot" cx="216" cy="206" r="3"/>
+                  <text x="70" y="58">LOAD</text>
+                  <text x="188" y="284">FIBER PATH</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-index">PROJECT 03 — COMPOSITE ADDITIVE MFG.</div>
+              <h3>Continuous Fiber 3D-Printing Toolpath System</h3>
+              <p class="desc">Built a carbon-fiber slicing and post-processing pipeline that generates machine-ready G-code, steering fiber direction through printed specimens to study — and control — crack propagation in composite parts. Undergraduate research at CU Denver.</p>
+              <div class="chips">
+                <span class="chip chip--accent">Composites</span>
+                <span class="chip chip--accent">Research</span>
+                <span class="chip">Python</span>
+                <span class="chip">G-code</span>
+                <span class="chip">Mechanical Testing</span>
+              </div>
+              <div class="meta-grid">
+                <div class="meta"><div class="k">Focus</div><div class="v">Fiber steering &amp; slicing</div></div>
+                <div class="meta"><div class="k">Output</div><div class="v">Machine-ready G-code</div></div>
+                <div class="meta"><div class="k">Duration</div><div class="v">2025 — Present</div></div>
+                <div class="meta"><div class="k">Status</div><div class="v live"><span class="status-dot" aria-hidden="true"></span>Active</div></div>
+              </div>
+              <div class="project-links btn-row">
+                <a class="btn btn--ghost btn--sm" href="projects.html#fiber">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04 — Macro Pad (real photo) -->
+          <article class="project project--flip reveal">
+            <div class="project-media">
+              <span class="media-tag">Embedded</span>
+              <div class="media-photo ph-macropad" role="img" aria-label="Custom 3D-printed six-key macro pad prototype on a desk" data-lightbox></div>
+            </div>
+            <div class="project-body">
+              <div class="project-index">PROJECT 04 — DESIGN FOR PRINT</div>
+              <h3>Custom Computer Macro Pad</h3>
+              <p class="desc">A compact input device designed around real constraints — switch spacing, USB access, wall thickness, and top-plate fit — then printed, wired, and flashed. A clean example of CAD-to-print electronics packaging done properly.</p>
+              <div class="chips">
+                <span class="chip chip--accent">Embedded</span>
+                <span class="chip chip--accent">DFM</span>
+                <span class="chip">CAD</span>
+                <span class="chip">FDM Printing</span>
+              </div>
+              <div class="meta-grid">
+                <div class="meta"><div class="k">Design for</div><div class="v">FDM · packaging</div></div>
+                <div class="meta"><div class="k">Includes</div><div class="v">Enclosure &amp; firmware</div></div>
+                <div class="meta"><div class="k">Duration</div><div class="v">2025</div></div>
+                <div class="meta"><div class="k">Status</div><div class="v live"><span class="status-dot" aria-hidden="true"></span>Built &amp; in use</div></div>
+              </div>
+              <div class="project-links btn-row">
+                <a class="btn btn--ghost btn--sm" href="projects.html#macropad">Read more</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="btn-row reveal" style="margin-top:2.5rem;">
+          <a class="btn btn--ghost" href="projects.html">
+            View all projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          I am a Mechanical Engineering student at the University of Colorado Denver (GPA 3.92,
-          expected graduation May 2028) with hands-on aerospace manufacturing and research experience.
-          My background includes AS9100 prototype machining at Lockheed Martin, CNC machining at Omni-X,
-          undergraduate research in continuous fiber-reinforced 3D printing, and teaching assistant work
-          supporting engineering programming. I enjoy solving practical design and manufacturing problems
-          through rigorous analysis, iterative prototyping, and clear technical communication.
-        </p>
-        <p>
-          I also have experience designing parts around real manufacturing constraints for both 3D printing
-          and CNC machining. That includes thinking through print orientation, support strategy, clearances,
-          fastener access, workholding, tool reach, tolerances, and how a CAD model will actually be made,
-          assembled, and tested.
-        </p>
-      </div>
-    </section>
+    <hr class="divider" />
 
-    <section id="projects" class="section section-muted">
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
       <div class="container">
-        <div class="section-heading">
+        <div class="about-grid">
           <div>
-            <p class="eyebrow">Featured Work</p>
-            <h2>Biggest Projects</h2>
+            <p class="eyebrow">About</p>
+            <h2 class="title" id="about-title">An engineer who has actually made the part.</h2>
           </div>
-          <a class="btn btn-secondary" href="projects.html">View all projects</a>
+          <div class="about-copy">
+            <p>I'm a Mechanical Engineering student at the University of Colorado Denver who learned engineering on a shop floor before I learned it in a lecture hall. I started in an <strong>AS9100 aerospace prototype facility at Lockheed Martin</strong>, moved into production CNC machining, and now split my time between undergraduate composites research and teaching.</p>
+            <p>That path shapes how I design. I think about manufacturing from the first sketch — print orientation, workholding, tool reach, clearances, tolerances, and how a model actually gets made, assembled, and tested. I'm drawn to <strong>aerospace, robotics, and defense hardware</strong>: problems where precision, weight, and reliability genuinely matter.</p>
+            <p>This summer I'll be a <strong>Production Engineering Intern at True Anomaly</strong>, a space and defense company. I'm looking for teams building serious hardware, where an engineer who can design it, machine it, wire it, and test it is worth having in the room.</p>
+          </div>
         </div>
-        <p class="section-intro">Four front-page projects highlighting engineering reasoning, manufacturability, controls, and analysis.</p>
+      </div>
+    </section>
 
-        <div class="project-grid featured-grid">
-          <article class="project-card">
-            <div class="project-image project-image-composite" role="img" aria-label="Continuous fiber toolpath visualization"><span>Fiber Toolpaths</span></div>
-            <h3>Continuous Fiber 3D Printing Toolpath System</h3>
-            <p><strong>Problem:</strong> Improve strength and crack resistance in printed composite specimens.</p>
-            <p><strong>Approach:</strong> Developed Python-based G-code workflows to control fiber path direction and loading response.</p>
-            <p><strong>Result:</strong> Produced repeatable toolpaths for comparative testing and improved control of crack propagation behavior.</p>
-            <p class="tools"><strong>Tools:</strong> Python, G-code, composite mechanics, experimental testing</p>
-          </article>
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section section--surface" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Experience</p>
+          <h2 class="title" id="exp-title">From the prototype shop to the production floor.</h2>
+        </div>
 
-          <article class="project-card">
-            <div
-              class="project-image project-image-robot project-photo"
-              role="img"
-              aria-label="PAROL 6 robotic arm assembled on a desk in front of control software"
-            >
-              <span>PAROL 6 Robotic Arm</span>
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-when">
+              Jun 2026 — Aug 2026
+              <span class="loc">Centennial, CO</span>
+              <span class="tag">Incoming</span>
             </div>
-            <h3>PAROL 6 Robotic Arm Build</h3>
-            <p><strong>Problem:</strong> Build, wire, and tune a multi-axis robotic arm for controlled motion testing.</p>
-            <p><strong>Approach:</strong> Integrated 3D-printed structures, motors, belts, wiring, and control software while troubleshooting mechanical fit-up.</p>
-            <p><strong>Result:</strong> Advanced a functional robotic arm platform for motion experiments and future end-effector work.</p>
-            <p class="tools"><strong>Tools:</strong> 3D printing, robotics assembly, controls, electromechanical troubleshooting</p>
-          </article>
-
-          <article class="project-card">
-            <div
-              class="project-image project-image-macropad project-photo"
-              role="img"
-              aria-label="Custom white six-key macro pad prototype on a desk"
-            >
-              <span>Custom Macro Pad</span>
+            <div class="tl-body">
+              <h3>True Anomaly</h3>
+              <p class="role">Production Engineering Intern</p>
+              <ul>
+                <li>Joining a space &amp; defense company to support <strong>production of spacecraft hardware</strong> — manufacturing, process, and build engineering.</li>
+                <li>Bringing hands-on machining, DFM, and quality experience directly into an aerospace production environment.</li>
+              </ul>
             </div>
-            <h3>Custom Computer Macro Pad</h3>
-            <p><strong>Problem:</strong> Create a compact, durable input device for repeatable computer shortcuts.</p>
-            <p><strong>Approach:</strong> Designed a printable enclosure around switch spacing, USB access, assembly clearance, and desk use.</p>
-            <p><strong>Result:</strong> Produced a working macro pad that combines electronics packaging with design for 3D printing.</p>
-            <p class="tools"><strong>Tools:</strong> CAD, FDM printing, keyboard switches, enclosure design</p>
           </article>
 
-          <article class="project-card">
-            <div class="project-image project-image-bracket" role="img" aria-label="Lightweight aerospace bracket concept representation"><span>Aerospace Bracket</span></div>
-            <h3>Lightweight Aerospace Structural Bracket</h3>
-            <p><strong>Problem:</strong> Reduce mass while maintaining load-bearing reliability for aerospace mounting conditions.</p>
-            <p><strong>Approach:</strong> Combined CAD iterations, hand calculations, and FEA to optimize geometry and stress flow.</p>
-            <p><strong>Result:</strong> Delivered a weight-optimized concept with documented manufacturability and validation assumptions.</p>
-            <p class="tools"><strong>Tools:</strong> SolidWorks/Fusion 360, FEA, structural calculations, DFM</p>
+          <article class="tl-item reveal">
+            <div class="tl-when">
+              Jul 2025 — Present
+              <span class="loc">Denver, CO</span>
+            </div>
+            <div class="tl-body">
+              <h3>University of Colorado Denver</h3>
+              <p class="role">Undergraduate Research Assistant — Continuous Fiber Composite Additive Manufacturing</p>
+              <ul>
+                <li>Developed a <strong>carbon-fiber slicing and post-processing system</strong> that generates machine-ready G-code for continuous-fiber printing.</li>
+                <li>Researched <strong>crack propagation</strong> in composite 3D-printed materials through fiber-steered specimen design and mechanical testing.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-when">
+              Jan 2025 — Present
+              <span class="loc">Denver, CO</span>
+            </div>
+            <div class="tl-body">
+              <h3>University of Colorado Denver</h3>
+              <p class="role">Engineering Programming Teaching Assistant</p>
+              <ul>
+                <li>Coached students through <strong>debugging and troubleshooting Python</strong> and computational problem-solving.</li>
+                <li>Developed and presented instructional material for core programming concepts.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-when">
+              Aug 2024 — May 2026
+              <span class="loc">Sheridan, CO</span>
+            </div>
+            <div class="tl-body">
+              <h3>Omni-X</h3>
+              <p class="role">CNC Machinist</p>
+              <ul>
+                <li>Programmed, set up, and operated <strong>2-axis and 9-axis CNC machining centers</strong> for production manufacturing.</li>
+                <li>Designed and built a <strong>custom part-extraction attachment</strong> for a turning center that eliminated operator intervention.</li>
+                <li>Held tight tolerances while consistently meeting production deadlines.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-when">
+              Jun 2023 — Aug 2024
+              <span class="loc">Jefferson County, CO</span>
+            </div>
+            <div class="tl-body">
+              <h3>Lockheed Martin</h3>
+              <p class="role">Prototype Machining Apprentice</p>
+              <ul>
+                <li>Produced aerospace components in an <strong>AS9100 prototype facility</strong>.</li>
+                <li>Performed inspection and collaborated with engineers to ensure compliance with aerospace standards.</li>
+                <li>Optimized an additive-manufacturing resurfacing process, <strong>reducing machining time by 70%</strong>.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <!-- ===================== TOOLBOX ===================== -->
+    <section class="section" id="toolbox" aria-labelledby="toolbox-title">
       <div class="container">
-        <h2>Experience</h2>
-        <div class="experience-list">
-          <article>
-            <h3>Lockheed Martin — Prototype Machining Apprentice</h3>
-            <p>Supported AS9100 aerospace prototype machining with focus on process discipline, quality, and precision part production.</p>
-          </article>
-          <article>
-            <h3>Omni-X USA — CNC Machinist</h3>
-            <p>Performed CNC machining operations and setup tasks, emphasizing repeatability, tolerances, throughput, and design decisions that reduce machining difficulty.</p>
-          </article>
-          <article>
-            <h3>University of Colorado — Undergraduate Researcher</h3>
-            <p>Contributed to continuous fiber-reinforced 3D printing research, including toolpath logic, print-aware specimen design, and specimen evaluation.</p>
-          </article>
-          <article>
-            <h3>University of Colorado — Engineering Programming Teaching Assistant</h3>
-            <p>Assisted students in engineering programming fundamentals, debugging, and computational problem-solving workflows.</p>
-          </article>
+        <div class="section-head reveal">
+          <p class="eyebrow">Technical Toolbox</p>
+          <h2 class="title" id="toolbox-title">The tools behind the work.</h2>
+          <p class="lead">Organized by discipline, not rated on a scale — because a ten-out-of-ten in SolidWorks means nothing next to a part that came off the machine in tolerance.</p>
+        </div>
+
+        <div class="toolbox reveal">
+          <div class="tool-group">
+            <h3><span class="n">01</span> Design &amp; CAD</h3>
+            <div class="tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Fusion 360</span>
+              <span class="tag">Autodesk Inventor</span>
+              <span class="tag">GD&amp;T</span>
+              <span class="tag">DFM</span>
+            </div>
+          </div>
+          <div class="tool-group">
+            <h3><span class="n">02</span> Manufacturing</h3>
+            <div class="tags">
+              <span class="tag">5-axis CNC</span>
+              <span class="tag">9-axis Turning</span>
+              <span class="tag">Manual Machining</span>
+              <span class="tag">Mastercam</span>
+              <span class="tag">FDM Printing</span>
+              <span class="tag">Grinding</span>
+            </div>
+          </div>
+          <div class="tool-group">
+            <h3><span class="n">03</span> Programming</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">G-code</span>
+              <span class="tag">Scripting</span>
+              <span class="tag">Debugging</span>
+            </div>
+          </div>
+          <div class="tool-group">
+            <h3><span class="n">04</span> Robotics &amp; Controls</h3>
+            <div class="tags">
+              <span class="tag">Forward / Inverse Kinematics</span>
+              <span class="tag">Motion Control</span>
+              <span class="tag">Steppers &amp; Servos</span>
+              <span class="tag">Pneumatics</span>
+            </div>
+          </div>
+          <div class="tool-group">
+            <h3><span class="n">05</span> Analysis &amp; Testing</h3>
+            <div class="tags">
+              <span class="tag">FEA</span>
+              <span class="tag">Structural Calcs</span>
+              <span class="tag">Metrology</span>
+              <span class="tag">Mechanical Testing</span>
+            </div>
+          </div>
+          <div class="tool-group">
+            <h3><span class="n">06</span> Standards &amp; Materials</h3>
+            <div class="tags">
+              <span class="tag">AS9100</span>
+              <span class="tag">Launch Compliance</span>
+              <span class="tag">Composites / CFRP</span>
+              <span class="tag">Inspection</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section section-muted">
+    <!-- ===================== EDUCATION + CERTS ===================== -->
+    <section class="section section--surface" id="education" aria-labelledby="edu-title">
       <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <article>
-            <h3>CAD</h3>
-            <ul>
-              <li>SolidWorks</li>
-              <li>Fusion 360</li>
-              <li>Autodesk Inventor</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Programming</h3>
-            <ul>
-              <li>Python</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Manufacturing</h3>
-            <ul>
-              <li>Design for manufacturing (DFM)</li>
-              <li>CNC milling</li>
-              <li>Turning</li>
-              <li>Grinding</li>
-              <li>Manual milling</li>
-              <li>FDM printing</li>
-            </ul>
-          </article>
-          <article>
-            <h3>DFM Focus Areas</h3>
-            <ul>
-              <li>3D print orientation and supports</li>
-              <li>Workholding and tool access</li>
-              <li>Assembly clearances and fastener access</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Analysis</h3>
-            <ul>
-              <li>Finite Element Analysis (FEA)</li>
-              <li>Structural calculations</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Standards &amp; Quality</h3>
-            <ul>
-              <li>AS9100 familiarity</li>
-              <li>Metrology</li>
-              <li>GD&amp;T working knowledge</li>
-            </ul>
-          </article>
+        <div class="edu">
+          <div class="reveal">
+            <p class="eyebrow">Education</p>
+            <h2 class="title" id="edu-title" style="margin-bottom:1.8rem;">University of Colorado Denver</h2>
+            <div class="card" style="box-shadow:none;">
+              <div class="card-eyebrow">B.S. Mechanical Engineering · Expected May 2028</div>
+              <h3>Bachelor of Science, Mechanical Engineering</h3>
+              <p class="sub">GPA 3.9 / 4.0 · Dean's List, 2024 – Present</p>
+              <ul>
+                <li>Relevant coursework: Statics, Dynamics, Mechanics of Materials, Thermodynamics, Engineering Programming, CAD &amp; GD&amp;T</li>
+                <li>Undergraduate research — composite additive manufacturing lab</li>
+                <li>Engineering Programming Teaching Assistant</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p class="eyebrow">Certifications</p>
+            <h2 class="title" style="margin-bottom:1.8rem;font-size:clamp(1.4rem,2.6vw,1.9rem);">Credentials</h2>
+            <div class="cert-list">
+              <div class="cert">
+                <span class="seal" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div class="name">Certified SolidWorks Professional (CSWP)</div>
+                  <div class="issuer">Dassault Systèmes · Mechanical Design</div>
+                </div>
+              </div>
+              <div class="cert">
+                <span class="seal" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7L9 18l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div class="name">AS9100 Aerospace Quality</div>
+                  <div class="issuer">Hands-on experience · prototype &amp; production</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- ===================== RESUME ===================== -->
+    <section class="section" id="resume" aria-labelledby="resume-title">
       <div class="container">
-        <h2>Contact</h2>
-        <p>If you are recruiting for aerospace or defense internships, I would be glad to connect.</p>
-        <ul class="contact-list">
-          <li><strong>Email:</strong> <a href="mailto:kkuhn1129@gmail.com">kkuhn1129@gmail.com</a></li>
-          <li><strong>Phone:</strong> <a href="tel:+13037200118">(303) 720-0118</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kestin-kuhn/"
-   target="_blank"
-   rel="noopener noreferrer">
-    LinkedIn
-</a></li>
-        </ul>
+        <div class="resume">
+          <div class="reveal">
+            <p class="eyebrow">Résumé</p>
+            <h2 class="title" id="resume-title">One page. Everything that matters.</h2>
+            <p class="lead" style="margin:1.2rem 0 2rem;">A concise engineering résumé — experience, education, skills, and projects, formatted for a recruiter's ten-second scan. Open the full PDF or download a copy.</p>
+            <div class="btn-row">
+              <a class="btn btn--accent" href="Kestin-Kuhn-Resume.pdf" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+              <a class="btn btn--ghost" href="Kestin-Kuhn-Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            </div>
+          </div>
+          <div class="resume-frame reveal">
+            <object data="Kestin-Kuhn-Resume.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf" aria-label="Résumé preview">
+              <iframe src="Kestin-Kuhn-Resume.pdf#toolbar=0&navpanes=0&view=FitH" title="Résumé preview"></iframe>
+            </object>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section section--surface" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <p class="eyebrow eyebrow--center">Contact</p>
+        <h2 class="display" id="contact-title" style="font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:1.4rem;">Let's build something.</h2>
+        <p class="lead" style="margin:0 auto 2.2rem;">If you're recruiting for aerospace, robotics, or defense — for an internship or full-time hardware role — I'd genuinely like to talk.</p>
+        <a class="contact-mail" href="mailto:kkuhn1129@gmail.com">kkuhn1129@gmail.com</a>
+        <div class="contact-links">
+          <a class="btn btn--ghost btn--sm" href="tel:+13037200118">(303) 720-0118</a>
+          <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/in/kestin-kuhn/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/kkuhn112" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost btn--sm" href="Kestin-Kuhn-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+          <span class="btn btn--ghost btn--sm" style="cursor:default;">📍 Centennial, CO</span>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <a class="brand" href="#top"><span class="mark">K</span> Kestin Kuhn</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#resume">Résumé</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-meta">© <span id="year">2026</span> Kestin Kuhn · Mechanical Engineer</p>
+    </div>
+  </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
 
   <script src="script.js"></script>
 </body>

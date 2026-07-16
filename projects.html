@@ -3,132 +3,276 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="All engineering projects by Kestin Kuhn, including robotics, design for manufacturing, 3D printing, CNC machining, composites, and aerospace design." />
-  <title>Projects | Kestin Kuhn</title>
+  <meta name="description" content="Engineering project archive — Kestin Kuhn. Robotics, aerospace structures, automation, composites research, CNC machining, and design for manufacturing, documented from requirement to result." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Projects — Kestin Kuhn</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0d12'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="assets/project-photos.css" />
+  <link rel="stylesheet" href="assets/photos.css" />
+  <style>
+    /* Page-specific: engineering-report detail layout */
+    .proj-detail { padding: clamp(3rem, 6vw, 5rem) 0; border-top: 1px solid var(--line-soft); }
+    .proj-detail:first-of-type { border-top: 0; }
+    .proj-hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; margin-bottom: 2.5rem; }
+    .proj-hero .media { position: relative; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--surface); box-shadow: var(--shadow-sm); }
+    .proj-hero .media img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+    .proj-hero .media .media-photo { cursor: zoom-in; }
+    .proj-hero .media .blueprint { position: absolute; inset: 0; }
+    .report { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 1.8rem; }
+    .report-block h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+    .report-block p, .report-block ul { color: var(--muted); font-size: 0.95rem; margin: 0; }
+    .report-block ul { list-style: none; padding: 0; display: grid; gap: 0.4rem; }
+    .report-block li { padding-left: 1.1rem; position: relative; }
+    .report-block li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    .proj-embed { margin-top: 2rem; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); aspect-ratio: 16 / 9; max-width: 720px; background: #000; }
+    .proj-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+    @media (max-width: 860px) { .proj-hero { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html#home">Kestin Kuhn</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html#top" aria-label="Kestin Kuhn — home">
+        <span class="mark">K</span>
+        <span>Kestin Kuhn</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html#work">Work</a>
         <a href="index.html#about">About</a>
-        <a href="index.html#projects">Featured Projects</a>
-        <a href="projects.html" aria-current="page">All Projects</a>
         <a href="index.html#experience">Experience</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html#toolbox">Toolbox</a>
+        <a href="index.html#education">Education</a>
+        <a class="nav-cta" href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero section">
-      <div class="container">
-        <p class="eyebrow">Project Portfolio</p>
-        <h1>All Projects</h1>
-        <p class="hero-text">
-          A broader project archive for robotics, design for manufacturing, additive manufacturing,
-          CNC machining, composites research, and structural design work.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="index.html#projects">Back to featured projects</a>
-          <a class="btn btn-secondary" href="index.html#contact">Contact</a>
+  <main id="top">
+    <!-- Page hero -->
+    <section class="hero section" style="padding-bottom:clamp(2.5rem,5vw,4rem);">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Project Archive</p>
+        <h1 class="display" style="font-size:clamp(2.4rem,6vw,4.2rem);">Selected engineering work.</h1>
+        <p class="hero-text">Robotics, aerospace structures, automation, composites research, and precision machining — documented the way an engineer reads a design review: requirement, approach, build, result.</p>
+        <div class="btn-row" style="margin-top:1.6rem;">
+          <a class="btn btn--ghost" href="index.html#work">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5m0 0l6-6m-6 6l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to home
+          </a>
+          <a class="btn btn--accent" href="index.html#contact">Get in touch</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-muted">
+    <div class="container">
+
+      <!-- PAROL 6 -->
+      <article class="proj-detail" id="parol6">
+        <div class="proj-hero">
+          <div class="media">
+            <div class="media-photo ph-parol6" role="img" aria-label="Assembled PAROL 6 six-axis robotic arm in front of its control software" data-lightbox></div>
+          </div>
+          <div>
+            <div class="project-index">PROJECT 01 · ROBOTICS · CONTROLS</div>
+            <h2 class="title" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:0.8rem;">PAROL 6 Robotic Arm</h2>
+            <p class="muted">A six-degree-of-freedom desktop industrial arm — kitted, assembled, calibrated, commissioned, and driven by software I wrote. Built as a platform for controls, calibration, and end-effector experiments.</p>
+            <div class="chips" style="margin-top:1.2rem;">
+              <span class="chip chip--accent">Robotics</span>
+              <span class="chip chip--accent">Controls</span>
+              <span class="chip">Kinematics</span>
+              <span class="chip">Python</span>
+              <span class="chip">Pneumatics</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-embed">
+          <iframe src="https://www.youtube.com/embed/sV4nwKh9tP0" title="PAROL 6 robotic arm demonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="report">
+          <div class="report-block"><h4>Overview</h4><p>Assembled a full six-axis manipulator from a kit — printed structures, stepper drives, belts, wiring, and control electronics — then integrated the software stack to command it.</p></div>
+          <div class="report-block"><h4>Design &amp; Build</h4><ul><li>Managed printed-part tolerances, belt alignment, and joint access for serviceability</li><li>Wired motors, drivers, and limit references into a coherent control loop</li><li>Integrated a custom end-effector and a pneumatic actuation system</li></ul></div>
+          <div class="report-block"><h4>Software</h4><ul><li>Python application for forward and inverse kinematics</li><li>Cartesian motion control for coordinated multi-axis moves</li><li>Serial command interface to the motion controller</li></ul></div>
+          <div class="report-block"><h4>Result &amp; Next</h4><p>A functional platform validated through live motion tests. Next steps: closed-loop calibration, repeatability characterization, and task-level end-effector routines.</p></div>
+        </div>
+      </article>
+
+      <!-- Automated CNC Part Extraction -->
+      <article class="proj-detail" id="extraction">
+        <div class="proj-hero">
+          <div class="media">
+            <div class="blueprint" aria-label="Schematic of an automated CNC part-extraction gripper">
+              <svg viewBox="0 0 300 300" role="img">
+                <path class="ln" d="M40 150 h60"/>
+                <circle class="fill" cx="140" cy="150" r="52"/>
+                <circle class="ln" cx="140" cy="150" r="52"/>
+                <circle class="acc" cx="140" cy="150" r="30"/>
+                <circle class="dot" cx="140" cy="150" r="3"/>
+                <path class="ln" d="M192 118 h44 v-24 h34 v112 h-34 v-24 h-44"/>
+                <path class="acc" d="M212 130 v40 M226 124 v52"/>
+                <text x="40" y="140">EXTRACT AXIS</text>
+                <text x="205" y="250">ACTUATOR</text>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="project-index">PROJECT 02 · AUTOMATION · MACHINE DESIGN</div>
+            <h2 class="title" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:0.8rem;">Automated CNC Part Extraction System</h2>
+            <p class="muted">A custom attachment for a CNC turning center that removes finished parts automatically — designed, manufactured, and deployed on a live production floor at Omni-X to take the operator out of the cycle.</p>
+            <div class="chips" style="margin-top:1.2rem;">
+              <span class="chip chip--accent">Automation</span>
+              <span class="chip chip--accent">Machine Design</span>
+              <span class="chip">CAD</span>
+              <span class="chip">Additive Mfg.</span>
+            </div>
+          </div>
+        </div>
+        <div class="report">
+          <div class="report-block"><h4>Requirement</h4><p>Reduce machine idle time and manual handling between cycles on a turning center without disrupting the existing workflow or work envelope.</p></div>
+          <div class="report-block"><h4>Design</h4><ul><li>Modeled the extraction mechanism in CAD around the machine's envelope</li><li>Selected chemical-resistant carbon-fiber material for coolant durability</li><li>Fabricated production-ready hardware with additive manufacturing</li></ul></div>
+          <div class="report-block"><h4>Result</h4><ul><li>Eliminated manual operator intervention on the cycle</li><li>Reduced idle time and improved production consistency</li><li>Ran on a real production line, not a bench prototype</li></ul></div>
+          <div class="report-block"><h4>Lessons</h4><p>Designing for a live machine forces hard constraints — envelope, repeatability, and coolant exposure drove every geometry and material decision.</p></div>
+        </div>
+      </article>
+
+      <!-- Continuous Fiber Toolpaths -->
+      <article class="proj-detail" id="fiber">
+        <div class="proj-hero">
+          <div class="media">
+            <div class="blueprint" aria-label="Schematic of continuous fiber toolpaths inside a printed tensile specimen">
+              <svg viewBox="0 0 300 300" role="img">
+                <rect class="fill" x="70" y="70" width="160" height="160" rx="6"/>
+                <rect class="ln" x="70" y="70" width="160" height="160" rx="6"/>
+                <path class="acc" d="M84 96 h132 M84 118 h132 M84 140 h132 M84 162 h132 M84 184 h132 M84 206 h132"/>
+                <path class="ln" d="M150 40 v30 M150 230 v30 M120 34 h60 M120 266 h60"/>
+                <text x="70" y="58">LOAD</text>
+                <text x="188" y="284">FIBER PATH</text>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="project-index">PROJECT 03 · RESEARCH · COMPOSITES</div>
+            <h2 class="title" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:0.8rem;">Continuous Fiber 3D-Printing Toolpath System</h2>
+            <p class="muted">A software pipeline that slices parts for continuous carbon-fiber printing and steers fiber direction through the geometry — the core tool for an undergraduate study on controlling crack propagation in composite prints.</p>
+            <div class="chips" style="margin-top:1.2rem;">
+              <span class="chip chip--accent">Composites</span>
+              <span class="chip chip--accent">Research</span>
+              <span class="chip">Python</span>
+              <span class="chip">G-code</span>
+              <span class="chip">Mechanical Testing</span>
+            </div>
+          </div>
+        </div>
+        <div class="report">
+          <div class="report-block"><h4>Objective</h4><p>Improve strength and crack resistance in printed composite specimens by controlling how continuous fiber is routed relative to expected loading.</p></div>
+          <div class="report-block"><h4>Approach</h4><ul><li>Built a slicing and post-processing system producing machine-ready G-code</li><li>Encoded fiber-steering logic to direct load paths within specimens</li><li>Handled nozzle-motion continuity and printability constraints</li></ul></div>
+          <div class="report-block"><h4>Testing</h4><ul><li>Produced repeatable specimens for comparative mechanical testing</li><li>Evaluated crack-propagation behavior across fiber strategies</li></ul></div>
+          <div class="report-block"><h4>Status</h4><p>Active research at CU Denver — refining fiber-path generation and expanding the specimen test matrix.</p></div>
+        </div>
+      </article>
+
+      <!-- Macro Pad -->
+      <article class="proj-detail" id="macropad">
+        <div class="proj-hero">
+          <div class="media">
+            <div class="media-photo ph-macropad" role="img" aria-label="Custom 3D-printed six-key macro pad prototype on a desk" data-lightbox></div>
+          </div>
+          <div>
+            <div class="project-index">PROJECT 04 · EMBEDDED · DESIGN FOR MANUFACTURING</div>
+            <h2 class="title" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:0.8rem;">Custom Computer Macro Pad</h2>
+            <p class="muted">A compact, durable input device for repeatable shortcuts — designed around switch spacing, USB access, and print constraints, then built and put to daily use. A tidy demonstration of CAD-to-print electronics packaging.</p>
+            <div class="chips" style="margin-top:1.2rem;">
+              <span class="chip chip--accent">Embedded</span>
+              <span class="chip chip--accent">DFM</span>
+              <span class="chip">CAD</span>
+              <span class="chip">FDM Printing</span>
+            </div>
+          </div>
+        </div>
+        <div class="report">
+          <div class="report-block"><h4>Requirement</h4><p>A small, sturdy shortcut device that fits the desk, survives daily use, and is fully self-manufactured.</p></div>
+          <div class="report-block"><h4>Design for Print</h4><ul><li>Enclosure built around switch spacing and top-plate fit</li><li>Wall thickness, USB access, and assembly clearances tuned for FDM</li><li>Print orientation chosen for strength and finish</li></ul></div>
+          <div class="report-block"><h4>Build</h4><ul><li>Printed, assembled, and wired mechanical switches</li><li>Flashed firmware to map keys to shortcuts</li></ul></div>
+          <div class="report-block"><h4>Result</h4><p>A working macro pad in everyday use — proof that a model on screen becomes a reliable physical product when it's designed to be made.</p></div>
+        </div>
+      </article>
+
+      <!-- Slitting Saw Arbor -->
+      <article class="proj-detail" id="arbor">
+        <div class="proj-hero">
+          <div class="media">
+            <div class="blueprint" aria-label="Schematic of a custom slitting saw arbor">
+              <svg viewBox="0 0 300 300" role="img">
+                <rect class="fill" x="60" y="132" width="180" height="36" rx="4"/>
+                <rect class="ln" x="60" y="132" width="180" height="36" rx="4"/>
+                <circle class="acc" cx="200" cy="150" r="46"/>
+                <circle class="ln" cx="200" cy="150" r="46"/>
+                <circle class="dot" cx="200" cy="150" r="4"/>
+                <path class="acc" d="M200 104 v-14 M200 210 v-14 M246 150 h14 M154 150 h-14"/>
+                <path class="ln" d="M60 150 h20 M84 138 v24 M96 138 v24"/>
+                <text x="58" y="122">SPINDLE</text>
+                <text x="176" y="284">SLITTING SAW</text>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="project-index">PROJECT 05 · PRECISION · TOOLING</div>
+            <h2 class="title" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:0.8rem;">Custom Slitting Saw Arbor</h2>
+            <p class="muted">A purpose-built arbor engineered for stiffness and concentricity, so slitting operations on precision parts run stable and repeatable — a machining-first design driven by real tolerances.</p>
+            <div class="chips" style="margin-top:1.2rem;">
+              <span class="chip chip--accent">Manufacturing</span>
+              <span class="chip chip--accent">Precision Design</span>
+              <span class="chip">Turning / Milling</span>
+              <span class="chip">Tolerancing</span>
+            </div>
+          </div>
+        </div>
+        <div class="report">
+          <div class="report-block"><h4>Requirement</h4><p>Increase rigidity and reliability for slitting precision parts, where deflection and runout show up directly in the cut.</p></div>
+          <div class="report-block"><h4>Design</h4><ul><li>Geometry optimized for stiffness, tool access, and machinability</li><li>Spindle-compatible interface with concentricity as a priority</li><li>Tolerances chosen to be genuinely producible</li></ul></div>
+          <div class="report-block"><h4>Result</h4><p>A manufacturable arbor that improved stability and confidence during cutting operations.</p></div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="section section--surface contact" style="text-align:center;margin-top:2rem;">
       <div class="container">
-        <div class="project-grid all-projects-grid">
-          <article class="project-card">
-            <div class="project-image project-image-composite" role="img" aria-label="Continuous fiber toolpath visualization"><span>Fiber Toolpaths</span></div>
-            <h2>Continuous Fiber 3D Printing Toolpath System</h2>
-            <p><strong>Problem:</strong> Improve strength and crack resistance in printed composite specimens.</p>
-            <p><strong>Constraints:</strong> Fiber steering limits, nozzle motion continuity, printability, and testable sample geometry.</p>
-            <p><strong>Approach:</strong> Developed Python-based G-code workflows to control fiber path direction and loading response.</p>
-            <p><strong>Result:</strong> Produced repeatable toolpaths for comparative testing and improved control of crack propagation behavior.</p>
-            <p class="tools"><strong>Tools:</strong> Python, G-code, composite mechanics, experimental testing</p>
-          </article>
-
-          <article class="project-card">
-            <div
-              class="project-image project-image-robot project-photo"
-              role="img"
-              aria-label="PAROL 6 robotic arm assembled on a desk in front of control software"
-            >
-              <span>PAROL 6 Robotic Arm</span>
-            </div>
-            <h2>PAROL 6 Robotic Arm Build</h2>
-            <p><strong>Problem:</strong> Assemble and validate a multi-axis robotic arm as a platform for motion control experiments.</p>
-            <p><strong>Constraints:</strong> Printed-part tolerances, belt alignment, motor wiring, joint access, and reliable serviceability.</p>
-            <p><strong>Approach:</strong> Integrated 3D-printed mechanical parts, motors, belts, fasteners, wiring, and control software while debugging fit-up issues.</p>
-            <div style="text-align:center;">
-    <iframe
-        width="800"
-        height="450"
-        src="https://youtube.com/shorts/sV4nwKh9tP0?feature=share"
-        title="Project Demo"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
-            <p><strong>Result:</strong> Advanced a functional robotic arm system for future controls, calibration, and end-effector development.</p>
-            <p class="tools"><strong>Tools:</strong> 3D printing, robotics assembly, controls, electromechanical troubleshooting</p>
-          </article>
-
-          <article class="project-card">
-            <div
-              class="project-image project-image-macropad project-photo"
-              role="img"
-              aria-label="Custom white six-key macro pad prototype on a desk"
-            >
-              <span>Custom Macro Pad</span>
-            </div>
-            <h2>Custom Computer Macro Pad</h2>
-            <p><strong>Problem:</strong> Create a compact input device for repeatable computer shortcuts and workflows.</p>
-            <p><strong>Constraints:</strong> Switch spacing, USB access, enclosure wall thickness, top-plate fit, and print quality.</p>
-            <p><strong>Approach:</strong> Designed and printed an enclosure around electronics packaging, assembly clearances, and ergonomic desk use.</p>
-            <p><strong>Result:</strong> Built a working macro pad that demonstrates practical CAD-to-print design for a functional product.</p>
-            <p class="tools"><strong>Tools:</strong> CAD, FDM printing, keyboard switches, electronics packaging</p>
-          </article>
-
-
-          <article class="project-card">
-            <div class="project-image project-image-gripper" role="img" aria-label="Automated CNC part gripper concept representation"><span>CNC Gripper</span></div>
-            <h2>Automated CNC Part Gripper</h2>
-            <p><strong>Problem:</strong> Minimize setup and transfer time in twin-turret CNC lathe operations.</p>
-            <p><strong>Constraints:</strong> Limited work envelope, repeatability requirements, safe integration, and existing workflow constraints.</p>
-            <p><strong>Approach:</strong> Designed a mechanical gripping concept focused on robust clamping and quick handoff steps.</p>
-            <p><strong>Result:</strong> Created a practical automation concept targeting reduced setup variability and cycle interruption.</p>
-            <p class="tools"><strong>Tools:</strong> Mechanical design, CNC process planning, automation concepts</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image project-image-arbor" role="img" aria-label="Custom slitting saw arbor concept representation"><span>Slitting Saw Arbor</span></div>
-            <h2>Custom Slitting Saw Arbor</h2>
-            <p><strong>Problem:</strong> Increase rigidity and reliability for slitting operations on precision parts.</p>
-            <p><strong>Constraints:</strong> Tool holding geometry, spindle compatibility, concentricity, and practical machining tolerances.</p>
-            <p><strong>Approach:</strong> Designed an arbor for stiffness, tool access, and machinability with a machining-first approach.</p>
-            <p><strong>Result:</strong> Produced a manufacturable design that improved stability and confidence during cutting operations.</p>
-            <p class="tools"><strong>Tools:</strong> Precision design, turning/milling, tolerance planning</p>
-          </article>
+        <p class="eyebrow eyebrow--center">Next</p>
+        <h2 class="title" style="margin-bottom:1.2rem;">Want the full picture?</h2>
+        <p class="lead" style="margin:0 auto 2rem;">The résumé has the complete history; email is the fastest way to reach me.</p>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn btn--accent" href="mailto:kkuhn1129@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="Kestin-Kuhn-Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Kestin Kuhn. Built for recruiter readability and engineering clarity.</p>
+    <div class="container footer-in">
+      <a class="brand" href="index.html#top"><span class="mark">K</span> Kestin Kuhn</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#resume">Résumé</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-meta">© <span id="year">2026</span> Kestin Kuhn · Mechanical Engineer</p>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
 
   <script src="script.js"></script>
 </body>
