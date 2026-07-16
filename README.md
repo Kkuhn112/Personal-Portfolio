@@ -1,48 +1,43 @@
-# Personal Portfolio Website
+# Kestin Kuhn — Engineering Portfolio
 
-A lightweight, recruiter-friendly personal portfolio for a mechanical engineering student targeting aerospace/defense internships.
+A premium, minimal personal portfolio for a Mechanical Engineering student
+targeting aerospace, robotics, and defense roles. Design language: Apple ·
+NASA · SpaceX · Stripe · Linear · Lockheed Martin — monochromatic, one
+aerospace-blue accent, typography-led, and built for a recruiter's ten-second scan.
 
-## File Structure
+## Structure
 
-- `index.html` — Main single-page portfolio layout and content sections.
-- `styles.css` — Visual style, responsive layout, typography, and component styling.
-- `script.js` — Mobile navigation toggle and footer year update.
+- `index.html` — Single-page portfolio: hero, featured work, about, experience,
+  technical toolbox, education, certifications, résumé preview, and contact.
+- `projects.html` — Full project archive with engineering-report detail for each build.
+- `styles.css` — The design system (tokens, type scale, components, responsive rules).
+- `script.js` — Minimal interactions: sticky-header state, scroll-spy nav,
+  subtle reveal-on-scroll, mobile menu, and an image lightbox.
+- `assets/img/` — Optimized project photography (PAROL 6 arm, macro pad).
+- `Kestin-Kuhn-Resume.pdf` — Résumé, previewed and downloadable on the site.
 
-## Local Preview
+Projects without a photo use clean, purposeful inline-SVG blueprint schematics
+that read like CAD line art rather than stock icons.
 
-1. Clone the repository.
-2. Open `index.html` directly in a browser, or run a simple local server:
+## Local preview
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then open `http://localhost:8000`.
 
-## Deploy to GitHub Pages
+## Deploy (GitHub Pages)
 
-### Option 1: Deploy from `main` branch (recommended for this project)
+Deployed from the repository root via `.github/workflows/static.yml`.
+In **Settings → Pages**, set the source to GitHub Actions (or Deploy from a
+branch → `main` → `/root`).
 
-1. Push this repository to GitHub.
-2. In GitHub, open **Settings → Pages**.
-3. Under **Build and deployment**, set:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main`
-   - **Folder:** `/ (root)`
-4. Save settings.
-5. After deployment completes, GitHub will provide your site URL.
+## Editing content
 
-### Option 2: Deploy from `gh-pages` branch
+- Contact links, résumé, and copy live directly in `index.html`.
+- Project detail lives in `projects.html`; add a photo by dropping an optimized
+  JPEG into `assets/img/` and swapping the `<img>` (or blueprint) inside the card.
+- Keep images web-sized (≈1400 px long edge, progressive JPEG) for fast loads.
 
-1. Create and push a `gh-pages` branch containing these files.
-2. In **Settings → Pages**, choose `gh-pages` and `/ (root)`.
-
-## Editing Content
-
-- Update contact links, resume URL, and project details directly in `index.html`.
-- Replace each "Image Placeholder" block in the Projects section with real project images.
-- Keep image sizes compressed for fast loading.
-
-## Notes
-
-This project uses plain HTML/CSS/JS for low complexity and easy long-term maintenance on GitHub Pages.
+Plain HTML/CSS/JS by design — no build step, no dependencies, easy to maintain.
