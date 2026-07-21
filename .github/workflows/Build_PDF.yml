@@ -11,10 +11,10 @@ jobs:
 
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: Resume.tex
+          root_file: Kestin-Kuhn-Resume.tex
           latexmk_use_lualatex: true
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Resume
-          path: Resume.pdf
+          name: Kestin-Kuhn-Resume
+          path: Kestin-Kuhn-Resume.pdf
