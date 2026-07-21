@@ -27,7 +27,7 @@ jobs:
           latexmk_use_lualatex: true
 
       - name: Rename PDF for website
-        run: cp Kestin-Kuhn-Resume.pdf Resume.pdf
+        run: cp Kestin-Kuhn-Resume.pdf Kestin_Kuhn_Resume.pdf
 
       - name: Commit updated PDF
         run: |
