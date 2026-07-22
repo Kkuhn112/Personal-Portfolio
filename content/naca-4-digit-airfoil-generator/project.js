@@ -19,8 +19,8 @@ window.Portfolio["naca-4-digit-airfoil-generator"] = {
   blurb:   "A Python tool that generates any 4-digit NACA airfoil and exports the profile in a format that imports cleanly into SolidWorks.",
   tagline: "From a four-digit designation to a smooth, watertight airfoil curve ready for CAD.",
 
-  cover:   "",
-  hero:    "",
+  cover:   "pressure regions on 4451 AIr foil.png",
+  hero:    "pressure regions on 4451 AIr foil.png",
 
   tags:    ["Aerospace", "Numerical Methods", "Python", "CAD"],
 
