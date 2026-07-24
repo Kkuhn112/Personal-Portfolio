@@ -57,23 +57,27 @@
   }
 
   function renderHome(container) {
-    var html = order.map(function (slug) {
+    var html = order.map(function (slug, i) {
       var p = store[slug];
       if (!p) return '';
       var href = 'project.html?p=' + encodeURIComponent(slug);
-      return '<article class="work-card fade' + (p.featured ? ' is-featured' : '') + '">' +
+      var delay = Math.min(i, 5) * 60;
+      return '<article class="work-card reveal' + (p.featured ? ' is-featured' : '') + '" data-reveal-delay="' + delay + '">' +
         coverMarkup(slug, p) +
         '<div class="body">' +
           '<div class="kicker">' + esc(p.kicker || '') + '</div>' +
           '<h3>' + esc(p.title) + '</h3>' +
           '<p class="blurb">' + esc(p.blurb || '') + '</p>' +
           '<div class="tags">' + tagsMarkup(p.tags) + '</div>' +
+          '<span class="card-cta">View project' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '</span>' +
           '<a class="card-link" href="' + href + '" aria-label="' + esc(p.title) + '"></a>' +
         '</div>' +
       '</article>';
     }).join('');
     container.innerHTML = html;
-    if (window.Site) { window.Site.refreshFades(); }
+    if (window.Motion) { window.Motion.scan(container); }
   }
 
   /* ---------- project page ---------- */
@@ -92,7 +96,7 @@
     return '<figure class="figure"><img src="' + esc(assetPath(slug, fig.src)) + '" alt="' + esc(fig.caption || '') + '" loading="lazy" data-zoom>' + cap + '</figure>';
   }
   function sectionMarkup(slug, sec) {
-    var out = '<section class="proj-section fade" id="' + esc(sec.id || '') + '">';
+    var out = '<section class="proj-section reveal" id="' + esc(sec.id || '') + '">';
     out += '<h2>' + esc(sec.heading) + '</h2>';
     toArray(sec.body).forEach(function (para) { out += '<p>' + esc(para) + '</p>'; });
     if (sec.list && sec.list.length) {
@@ -118,7 +122,7 @@
 
     var heroImg = p.hero || p.cover;
     var heroMarkup = heroImg
-      ? '<div class="proj-hero-img fade"><img src="' + esc(assetPath(slug, heroImg)) + '" alt="' + esc(p.title) + '" data-zoom></div>'
+      ? '<div class="proj-hero-img reveal"><img src="' + esc(assetPath(slug, heroImg)) + '" alt="' + esc(p.title) + '" data-zoom></div>'
       : '';
 
     var links = linksMarkup(p.links);
@@ -127,7 +131,7 @@
     root.innerHTML =
       '<div class="wrap proj-top">' +
         '<a class="back-link" href="index.html#work"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m0 0l6-6m-6 6l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>All work</a>' +
-        '<header class="proj-header fade">' +
+        '<header class="proj-header reveal">' +
           '<div>' +
             '<div class="kicker">' + esc(p.kicker || '') + '</div>' +
             '<h1>' + esc(p.title) + '</h1>' +
@@ -143,8 +147,8 @@
         '</div>' +
       '</div>';
 
+    if (window.Motion) { window.Motion.scan(root); }
     if (window.Site) {
-      window.Site.refreshFades();
       window.Site.bindZoom(root);
       window.Site.initSpy('#projToc');
     }
