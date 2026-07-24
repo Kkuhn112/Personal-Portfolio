@@ -1,11 +1,10 @@
 /* ============================================================
-   Shared site behaviour: nav, header state, fade-ins, lightbox.
-   Exposes window.Site helpers so render.js can re-scan new content.
+   Shared site behaviour: nav, header state, scroll-spy, lightbox.
+   Reveal/entrance animation lives in motion.js.
    ============================================================ */
 (function () {
   'use strict';
   var doc = document;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Footer year */
   function setYear() {
@@ -38,24 +37,6 @@
     function onScroll() { header.classList.toggle('is-stuck', window.scrollY > 6); }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-  }
-
-  /* Fade-in on scroll (subtle). Re-scannable for injected content. */
-  var fadeObserver = null;
-  function refreshFades() {
-    var els = doc.querySelectorAll('.fade:not(.in)');
-    if (reduce || !('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('in'); });
-      return;
-    }
-    if (!fadeObserver) {
-      fadeObserver = new IntersectionObserver(function (entries, obs) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    }
-    els.forEach(function (el) { fadeObserver.observe(el); });
   }
 
   /* Scroll-spy for a set of nav anchors against section ids */
@@ -92,20 +73,16 @@
   }
   function open(src, alt) { ensureLightbox(); lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); doc.body.style.overflow = 'hidden'; }
   function close() { if (lb) { lb.classList.remove('open'); doc.body.style.overflow = ''; lbImg.src = ''; } }
-  function bindZoom(root) {
-    (root || doc).querySelectorAll('img[data-zoom]:not([data-zoom-bound])').forEach(function (img) {
+  function bindZoom(scope) {
+    (scope || doc).querySelectorAll('img[data-zoom]:not([data-zoom-bound])').forEach(function (img) {
       img.setAttribute('data-zoom-bound', '1');
       img.addEventListener('click', function () { open(img.src, img.alt); });
     });
   }
 
-  window.Site = {
-    refreshFades: refreshFades,
-    bindZoom: bindZoom,
-    initSpy: initSpy
-  };
+  window.Site = { bindZoom: bindZoom, initSpy: initSpy };
 
   doc.addEventListener('DOMContentLoaded', function () {
-    setYear(); initNav(); initHeader(); refreshFades(); bindZoom();
+    setYear(); initNav(); initHeader(); bindZoom();
   });
 })();

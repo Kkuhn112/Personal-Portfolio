@@ -10,7 +10,7 @@ window.Portfolio = window.Portfolio || {};
 window.Portfolio["automated-cnc-part-extraction"] = {
 
   title:   "Automated CNC Part Extraction",
-  kicker:  "Automation and Machine Design",
+  kicker:  "Machine Design and Automation",
   featured: false,
 
   blurb:   "A custom attachment for a CNC turning center that removes finished parts automatically, designed and deployed on a live production floor.",
@@ -19,7 +19,7 @@ window.Portfolio["automated-cnc-part-extraction"] = {
   cover:   "",
   hero:    "",
 
-  tags:    ["Automation", "Machine Design", "CAD", "Additive Mfg."],
+  tags:    ["Machine Design", "CAD", "Automation", "Additive Mfg."],
 
   spec: [
     ["Context",   "Omni-X production floor"],

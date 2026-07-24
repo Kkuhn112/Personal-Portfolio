@@ -6,7 +6,7 @@ window.Portfolio = window.Portfolio || {};
 window.Portfolio["custom-macro-pad"] = {
 
   title:   "Custom Macro Pad",
-  kicker:  "Embedded and Design for Manufacturing",
+  kicker:  "Design for Manufacturing",
   featured: false,
 
   blurb:   "A compact input device designed around real print constraints, then built, wired, and put to daily use.",
@@ -15,7 +15,7 @@ window.Portfolio["custom-macro-pad"] = {
   cover:   "macropad.jpg",
   hero:    "macropad.jpg",
 
-  tags:    ["Embedded", "DFM", "CAD", "FDM Printing"],
+  tags:    ["Design for Manufacturing", "CAD", "Embedded", "FDM Printing"],
 
   spec: [
     ["Type",     "Custom input device"],
