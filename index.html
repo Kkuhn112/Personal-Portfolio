@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kestin Kuhn is a mechanical engineering student focused on aerospace manufacturing, robotics, controls, CNC machining, and composites research. Incoming production engineering intern at True Anomaly." />
+  <meta name="description" content="Kestin Kuhn is a mechanical design engineer working across aerospace and robotics: CAD, analysis, controls, and R&D, backed by hands-on CNC manufacturing. Incoming production engineering intern at True Anomaly." />
   <meta name="theme-color" content="#ffffff" />
-  <meta property="og:title" content="Kestin Kuhn | Mechanical Engineer" />
-  <meta property="og:description" content="Aerospace manufacturing, robotics, controls, and composites research. Engineering work from design through tested hardware." />
+  <meta property="og:title" content="Kestin Kuhn | Mechanical Design Engineer" />
+  <meta property="og:description" content="Design, analysis, controls, and R&D across aerospace and robotics, from CAD through tested hardware." />
   <meta property="og:type" content="website" />
-  <title>Kestin Kuhn | Mechanical Engineer</title>
+  <title>Kestin Kuhn | Mechanical Design Engineer</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0e13'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Prevent a flash before motion.js: hide reveal targets only when motion is supported and wanted -->
+  <script>try{if('animate' in Element.prototype && !matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('has-motion');}}catch(e){}</script>
   <link rel="stylesheet" href="assets/css/site.css" />
 
   <!-- Project data (edit these files to change content) -->
   <script src="content/manifest.js"></script>
+  <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/render.js" defer></script>
 </head>
@@ -40,21 +43,23 @@
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="section hero">
-      <div class="wrap">
-        <h1 class="h-display">Kestin Kuhn</h1>
-        <p class="hero-role">
-          <span>Mechanical Engineer</span><span class="sep">/</span>
+      <div class="wrap" data-mount>
+        <p class="eyebrow reveal">Mechanical Design Engineer</p>
+        <h1 class="h-display reveal">Kestin Kuhn</h1>
+        <p class="hero-role reveal">
+          <span>Design</span><span class="sep">/</span>
+          <span>Analysis</span><span class="sep">/</span>
+          <span>Robotics &amp; Controls</span><span class="sep">/</span>
           <span>Aerospace</span><span class="sep">/</span>
-          <span>Robotics</span><span class="sep">/</span>
-          <span>Controls</span><span class="sep">/</span>
           <span>Manufacturing</span>
         </p>
-        <p class="hero-text">
-          I design, machine, and test precision hardware for aerospace and robotics applications.
-          My work spans CNC manufacturing, controls, and composites research, from the first CAD
-          model through a finished, validated part.
+        <div class="hero-accent reveal" aria-hidden="true"></div>
+        <p class="hero-text reveal">
+          I design mechanical systems and precision hardware for aerospace and robotics,
+          carrying work from concept and CAD through analysis, prototyping, and test.
+          Years on the shop floor mean I design parts that are engineered to be built.
         </p>
-        <div class="btn-row">
+        <div class="btn-row reveal">
           <a class="btn btn--accent" href="Kestin-Kuhn-Resume.pdf" target="_blank" rel="noopener">Resume</a>
           <a class="btn btn--ghost" href="https://github.com/kkuhn112" target="_blank" rel="noopener">GitHub</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/kestin-kuhn/" target="_blank" rel="noopener">LinkedIn</a>
@@ -65,18 +70,18 @@
 
     <!-- ============ STATS ============ -->
     <div class="wrap">
-      <div class="stats">
-        <div class="stat fade"><div class="num">5<span class="unit">+</span></div><div class="label">Years machining</div></div>
-        <div class="stat fade"><div class="num">3.9<span class="unit">/4.0</span></div><div class="label">GPA, Dean's List</div></div>
-        <div class="stat fade"><div class="num">9<span class="unit">-axis</span></div><div class="label">CNC programming</div></div>
-        <div class="stat fade"><div class="num">1</div><div class="label">Peer-reviewed paper</div></div>
+      <div class="stats" data-stagger>
+        <div class="stat reveal"><div class="num"><span data-count="3.9">3.9</span><span class="unit">/4.0</span></div><div class="label">GPA, Dean's List</div></div>
+        <div class="stat reveal"><div class="num"><span data-count="6">6</span></div><div class="label">Engineering projects</div></div>
+        <div class="stat reveal"><div class="num"><span data-count="1">1</span></div><div class="label">Peer-reviewed paper</div></div>
+        <div class="stat reveal"><div class="num"><span data-count="5">5</span><span class="unit">+</span></div><div class="label">Years in the shop</div></div>
       </div>
     </div>
 
     <!-- ============ WORK ============ -->
     <section class="section" id="work">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow">Selected Work</p>
           <h2 class="h-section">Projects</h2>
         </div>
@@ -90,14 +95,14 @@
     <!-- ============ ABOUT ============ -->
     <section class="section" id="about">
       <div class="wrap two-col">
-        <div>
+        <div class="reveal">
           <p class="eyebrow">About</p>
           <h2 class="h-section">Background</h2>
         </div>
-        <div class="prose">
-          <p>I am a mechanical engineering student at the University of Colorado Denver. I began in an <strong>AS9100 aerospace prototype shop at Lockheed Martin</strong>, moved into production CNC machining, and now divide my time between undergraduate composites research and teaching.</p>
-          <p>That experience shapes how I design. I account for manufacturing from the first sketch: print orientation, workholding, tool access, clearances, tolerances, and how a model is actually made, assembled, and tested. My focus is aerospace, robotics, and defense hardware, where precision, weight, and reliability carry real consequences.</p>
-          <p>In the summer of 2026 I will join <strong>True Anomaly</strong>, a space and defense company, as a production engineering intern. I am interested in teams building serious hardware, where an engineer who can design, machine, wire, and test a part adds value across the process.</p>
+        <div class="prose reveal">
+          <p>I am a mechanical engineering student at the University of Colorado Denver focused on <strong>design, analysis, and R&amp;D</strong>. My work runs from CAD and hand calculations to prototyping, controls, and mechanical testing, and I care most about how a design performs once it is built.</p>
+          <p>What sets that design work apart is where it started. I learned engineering in an <strong>AS9100 aerospace prototype shop at Lockheed Martin</strong> and on production CNC machines, so I design with manufacturing in mind from the first sketch: print orientation, workholding, tool access, clearances, and tolerances. I gravitate toward aerospace, robotics, and defense hardware, where precision, weight, and reliability carry real consequences.</p>
+          <p>In the summer of 2026 I will join <strong>True Anomaly</strong>, a space and defense company, as a production engineering intern. I am looking for design and development teams building serious hardware, where an engineer who can model it, analyze it, and also machine and test it adds value across the process.</p>
         </div>
       </div>
     </section>
@@ -105,12 +110,12 @@
     <!-- ============ EXPERIENCE ============ -->
     <section class="section section--surface" id="experience">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow">Experience</p>
           <h2 class="h-section">Work history</h2>
         </div>
-        <div class="exp">
-          <article class="exp-item fade">
+        <div class="exp" data-stagger>
+          <article class="exp-item reveal">
             <div class="exp-when">Jun 2026 to Aug 2026<span class="loc">Centennial, CO</span></div>
             <div class="exp-body">
               <h3>True Anomaly</h3>
@@ -120,19 +125,19 @@
               </ul>
             </div>
           </article>
-          <article class="exp-item fade">
+          <article class="exp-item reveal">
             <div class="exp-when">Jul 2025 to Present<span class="loc">Denver, CO</span></div>
             <div class="exp-body">
               <h3>University of Colorado Denver</h3>
               <p class="role">Undergraduate Research Assistant, Composite Additive Manufacturing</p>
               <ul>
-                <li>Developed a carbon-fiber slicing and post-processing system that generates machine-ready G-code for continuous-fiber printing.</li>
+                <li>Designed and built a carbon-fiber slicing and post-processing system that generates machine-ready G-code for continuous-fiber printing.</li>
                 <li>Studied crack propagation in composite printed specimens through fiber-steered design and mechanical testing.</li>
                 <li>Co-authored a peer-reviewed journal paper on dual-wall continuous-fiber cellular structures.</li>
               </ul>
             </div>
           </article>
-          <article class="exp-item fade">
+          <article class="exp-item reveal">
             <div class="exp-when">Jan 2025 to Present<span class="loc">Denver, CO</span></div>
             <div class="exp-body">
               <h3>University of Colorado Denver</h3>
@@ -143,7 +148,7 @@
               </ul>
             </div>
           </article>
-          <article class="exp-item fade">
+          <article class="exp-item reveal">
             <div class="exp-when">Aug 2024 to May 2026<span class="loc">Sheridan, CO</span></div>
             <div class="exp-body">
               <h3>Omni-X</h3>
@@ -155,7 +160,7 @@
               </ul>
             </div>
           </article>
-          <article class="exp-item fade">
+          <article class="exp-item reveal">
             <div class="exp-when">Jun 2023 to Aug 2024<span class="loc">Jefferson County, CO</span></div>
             <div class="exp-body">
               <h3>Lockheed Martin</h3>
@@ -174,50 +179,51 @@
     <!-- ============ TOOLBOX ============ -->
     <section class="section" id="toolbox">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow">Technical Toolbox</p>
           <h2 class="h-section">Tools and methods</h2>
         </div>
-        <div class="toolbox">
-          <div class="tool-group">
+        <div class="toolbox" data-stagger>
+          <div class="tool-group reveal">
             <h3>Design and CAD</h3>
             <div class="chips">
               <span class="chip">SolidWorks (CSWP)</span>
               <span class="chip">Fusion 360</span>
               <span class="chip">Autodesk Inventor</span>
               <span class="chip">GD&amp;T</span>
+              <span class="chip">Tolerance Analysis</span>
               <span class="chip">Design for Manufacturing</span>
             </div>
           </div>
-          <div class="tool-group">
-            <h3>Manufacturing</h3>
+          <div class="tool-group reveal">
+            <h3>Analysis and Simulation</h3>
+            <div class="chips">
+              <span class="chip">FEA</span>
+              <span class="chip">Hand Calculations</span>
+              <span class="chip">Mechanical Testing</span>
+              <span class="chip">Flow Simulation</span>
+              <span class="chip">Metrology</span>
+            </div>
+          </div>
+          <div class="tool-group reveal">
+            <h3>Software and Controls</h3>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Numerical Methods</span>
+              <span class="chip">G-code</span>
+              <span class="chip">Motion Control</span>
+              <span class="chip">Kinematics</span>
+            </div>
+          </div>
+          <div class="tool-group reveal">
+            <h3>Manufacturing and Fabrication</h3>
             <div class="chips">
               <span class="chip">5-axis CNC</span>
               <span class="chip">9-axis Turning</span>
               <span class="chip">Manual Machining</span>
               <span class="chip">Mastercam</span>
               <span class="chip">FDM Printing</span>
-              <span class="chip">Metrology</span>
-            </div>
-          </div>
-          <div class="tool-group">
-            <h3>Software and Controls</h3>
-            <div class="chips">
-              <span class="chip">Python</span>
-              <span class="chip">G-code</span>
-              <span class="chip">Numerical Methods</span>
-              <span class="chip">Motion Control</span>
-              <span class="chip">Kinematics</span>
-            </div>
-          </div>
-          <div class="tool-group">
-            <h3>Analysis and Standards</h3>
-            <div class="chips">
-              <span class="chip">FEA</span>
-              <span class="chip">Mechanical Testing</span>
-              <span class="chip">Composites (CFRP)</span>
               <span class="chip">AS9100</span>
-              <span class="chip">Inspection</span>
             </div>
           </div>
         </div>
@@ -227,12 +233,12 @@
     <!-- ============ EDUCATION ============ -->
     <section class="section section--surface" id="education">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow">Education and Credentials</p>
           <h2 class="h-section">University of Colorado Denver</h2>
         </div>
-        <div class="card-grid">
-          <div class="card">
+        <div class="card-grid" data-stagger>
+          <div class="card reveal">
             <div class="kicker">Degree</div>
             <h3>B.S. Mechanical Engineering</h3>
             <p class="sub">Expected May 2028</p>
@@ -242,7 +248,7 @@
               <li>Undergraduate researcher, composite additive manufacturing</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <div class="kicker">Publication</div>
             <h3>Peer-Reviewed Journal Paper</h3>
             <p class="sub">Mechanics of Advanced Materials and Structures, 2026</p>
@@ -251,7 +257,7 @@
               <li><a href="https://doi.org/10.1080/15376494.2026.2702552" target="_blank" rel="noopener">doi.org/10.1080/15376494.2026.2702552</a></li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <div class="kicker">Certification</div>
             <h3>Certified SolidWorks Professional</h3>
             <p class="sub">Dassault Systèmes, Mechanical Design (CSWP)</p>
@@ -265,10 +271,10 @@
 
     <!-- ============ CONTACT ============ -->
     <section class="section" id="contact">
-      <div class="wrap">
+      <div class="wrap reveal">
         <p class="eyebrow">Contact</p>
         <h2 class="h-section" style="margin-bottom:1.4rem;">Get in touch</h2>
-        <p class="lead" style="margin-bottom:1.8rem;">Available for aerospace, robotics, and defense roles. Email is the fastest way to reach me.</p>
+        <p class="lead" style="margin-bottom:1.8rem;">Available for mechanical design, R&amp;D, and manufacturing roles across aerospace, robotics, and defense. Email is the fastest way to reach me.</p>
         <a class="contact-mail" href="mailto:kkuhn1129@gmail.com">kkuhn1129@gmail.com</a>
         <div class="contact-meta">
           <a class="btn btn--ghost btn--sm" href="tel:+13037200118">(303) 720-0118</a>

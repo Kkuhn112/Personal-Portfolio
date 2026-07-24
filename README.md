@@ -14,7 +14,8 @@ index.html            Home page (hero, work, about, experience, toolbox, educati
 project.html          The template that displays a single project
 assets/
   css/site.css        All styling
-  js/site.js          Navigation, header, fade-ins, image lightbox
+  js/site.js          Navigation, header, scroll-spy, image lightbox
+  js/motion.js        Scroll reveals, staggered entrances, count-ups (respects reduced motion)
   js/render.js        Builds the project cards and project pages from /content
 content/
   manifest.js         The list of projects and their order
