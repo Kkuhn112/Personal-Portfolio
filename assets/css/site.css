@@ -74,9 +74,14 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
   padding: 0.68rem 1.2rem; border-radius: 8px;
   font-size: 0.94rem; font-weight: 550; letter-spacing: -0.005em;
   border: 1px solid transparent; cursor: pointer;
-  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s cubic-bezier(0.16,1,0.3,1), box-shadow 0.16s ease;
 }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn--accent:hover { box-shadow: 0 10px 22px -12px rgba(24,87,214,0.65); }
+.btn--primary:hover { box-shadow: var(--shadow-md); }
 .btn svg { width: 16px; height: 16px; }
+@media (prefers-reduced-motion: reduce) { .btn:hover, .btn:active { transform: none; } }
 .btn--primary { background: var(--ink); color: #fff; }
 .btn--primary:hover { background: #000; color: #fff; }
 .btn--accent { background: var(--accent); color: #fff; }
@@ -107,6 +112,16 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 }
 .nav-links a:hover { color: var(--ink); background: var(--surface); }
 .nav-links a.active { color: var(--ink); }
+/* Animated underline indicator for section links */
+.nav-links a:not(.nav-cta)::after {
+  content: ""; position: absolute; left: 0.7rem; right: 0.7rem; bottom: 0.15rem;
+  height: 2px; border-radius: 2px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; opacity: 0;
+  transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease;
+}
+.nav-links a:not(.nav-cta) { position: relative; }
+.nav-links a:not(.nav-cta).active::after { transform: scaleX(1); opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .nav-links a::after { transition: none; } }
 .nav-links .nav-cta { color: #fff; background: var(--ink); margin-left: 0.4rem; }
 .nav-links .nav-cta:hover { background: #000; color: #fff; }
 .nav-toggle {
@@ -189,6 +204,17 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 .tag--accent { color: var(--accent); border-color: rgba(24,87,214,0.28); background: var(--accent-tint); }
 .card-link { position: absolute; inset: 0; z-index: 3; }
 .work-card .cover, .work-card .body { position: relative; }
+.work-card { transition: box-shadow 0.28s cubic-bezier(0.16,1,0.3,1), transform 0.28s cubic-bezier(0.16,1,0.3,1), border-color 0.28s ease; }
+.work-card:hover { transform: translateY(-4px); border-color: rgba(24,87,214,0.35); }
+.card-cta {
+  display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s ease;
+}
+.card-cta svg { width: 15px; height: 15px; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1); }
+.work-card:hover .card-cta { color: var(--accent); }
+.work-card:hover .card-cta svg { transform: translateX(4px); }
+@media (prefers-reduced-motion: reduce) { .work-card:hover { transform: none; } .work-card:hover .card-cta svg { transform: none; } }
 
 /* ---------- About / prose ---------- */
 .two-col { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
@@ -291,10 +317,13 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 .lightbox img { max-width: min(94vw, 1100px); max-height: 90vh; width: auto; border-radius: 8px; }
 .lightbox-close { position: absolute; top: 1.3rem; right: 1.5rem; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.06); color: #fff; font-size: 1.4rem; cursor: pointer; }
 
-/* ---------- Fade-in (subtle) ---------- */
-.fade { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; } }
+/* ---------- Motion reveal base ----------
+   Elements marked .reveal are shown by default. Only when motion.js
+   confirms support and no reduced-motion preference does it add
+   .has-motion, which hides them until animated in. This keeps content
+   visible without JS and for reduced-motion users. */
+.has-motion .reveal:not(.is-in) { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
@@ -322,3 +351,37 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
   .fig-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 420px) { .stats { grid-template-columns: 1fr 1fr; } }
+
+/* ============================================================
+   Refinements and micro-interactions
+   ============================================================ */
+
+/* Project hero image: slow, subtle zoom on hover */
+.proj-hero-img { position: relative; }
+.proj-hero-img img { transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.proj-hero-img:hover img { transform: scale(1.02); }
+@media (prefers-reduced-motion: reduce) { .proj-hero-img:hover img { transform: none; } }
+
+/* Figures lift slightly on hover to signal they are zoomable */
+.figure img { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease; }
+.figure img:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+@media (prefers-reduced-motion: reduce) { .figure img:hover { transform: none; } }
+
+/* Hero: quiet accent rule under the role line */
+.hero-accent { width: 46px; height: 3px; border-radius: 3px; background: var(--accent); margin: 0 0 1.6rem; }
+
+/* Section eyebrow gets a small leading tick for structure */
+.eyebrow { display: inline-flex; align-items: center; gap: 0.55rem; }
+.eyebrow::before { content: ""; width: 1.4rem; height: 1px; background: var(--accent); opacity: 0.55; }
+
+/* Contact mail arrow affordance */
+.contact-mail { transition: color 0.2s ease, border-color 0.2s ease; }
+
+/* ---------- Cross-document view transitions (progressive) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: 0.28s; animation-timing-function: cubic-bezier(0.16,1,0.3,1); }
+::view-transition-new(root) { animation-duration: 0.34s; animation-timing-function: cubic-bezier(0.16,1,0.3,1); }
+.header { view-transition-name: site-header; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
