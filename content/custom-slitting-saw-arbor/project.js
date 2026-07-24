@@ -9,7 +9,7 @@ window.Portfolio = window.Portfolio || {};
 window.Portfolio["custom-slitting-saw-arbor"] = {
 
   title:   "Custom Slitting Saw Arbor",
-  kicker:  "Precision Tooling",
+  kicker:  "Precision Design and Tooling",
   featured: false,
 
   blurb:   "A purpose-built arbor engineered for stiffness and concentricity, so slitting operations on precision parts run stable and repeatable.",
@@ -18,7 +18,7 @@ window.Portfolio["custom-slitting-saw-arbor"] = {
   cover:   "",
   hero:    "",
 
-  tags:    ["Manufacturing", "Precision Design", "Tooling", "GD&T"],
+  tags:    ["Precision Design", "GD&T", "Tooling", "Manufacturing"],
 
   spec: [
     ["Type",     "Slitting saw arbor"],
