@@ -16,7 +16,7 @@ window.Portfolio = window.Portfolio || {};
 window.Portfolio["fiber-reinforced-printing"] = {
 
   title:   "Continuous Fiber Reinforced Printing",
-  kicker:  "Composite Additive Manufacturing",
+  kicker:  "Research and Design Automation",
   featured: true,
 
   // Home-page card summary (keep this to one or two sentences)
@@ -28,7 +28,7 @@ window.Portfolio["fiber-reinforced-printing"] = {
   cover:   "printing-nozzle.jpg",
   hero:    "printing-nozzle.jpg",
 
-  tags:    ["Composites", "Research", "Python", "G-code"],
+  tags:    ["R&D", "Design Software", "Composites", "Python"],
 
   // Facts shown in the box at the top of the project page
   spec: [

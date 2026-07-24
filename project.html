@@ -10,10 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Prevent a flash before motion.js: hide reveal targets only when motion is supported and wanted -->
+  <script>try{if('animate' in Element.prototype && !matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('has-motion');}}catch(e){}</script>
   <link rel="stylesheet" href="assets/css/site.css" />
 
   <!-- Project data (edit the files in /content to change content) -->
   <script src="content/manifest.js"></script>
+  <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/render.js" defer></script>
 </head>
@@ -38,7 +41,7 @@
     <div id="project-root"></div>
 
     <section class="section section--surface" style="margin-top:1rem;">
-      <div class="wrap" style="text-align:center;">
+      <div class="wrap reveal" style="text-align:center;">
         <p class="eyebrow" style="justify-content:center;">Next</p>
         <h2 class="h-section" style="margin-bottom:1.4rem;">See the rest of the work</h2>
         <div class="btn-row" style="justify-content:center;">
