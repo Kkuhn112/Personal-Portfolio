@@ -80,9 +80,44 @@
     });
   }
 
-  window.Site = { bindZoom: bindZoom, initSpy: initSpy };
+  /* ---------- Hover-to-play cover video ----------
+     The poster image is the resting state and the video sits on top of it.
+     Nothing is downloaded until the pointer enters the card (preload="none").
+     Only runs on devices with a real hovering pointer, and never when the
+     visitor has asked for reduced motion. On touch devices and for
+     reduced-motion users the still poster is all they get, which is correct:
+     the whole card is a link, so a tap must navigate, not play. */
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var wantsMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function bindHoverVideo(scope) {
+    if (!canHover || !wantsMotion) return;
+    (scope || doc).querySelectorAll('.cover.has-video:not([data-video-bound])').forEach(function (cover) {
+      cover.setAttribute('data-video-bound', '1');
+      var video = cover.querySelector('.cover-video');
+      if (!video) return;
+      var card = cover.closest('.work-card') || cover;
+
+      card.addEventListener('mouseenter', function () {
+        cover.classList.add('is-playing');
+        var playing = video.play();
+        // Browsers can reject play(); fall back to the poster silently.
+        if (playing && typeof playing.catch === 'function') {
+          playing.catch(function () { cover.classList.remove('is-playing'); });
+        }
+      });
+
+      card.addEventListener('mouseleave', function () {
+        cover.classList.remove('is-playing');
+        video.pause();
+        try { video.currentTime = 0; } catch (e) {}
+      });
+    });
+  }
+
+  window.Site = { bindZoom: bindZoom, initSpy: initSpy, bindHoverVideo: bindHoverVideo };
 
   doc.addEventListener('DOMContentLoaded', function () {
-    setYear(); initNav(); initHeader(); bindZoom();
+    setYear(); initNav(); initHeader(); bindZoom(); bindHoverVideo();
   });
 })();
