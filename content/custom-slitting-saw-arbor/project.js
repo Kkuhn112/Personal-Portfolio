@@ -15,8 +15,8 @@ window.Portfolio["custom-slitting-saw-arbor"] = {
   blurb:   "A purpose-built arbor engineered for stiffness and concentricity, so slitting operations on precision parts run stable and repeatable.",
   tagline: "A machining-first tooling design driven by real tolerances, deflection, and runout.",
 
-  cover:   "",
-  hero:    "",
+  cover:   "Saw Arbor.jpeg",
+  hero:    "Saw Arbor.jpeg",
 
   tags:    ["Precision Design", "GD&T", "Tooling", "Manufacturing"],
 
