@@ -16,8 +16,8 @@ window.Portfolio["automated-cnc-part-extraction"] = {
   blurb:   "A custom attachment for a CNC turning center that removes finished parts automatically, designed and deployed on a live production floor.",
   tagline: "Taking the operator out of the cycle on a production lathe with a purpose-built extraction attachment.",
 
-  cover:   "",
-  hero:    "",
+  cover:   "CNC Part Grabber Main Photo.jpg",
+  hero:    "CNC Part Grabber Main Photo.jpg",
 
   tags:    ["Machine Design", "CAD", "Automation", "Additive Mfg."],
 
