@@ -56,6 +56,7 @@ window.Portfolio["REPLACE-WITH-SLUG"] = {
   tagline: "One sentence shown under the title on the project page.",
 
   cover:   "",   // image file in this folder for the card, e.g. "cover.jpg". Empty = clean placeholder.
+  coverVideo: "", // optional short clip that plays when the pointer is over the card, e.g. "demo.mp4". See below.
   hero:    "",   // large image at the top of the project page. Usually the same as cover.
 
   tags:    ["Tag One", "Tag Two", "Tag Three"],  // the first two are highlighted; put the most important disciplines first
@@ -117,11 +118,45 @@ window.Portfolio["REPLACE-WITH-SLUG"] = {
 | `blurb` | yes | One or two sentences on the home card. |
 | `tagline` | yes | One sentence under the title on the project page. |
 | `cover` | no | Card image file name in this folder. Empty shows a placeholder. |
+| `coverVideo` | no | Short clip that plays on hover over the card. Requires `cover` as the still. |
 | `hero` | no | Large image at the top of the project page. |
 | `tags` | yes | Short discipline labels. First two are visually highlighted. |
 | `spec` | no | Rows of `[label, value]` facts shown in a box. |
 | `links` | no | Buttons. Empty `href` hides the button. |
 | `sections` | yes | The body of the project page. Each has `id`, `heading`, `body`, optional `list`, optional `figures`. |
+
+## Optional: a video that plays on hover
+
+A card can show a short clip while the pointer is over it. The still `cover`
+image stays the resting state, so the page still looks calm.
+
+1. Put the clip in the project folder, for example
+   `content/<slug>/demo.mp4`.
+2. Set both fields in `project.js`:
+
+```js
+cover:      "cover.jpg",   // the still, always required
+coverVideo: "demo.mp4",    // plays on hover
+```
+
+Guidelines for the clip:
+
+- **Format:** MP4 with H.264 video. That plays everywhere. WebM also works.
+- **Length:** 2 to 5 seconds, looping seamlessly.
+- **Size:** aim under 2 MB. Nothing downloads until someone hovers, but keep it small.
+- **No audio.** The clip is always muted. Strip the audio track to save space.
+- **Framing:** cropped near 16:10, since the card crops to that.
+- **No baked-in text.** It is a background, not a slide.
+
+Behavior that is already handled, so no code is needed:
+
+- Nothing is downloaded until the pointer enters the card.
+- Leaving the card pauses the clip and rewinds it.
+- Touch devices show only the still, because tapping the card opens the project.
+- Visitors who ask for reduced motion never see it play.
+- A small play badge appears on the card so people know there is motion.
+
+Use this on one or two cards at most. If every card moves, the page reads as busy.
 
 ## Then update the order
 
