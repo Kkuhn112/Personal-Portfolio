@@ -39,8 +39,18 @@
   function coverMarkup(slug, p) {
     var flag = p.featured ? '<span class="featured-flag">Featured</span>' : '';
     if (p.cover) {
-      return '<div class="cover">' + flag +
-        '<img src="' + esc(assetPath(slug, p.cover)) + '" alt="' + esc(p.title) + '" loading="lazy"></div>';
+      // Optional hover video. The poster image is always the resting state.
+      // preload="none" means nothing downloads until the user hovers.
+      var video = '', badge = '';
+      if (p.coverVideo) {
+        video = '<video class="cover-video" src="' + esc(assetPath(slug, p.coverVideo)) +
+                '" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>';
+        badge = '<span class="motion-badge" aria-hidden="true">' +
+                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>';
+      }
+      return '<div class="cover' + (p.coverVideo ? ' has-video' : '') + '">' + flag +
+        '<img src="' + esc(assetPath(slug, p.cover)) + '" alt="' + esc(p.title) + '" loading="lazy">' +
+        video + badge + '</div>';
     }
     // No photo yet: clean placeholder. Drop a photo in the folder and set "cover".
     return '<div class="cover">' + flag +
@@ -78,6 +88,7 @@
     }).join('');
     container.innerHTML = html;
     if (window.Motion) { window.Motion.scan(container); }
+    if (window.Site) { window.Site.bindHoverVideo(container); }
   }
 
   /* ---------- project page ---------- */
