@@ -13,7 +13,7 @@ window.Portfolio["parol6-robotic-arm"] = {
   blurb:   "A six-axis desktop robotic arm assembled, wired, and commissioned, then driven by motion software written in Python.",
   tagline: "A six-degree-of-freedom manipulator built as a platform for controls, calibration, and end-effector work.",
 
-  cover:   "parol6.jpg",
+  cover:   "IMG_9980.jpeg",
   hero:    "parol6.jpg",
 
   tags:    ["Robotics", "Controls", "Python", "Kinematics"],
