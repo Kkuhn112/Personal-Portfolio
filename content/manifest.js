@@ -17,8 +17,8 @@ window.PORTFOLIO_ORDER = [
   "fiber-reinforced-printing",
   "continuous-fiber-retrofit",
   "parol6-robotic-arm",
-  "naca-4-digit-airfoil-generator",
   "automated-cnc-part-extraction",
+  "naca-4-digit-airfoil-generator",
   "custom-slitting-saw-arbor",
   "custom-macro-pad"
 ];
