@@ -16,8 +16,7 @@
 window.PORTFOLIO_ORDER = [
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
-  "custom-macro-pad"
+  "custom-macro-pad",
   "naca-4-digit-airfoil-generator",
-  "custom-slitting-saw-arbor",
-
+  "custom-slitting-saw-arbor"
 ];
