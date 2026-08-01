@@ -17,7 +17,7 @@ window.Portfolio["fiber-reinforced-printing"] = {
 
   title:   "Continuous Fiber Reinforced Printing",
   kicker:  "Research and Design Automation",
-  featured: true,
+  featured: false,
 
   // Home-page card summary (keep this to one or two sentences)
   blurb:   "A software system that plans continuous carbon-fiber toolpaths and generates machine-ready G-code, developed as part of peer-reviewed composites research at CU Denver.",
