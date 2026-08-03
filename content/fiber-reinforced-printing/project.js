@@ -17,7 +17,7 @@ window.Portfolio["fiber-reinforced-printing"] = {
 
   title:   "Continuous Fiber Reinforced Printing",
   kicker:  "Research and Design Automation",
-  featured: true,
+  featured: false,
 
   // Home-page card summary (keep this to one or two sentences)
 

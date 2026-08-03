@@ -151,12 +151,15 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 .hero-text { font-size: clamp(1.02rem, 1.4vw, 1.16rem); color: var(--muted); max-width: 58ch; margin: 0 0 1.8rem; }
 
 /* ---------- Stat strip ---------- */
+/* Flex, not a fixed grid, so the strip adapts to however many stats exist.
+   Items grow to fill the row exactly, so the gray backing only ever shows
+   through the 1px separators and never as an empty cell. */
 .stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--line-soft);
+  display: flex; flex-wrap: wrap; gap: 1px;
+  background: var(--line-soft);
   border-block: 1px solid var(--line-soft);
 }
-.stat { background: var(--bg); padding: 1.7rem 1.2rem; }
+.stat { flex: 1 1 200px; background: var(--bg); padding: 1.7rem 1.2rem; }
 .stat .num { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 680; letter-spacing: -0.03em; color: var(--ink); }
 .stat .num .unit { color: var(--accent); }
 .stat .label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
@@ -346,11 +349,11 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
   .nav-links a { padding: 0.75rem 0.6rem; font-size: 1rem; }
   .nav-links .nav-cta { margin: 0.4rem 0 0; justify-content: center; }
   .nav-toggle { display: block; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat { flex-basis: 140px; }   /* two per row on phones, still gapless */
   .exp-item { grid-template-columns: 1fr; gap: 0.6rem; }
   .fig-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 420px) { .stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .stat { flex-basis: 120px; } }
 
 /* ============================================================
    Refinements and micro-interactions
