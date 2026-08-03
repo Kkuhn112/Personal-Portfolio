@@ -15,8 +15,8 @@
    ============================================================ */
 window.PORTFOLIO_ORDER = [
   "parol6-robotic-arm",
-  "naca-4-digit-airfoil-generator",
   "automated-cnc-part-extraction",
-  "custom-slitting-saw-arbor",
-  "custom-macro-pad"
+  "custom-macro-pad",
+  "naca-4-digit-airfoil-generator",
+  "custom-slitting-saw-arbor"
 ];
