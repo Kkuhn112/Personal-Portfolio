@@ -7,7 +7,7 @@
    Suggested photo: the black gripper holding the blue part in the lathe.
    ============================================================ */
 window.Portfolio = window.Portfolio || {};
-window.Portfolio["automated-cnc-part-extraction"] = {
+window.Portfolio["NimbusOne"] = {
 
   title:   "Automated CNC Part Extraction",
   kicker:  "Machine Design and Automation",
