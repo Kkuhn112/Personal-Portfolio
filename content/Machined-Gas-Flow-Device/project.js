@@ -16,8 +16,8 @@ window.Portfolio["automated-cnc-part-extraction"] = {
   blurb:   "A custom gas flow device with preliminary analysis done in CFD, and design optimized for manufacturing only requiring a manual mill and lathe.",
   tagline: "Reinforcement of traditional ideas with a modern analysis method and traditional machining methods.",
 
-  cover:   "CNC Part Grabber Main Photo.jpg",
-  hero:    "CNC Part Grabber Main Photo.jpg",
+  cover:   "Gas-Flow-Device.png",
+  hero:    "Gas-Flow-Device.png",
 
   tags:    ["Machine Design", "CAD", "Automation", "Additive Mfg."],
 
