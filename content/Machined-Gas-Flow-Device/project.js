@@ -9,12 +9,12 @@
 window.Portfolio = window.Portfolio || {};
 window.Portfolio["automated-cnc-part-extraction"] = {
 
-  title:   "Automated CNC Part Extraction",
-  kicker:  "Machine Design and Automation",
+  title:   "CFD inspired Gas FLow Device",
+  kicker:  "DFM and CFD",
   featured: false,
 
-  blurb:   "A custom attachment for a CNC turning center that removes finished parts automatically, designed and deployed on a live production floor.",
-  tagline: "Taking the operator out of the cycle on a production lathe with a purpose-built extraction attachment.",
+  blurb:   "A custom gas flow device with preliminary analysis done in CFD, and design optimized for manufacturing only requiring a manual mill and lathe.",
+  tagline: "Reinforcement of traditional ideas with a modern analysis method and traditional machining methods.",
 
   cover:   "CNC Part Grabber Main Photo.jpg",
   hero:    "CNC Part Grabber Main Photo.jpg",
@@ -22,9 +22,9 @@ window.Portfolio["automated-cnc-part-extraction"] = {
   tags:    ["Machine Design", "CAD", "Automation", "Additive Mfg."],
 
   spec: [
-    ["Context",   "Omni-X production floor"],
+    ["Context",   "Design for manufacturing implementation"],
     ["Timeline",  "2025"],
-    ["Materials", "Chemical-resistant carbon fiber, additive"],
+    ["Materials", "4140 Steel"],
     ["Status",    "Deployed"]
   ],
 
