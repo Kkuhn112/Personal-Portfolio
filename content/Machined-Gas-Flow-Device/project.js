@@ -1,31 +1,29 @@
 /* ============================================================
-   PROJECT: Automated CNC Part Extraction
+   PROJECT: CFD-Informed Muzzle Brake
    ------------------------------------------------------------
-   PHOTO: drop your gripper photo into this folder, then set
-   "cover" (and "hero") to the file name, e.g. cover: "gripper.jpg".
-   While "cover" is empty, the card shows a clean placeholder.
-   Suggested photo: the black gripper holding the blue part in the lathe.
+   Designed, analyzed in CFD, manually machined, and tested.
    ============================================================ */
 window.Portfolio = window.Portfolio || {};
 window.Portfolio["Machined-Gas-Flow-Device"] = {
 
-  title:   "CFD inspired Gas FLow Device",
-  kicker:  "DFM and CFD",
+  title:   "CFD-Informed Muzzle Brake",
+  kicker:  "CFD • DFM • Manual Machining",
   featured: false,
 
-  blurb:   "A custom gas flow device with preliminary analysis done in CFD, and design optimized for manufacturing only requiring a manual mill and lathe.",
-  tagline: "Reinforcement of traditional ideas with a modern analysis method and traditional machining methods.",
+  blurb:   "A 4140 steel muzzle brake designed using CFD to evaluate gas-flow behavior, then refined for manufacturability, manually machined, and physically tested.",
+  tagline: "Using simulation to inform a practical design that could be manufactured with conventional manual machining processes.",
 
   cover:   "Gas-Flow-Device.png",
   hero:    "Gas-Flow-Device.png",
 
-  tags:    ["Machine Design", "CAD", "Automation", "Additive Mfg."],
+  tags:    ["Mechanical Design", "CFD", "DFM", "Manual Machining"],
 
   spec: [
-    ["Context",   "Design for manufacturing implementation"],
+    ["Focus",     "CFD-informed mechanical design and DFM"],
     ["Timeline",  "2025"],
-    ["Materials", "4140 Steel"],
-    ["Status",    "Deployed"]
+    ["Material",  "4140 Steel"],
+    ["Process",   "Manual Mill & Lathe"],
+    ["Status",    "Manufactured & Tested"]
   ],
 
   links: [
@@ -37,38 +35,67 @@ window.Portfolio["Machined-Gas-Flow-Device"] = {
       id: "overview",
       heading: "Overview",
       body: [
-        "On a CNC turning center, an operator often has to reach in and remove each finished part before the next cycle can start. I designed and built an attachment that does this automatically, which removed the manual step and kept the machine running."
+        "I designed and manufactured a custom muzzle brake as an exercise in combining computational analysis, mechanical design, and hands-on manufacturing. CFD was used during development to evaluate gas-flow behavior and compare design features before committing the final geometry to metal."
       ]
     },
     {
       id: "requirements",
-      heading: "Requirements",
+      heading: "Design Requirements",
       body: [
-        "The attachment had to work inside a live production process without changing the existing workflow or crowding the machine's working envelope."
+        "The design needed to balance gas-flow performance with geometry that could realistically be produced using the manual machining equipment available to me."
       ],
       list: [
-        "Fit within the limited work envelope of the turning center.",
-        "Repeatably grip and clear finished parts.",
-        "Withstand continuous exposure to cutting fluid."
+        "Use CFD to evaluate and refine internal and external gas-flow geometry.",
+        "Design all critical features around manual lathe and mill capabilities.",
+        "Use 4140 steel for a durable final component.",
+        "Minimize unnecessary machining operations and difficult setups.",
+        "Produce a functional prototype suitable for physical testing."
+      ]
+    },
+    {
+      id: "analysis",
+      heading: "CFD Analysis",
+      body: [
+        "I used CFD as a design tool rather than relying only on conventional geometry. Simulation results were used to visualize gas expansion and flow through the brake and to identify areas where the geometry could be refined before manufacturing."
+      ],
+      list: [
+        "Created the flow domain from the CAD geometry.",
+        "Evaluated pressure and velocity behavior through the device.",
+        "Compared design features based on simulated gas-flow behavior.",
+        "Used analysis results to guide geometry changes before machining."
       ]
     },
     {
       id: "design",
-      heading: "Design and Build",
+      heading: "Design for Manufacturing",
       body: [
-        "I modeled the mechanism in CAD around the machine, chose a material that would hold up to coolant, and fabricated production-ready hardware."
+        "After the analysis phase, I refined the CAD model around the capabilities of a manual mill and lathe. Features were selected and dimensioned to reduce setup complexity while maintaining the intended geometry."
       ],
       list: [
-        "Modeled the extraction mechanism in CAD around the machine envelope.",
-        "Selected chemical-resistant carbon fiber for coolant durability.",
-        "Fabricated the hardware with additive manufacturing."
+        "Designed turned features for conventional manual lathe operations.",
+        "Designed port geometry around accessible manual milling operations.",
+        "Reduced unnecessary features and complex setups.",
+        "Considered tooling access, workholding, and operation sequence during the design process."
+      ]
+    },
+    {
+      id: "manufacturing",
+      heading: "Manufacturing",
+      body: [
+        "The final component was manufactured from 4140 steel using manual machining processes. Completing the part myself provided direct feedback on tool access, setup difficulty, tolerances, and the manufacturability decisions made during CAD development."
+      ],
+      list: [
+        "Turned the primary cylindrical geometry on a manual lathe.",
+        "Machined gas ports and secondary features on a manual mill.",
+        "Performed the required setups, workholding, and dimensional inspection.",
+        "Completed and inspected the final manufactured component."
       ]
     },
     {
       id: "result",
-      heading: "Result",
+      heading: "Testing and Result",
       body: [
-        "The attachment removed operator intervention from the cycle, reduced idle time between parts, and improved production consistency. It ran on a real production line rather than a bench."
+        "The finished muzzle brake was physically tested after manufacturing. The project took the design through the complete workflow from CAD and CFD analysis to DFM refinement, manual machining, and hardware testing."
       ]
     }
   ]
