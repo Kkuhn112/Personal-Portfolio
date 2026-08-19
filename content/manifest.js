@@ -17,7 +17,7 @@ window.PORTFOLIO_ORDER = [
   "automated-cnc-part-extraction",
   "Machined-Gas-Flow-Device",
   "custom-macro-pad",
-  "Nimbus-One",
+  "NimbusOne",
   "naca-4-digit-airfoil-generator",
   "custom-slitting-saw-arbor"
 ];
