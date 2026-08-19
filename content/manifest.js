@@ -19,7 +19,7 @@ window.PORTFOLIO_ORDER = [
   "fiber-reinforced-printing",
   "Machined-Gas-Flow-Device",
   "custom-macro-pad",
-  "Nimbus-One",
+  "NimbusOne",
   "naca-4-digit-airfoil-generator",
   "custom-slitting-saw-arbor"
 ];
