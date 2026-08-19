@@ -5,7 +5,7 @@
    a large-format physical eVTOL/drone demonstrator.
    ============================================================ */
 window.Portfolio = window.Portfolio || {};
-window.Portfolio["Nimbus-One"] = {
+window.Portfolio["NimbusOne"] = {
 
   title:   "Nimbus One",
   kicker:  "Stakeholder-Driven Design • Prototyping • Systems Engineering",
