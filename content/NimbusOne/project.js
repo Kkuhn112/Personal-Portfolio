@@ -12,7 +12,6 @@ window.Portfolio["Nimbus-One"] = {
   featured: false,
 
   blurb:   "A team-based engineering design project that translated stakeholder needs into system-level design priorities and culminated in a large-format physical eVTOL/drone demonstrator.",
-
   tagline: "Applying a structured engineering design process from stakeholder discovery and requirements definition through concept selection, prototyping, integration, and testing.",
 
   cover:   "NimbusOne.jpg",
