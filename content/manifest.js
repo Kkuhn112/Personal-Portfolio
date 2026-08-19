@@ -3,7 +3,6 @@
    ------------------------------------------------------------
    This list controls which projects appear and in what order,
    on both the home page and everywhere else.
-
    To ADD a project:
      1. Copy an existing folder in /content (e.g. custom-macro-pad)
         and rename it to your new project's slug (lowercase-with-dashes).
