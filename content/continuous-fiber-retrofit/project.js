@@ -21,7 +21,7 @@ window.Portfolio["continuous-fiber-retrofit"] = {
   tagline: "Turning any standard 3D printer into a continuous carbon-fiber machine, designed from the ground up.",
 
   cover:   "Fiber Printing Single Nozzle Prototype.jpeg",
-  hero:    "Fiber Printing Single Nozzle Prototype.jpeg",
+  hero:    "Fiber Printing Single Nozzle Prototype2.jpeg",
 
   tags:    ["Mechanical Design", "Fluid Dynamics", "Tolerance Analysis", "Research"],
 
