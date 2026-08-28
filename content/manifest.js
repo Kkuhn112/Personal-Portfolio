@@ -15,7 +15,7 @@
 window.PORTFOLIO_ORDER = [
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
-  "Machined-Gas-Flow-Device",
+  /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
   "NimbusOne",
   "naca-4-digit-airfoil-generator",
