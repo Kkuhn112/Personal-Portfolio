@@ -12,16 +12,20 @@ touch the layout code.
 ```
 index.html            Home page (hero, work, about, experience, toolbox, education, contact)
 project.html          The template that displays a single project
+export.html           Unlisted print version of the whole portfolio, used to make the PDF
 assets/
   css/site.css        All styling
+  css/print.css       Styling for the PDF export only
   js/site.js          Navigation, header, scroll-spy, image lightbox
   js/motion.js        Scroll reveals, staggered entrances, count-ups (respects reduced motion)
   js/render.js        Builds the project cards and project pages from /content
+  js/export.js        Builds the print version from index.html and /content
 content/
   manifest.js         The list of projects and their order
   <project>/          One folder per project
     project.js        All of that project's text and settings
     *.jpg / *.png     That project's images
+tools/export-pdf.mjs  Renders export.html to a PDF
 Kestin-Kuhn-Resume.pdf
 ```
 
@@ -77,6 +81,34 @@ window.Portfolio["my-project"] = {
   ]
 };
 ```
+
+## Export the portfolio as a PDF
+
+`export.html` is a print version of the whole portfolio: a cover page, the
+profile sections, and every project in full with its images. It is not linked
+anywhere on the site and is marked `noindex`, so visitors never see it. It reads
+its content from `index.html` and the files in `content/`, so it always matches
+the live site with nothing to keep in sync.
+
+**The easy way.** In the Actions tab, run **Build Portfolio PDF**. It renders the
+PDF and attaches it to the run as a download, and by default also commits
+`Kestin-Kuhn-Portfolio.pdf` to the branch. Nothing to install.
+
+**Locally**, if you have Node:
+
+```bash
+npm install
+npx playwright install chromium
+npm run pdf                       # writes Kestin-Kuhn-Portfolio.pdf
+npm run pdf -- some-name.pdf      # or choose the file name
+```
+
+**By hand**, with no tooling at all: start a local server (see below), open
+`http://localhost:8000/export.html`, then print and choose Save as PDF. Turn on
+background graphics in the print dialog.
+
+Text stays selectable and searchable, and photos are embedded at full
+resolution, so the quality matches the website.
 
 ## Local preview
 

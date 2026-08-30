@@ -1,0 +1,173 @@
+/* ============================================================
+   Print stylesheet for export.html
+   ------------------------------------------------------------
+   Self-contained on purpose. The export is a print artifact, so
+   it does not inherit the site's screen layout and cannot be
+   broken by later changes to site.css. Design tokens are kept in
+   sync with the site by hand.
+   ============================================================ */
+
+:root {
+  --bg:            #ffffff;
+  --surface:       #f5f6f8;
+  --ink:           #0b0e13;
+  --ink-2:         #2c323c;
+  --muted:         #5b6470;
+  --faint:         #8b929c;
+  --accent:        #1857d6;
+  --line:          rgba(11, 14, 19, 0.14);
+  --line-soft:     rgba(11, 14, 19, 0.08);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@page {
+  size: A4;
+  margin: 15mm 15mm 17mm;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 10.2pt;
+  line-height: 1.5;
+  color: var(--ink-2);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+p { margin: 0 0 0.6em; }
+a { color: var(--accent); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 7.4pt; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+  margin: 0 0 0.5em;
+}
+
+/* ---------- Page mechanics ---------- */
+.page { break-after: page; page-break-after: always; }
+.page:last-child { break-after: auto; page-break-after: auto; }
+/* Keep headings with the text that follows, and never split a figure */
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+figure, .fig, .spec, .exp-item, .edu-card, .tool-group {
+  break-inside: avoid; page-break-inside: avoid;
+}
+
+/* ---------- Cover ---------- */
+.cover { display: flex; flex-direction: column; min-height: 247mm; }
+.cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cover .logo { height: 74px; width: auto; margin-bottom: 14mm; }
+.cover h1 { font-size: 34pt; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 5mm; }
+.cover .roles {
+  font-family: var(--mono); font-size: 9pt; color: var(--ink-2);
+  display: flex; flex-wrap: wrap; gap: 2mm 3.5mm; margin-bottom: 5mm;
+}
+.cover .roles .sep { color: var(--accent); }
+.cover .rule-accent { width: 16mm; height: 1.1mm; background: var(--accent); border-radius: 1mm; margin-bottom: 6mm; }
+.cover .summary { font-size: 11.5pt; color: var(--muted); max-width: 130mm; line-height: 1.55; }
+
+.cover-contact {
+  display: flex; flex-wrap: wrap; gap: 2mm 6mm;
+  border-top: 1px solid var(--line); padding-top: 4mm; margin-top: 8mm;
+  font-size: 9.2pt;
+}
+.cover-contact .item { color: var(--ink); }
+.cover-contact .item .k {
+  display: block; font-family: var(--mono); font-size: 7pt; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 0.8mm;
+}
+
+.cover-stats { display: flex; gap: 1px; background: var(--line-soft); border-block: 1px solid var(--line-soft); margin-top: 7mm; }
+.cover-stats .stat { flex: 1 1 0; background: var(--bg); padding: 4mm 3mm; }
+.cover-stats .num { font-size: 16pt; font-weight: 680; letter-spacing: -0.03em; color: var(--ink); }
+.cover-stats .num .unit { color: var(--accent); }
+.cover-stats .label {
+  font-family: var(--mono); font-size: 6.8pt; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin-top: 1mm;
+}
+
+/* ---------- Generic section ---------- */
+.sec { margin-bottom: 9mm; }
+.sec > h2 { font-size: 17pt; letter-spacing: -0.028em; margin-bottom: 4mm; }
+.prose p { color: var(--ink-2); max-width: 165mm; }
+.prose strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Experience ---------- */
+.exp-item {
+  display: grid; grid-template-columns: 42mm 1fr; gap: 6mm;
+  padding: 4mm 0; border-top: 1px solid var(--line-soft);
+}
+.exp-item:first-of-type { border-top: 0; padding-top: 0; }
+.exp-when { font-family: var(--mono); font-size: 8pt; color: var(--muted); }
+.exp-when .loc { display: block; color: var(--faint); font-size: 7.2pt; margin-top: 1mm; letter-spacing: 0.06em; text-transform: uppercase; }
+.exp-body h3 { font-size: 11.5pt; }
+.exp-body .role { color: var(--accent); font-weight: 600; font-size: 9.4pt; margin: 0.5mm 0 2mm; }
+.exp-body ul, .edu-card ul, .proj ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.4mm; }
+.exp-body li, .proj li { position: relative; padding-left: 4.5mm; color: var(--ink-2); }
+.exp-body li::before, .proj li::before {
+  content: ""; position: absolute; left: 0; top: 0.62em;
+  width: 1.5mm; height: 1.5mm; border: 0.35mm solid var(--accent); transform: rotate(45deg);
+}
+
+/* ---------- Toolbox ---------- */
+.toolbox { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 8mm; }
+.tool-group h3 {
+  font-family: var(--mono); font-size: 7.6pt; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 2.5mm;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+.chip { font-size: 8.6pt; color: var(--ink); font-weight: 500; border: 1px solid var(--line); border-radius: 1.6mm; padding: 1mm 2.2mm; }
+
+/* ---------- Education ---------- */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.edu-card { border: 1px solid var(--line); border-radius: 2.5mm; padding: 4mm; }
+.edu-card .kicker { font-family: var(--mono); font-size: 7pt; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 2mm; }
+.edu-card h3 { font-size: 10.5pt; margin-bottom: 0.8mm; }
+.edu-card .sub { color: var(--muted); font-size: 8.8pt; margin-bottom: 2mm; }
+.edu-card li { color: var(--muted); font-size: 8.8pt; padding-left: 3.6mm; position: relative; }
+.edu-card li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 1.2mm; height: 1.2mm; background: var(--accent); border-radius: 50%; }
+
+/* ---------- Projects ---------- */
+.proj-head { border-bottom: 1px solid var(--line); padding-bottom: 4mm; margin-bottom: 5mm; }
+.proj-head .kicker { font-family: var(--mono); font-size: 7.4pt; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 2mm; }
+.proj-head h2 { font-size: 20pt; letter-spacing: -0.03em; margin-bottom: 2.5mm; }
+.proj-head .tagline { font-size: 11pt; color: var(--muted); max-width: 150mm; margin: 0; }
+
+.proj-hero { margin-bottom: 5mm; border: 1px solid var(--line); border-radius: 2mm; overflow: hidden; }
+.proj-hero img { width: 100%; height: auto; max-height: 95mm; object-fit: cover; }
+
+.spec { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 6mm; border: 1px solid var(--line); border-radius: 2mm; padding: 3mm 4mm; margin-bottom: 5mm; }
+.spec .row { display: flex; justify-content: space-between; gap: 3mm; padding: 1.4mm 0; font-size: 9pt; border-top: 1px solid var(--line-soft); }
+.spec .row:nth-child(-n+2) { border-top: 0; }
+.spec .k { font-family: var(--mono); font-size: 7.2pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.spec .v { color: var(--ink); font-weight: 550; text-align: right; }
+
+.proj-links { font-size: 8.8pt; color: var(--muted); margin-bottom: 5mm; }
+.proj-links a { color: var(--accent); word-break: break-all; }
+
+.proj h3 { font-size: 12.5pt; margin: 0 0 2.5mm; }
+.proj .block { margin-bottom: 5mm; }
+.proj p { max-width: 165mm; }
+
+figure { margin: 3.5mm 0 0; }
+figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 1.6mm; }
+figcaption { font-family: var(--mono); font-size: 7.4pt; color: var(--faint); margin-top: 1.5mm; line-height: 1.35; }
+.fig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 3.5mm; }
+.fig-grid figure { margin: 0; }
+
+/* Screen preview of the export page, so it is readable before printing */
+@media screen {
+  body { background: #eceef1; padding: 8mm 0; }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 0 auto 8mm;
+    padding: 15mm 15mm 17mm; background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+}
