@@ -1,0 +1,55 @@
+name: Build Portfolio PDF
+
+# Run this by hand from the Actions tab. It renders export.html, which is the
+# unlisted print version of the site, and produces a high-quality PDF.
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Commit the PDF back to this branch"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Render portfolio to PDF
+        run: npm run pdf -- Kestin-Kuhn-Portfolio.pdf
+
+      - name: Upload PDF as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-pdf
+          path: Kestin-Kuhn-Portfolio.pdf
+          if-no-files-found: error
+
+      - name: Commit updated PDF
+        if: ${{ inputs.commit }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- Kestin-Kuhn-Portfolio.pdf; then
+            echo "PDF unchanged, nothing to commit."
+          else
+            git add Kestin-Kuhn-Portfolio.pdf
+            git commit -m "Automatically update portfolio PDF"
+            git push
+          fi
