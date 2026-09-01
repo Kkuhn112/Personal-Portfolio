@@ -156,6 +156,25 @@ figure, .fig, .spec, .exp-item, .edu-card, .tool-group {
 .proj .block { margin-bottom: 5mm; }
 .proj p { max-width: 165mm; }
 
+/* Tables (requirements, trade studies, before/after) */
+/* A long table must be allowed to span pages. Forcing break-inside:avoid on
+   the table makes anything taller than a page get clipped, so instead the
+   table flows, each row stays whole, and the header repeats on every page. */
+.proj-table {
+  width: 100%; border-collapse: collapse; font-size: 8.4pt;
+  margin: 3.5mm 0; border: 1px solid var(--line);
+  break-inside: auto; page-break-inside: auto;
+}
+.proj-table thead { display: table-header-group; }
+.proj-table tr { break-inside: avoid; page-break-inside: avoid; }
+.proj-table th, .proj-table td { text-align: left; padding: 1.6mm 2.2mm; vertical-align: top; border-top: 1px solid var(--line-soft); }
+.proj-table thead th {
+  font-family: var(--mono); font-size: 6.8pt; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; background: var(--surface); border-top: 0;
+}
+.proj-table tbody tr:first-child td { border-top: 0; }
+.proj-table td:first-child { color: var(--ink); font-weight: 550; white-space: nowrap; }
+
 figure { margin: 3.5mm 0 0; }
 figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 1.6mm; }
 figcaption { font-family: var(--mono); font-size: 7.4pt; color: var(--faint); margin-top: 1.5mm; line-height: 1.35; }
