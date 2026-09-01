@@ -308,6 +308,23 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 .proj-section ul li { position: relative; padding-left: 1.3rem; color: var(--ink-2); }
 .proj-section ul li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border: 1.4px solid var(--accent); transform: rotate(45deg); }
 
+/* ---------- Tables (requirements, trade studies, before/after) ---------- */
+/* Grid and flex children default to min-width:auto, so a wide table would
+   push the whole column open and scroll the page. This keeps the scroll
+   inside the table instead. */
+.proj-body > * { min-width: 0; }
+.table-wrap { overflow-x: auto; max-width: 100%; margin: 1.4rem 0; border: 1px solid var(--line); border-radius: 10px; }
+.proj-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.proj-table th, .proj-table td { text-align: left; padding: 0.7rem 0.95rem; vertical-align: top; border-top: 1px solid var(--line-soft); }
+.proj-table thead th {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; background: var(--surface); border-top: 0; white-space: nowrap;
+}
+.proj-table tbody tr:first-child td { border-top: 0; }
+.proj-table td { color: var(--ink-2); }
+/* First column reads as the identifier when it is a short code */
+.proj-table td:first-child { color: var(--ink); font-weight: 550; white-space: nowrap; }
+
 .figure { margin: 1.5rem 0; }
 .figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; cursor: zoom-in; background: var(--surface); }
 .figure figcaption { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.03em; color: var(--faint); margin-top: 0.6rem; }

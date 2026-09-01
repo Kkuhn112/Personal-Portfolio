@@ -14,6 +14,7 @@
    ============================================================ */
 window.PORTFOLIO_ORDER = [
   "continuous-fiber-retrofit",
+  "crius-cubesat",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   "fiber-reinforced-printing",
