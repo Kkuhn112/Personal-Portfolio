@@ -40,11 +40,12 @@
     var flag = p.featured ? '<span class="featured-flag">Featured</span>' : '';
     if (p.cover) {
       // Optional hover video. The poster image is always the resting state.
-      // preload="none" means nothing downloads until the user hovers.
+      // preload="metadata" fetches only the header, so the clip is ready to
+      // start on hover without downloading the whole file up front.
       var video = '', badge = '';
       if (p.coverVideo) {
         video = '<video class="cover-video" src="' + esc(assetPath(slug, p.coverVideo)) +
-                '" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>';
+                '" muted loop playsinline preload="metadata" tabindex="-1" aria-hidden="true"></video>';
         badge = '<span class="motion-badge" aria-hidden="true">' +
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>';
       }
@@ -106,6 +107,21 @@
     var cap = fig.caption ? '<figcaption>' + esc(fig.caption) + '</figcaption>' : '';
     return '<figure class="figure"><img src="' + esc(assetPath(slug, fig.src)) + '" alt="' + esc(fig.caption || '') + '" loading="lazy" data-zoom>' + cap + '</figure>';
   }
+  /* Optional table:  table: { head: ["A","B"], rows: [["1","2"]] }
+     Wrapped so a wide table scrolls on its own instead of the page. */
+  function tableMarkup(t) {
+    if (!t || !t.rows || !t.rows.length) return '';
+    var head = toArray(t.head);
+    var out = '<div class="table-wrap"><table class="proj-table">';
+    if (head.length) {
+      out += '<thead><tr>' + head.map(function (h) { return '<th>' + esc(h) + '</th>'; }).join('') + '</tr></thead>';
+    }
+    out += '<tbody>' + toArray(t.rows).map(function (r) {
+      return '<tr>' + toArray(r).map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+    }).join('') + '</tbody></table></div>';
+    return out;
+  }
+
   function sectionMarkup(slug, sec) {
     var out = '<section class="proj-section reveal" id="' + esc(sec.id || '') + '">';
     out += '<h2>' + esc(sec.heading) + '</h2>';
@@ -113,6 +129,7 @@
     if (sec.list && sec.list.length) {
       out += '<ul>' + sec.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
     }
+    out += tableMarkup(sec.table);
     var figs = toArray(sec.figures);
     if (figs.length === 1) { out += figureMarkup(slug, figs[0]); }
     else if (figs.length > 1) {

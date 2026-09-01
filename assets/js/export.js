@@ -197,6 +197,19 @@
       (f.caption ? '<figcaption>' + esc(f.caption) + '</figcaption>' : '') + '</figure>';
   }
 
+  function tableMarkup(t) {
+    if (!t || !t.rows || !t.rows.length) return '';
+    var head = toArray(t.head);
+    var out = '<table class="proj-table">';
+    if (head.length) {
+      out += '<thead><tr>' + head.map(function (h) { return '<th>' + esc(h) + '</th>'; }).join('') + '</tr></thead>';
+    }
+    out += '<tbody>' + toArray(t.rows).map(function (r) {
+      return '<tr>' + toArray(r).map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+    }).join('') + '</tbody></table>';
+    return out;
+  }
+
   function projectPage(slug) {
     var p = store[slug];
     if (!p) return '';
@@ -226,6 +239,7 @@
       if (sec.list && sec.list.length) {
         out += '<ul>' + sec.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
       }
+      out += tableMarkup(sec.table);
       var figs = toArray(sec.figures);
       if (figs.length === 1) out += figureMarkup(slug, figs[0]);
       else if (figs.length > 1) {

@@ -13,6 +13,7 @@
    To REORDER: change the order of the lines below.
    ============================================================ */
 window.PORTFOLIO_ORDER = [
+  "crius-cubesat",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   /*"Machined-Gas-Flow-Device",*/
