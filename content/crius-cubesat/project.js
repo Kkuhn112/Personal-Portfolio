@@ -28,7 +28,7 @@ window.Portfolio["crius-cubesat"] = {
 
   title:   "Crius 3U CubeSat Structure",
   kicker:  "Spacecraft Structures and DFM",
-  featured: false,
+  featured: true,
 
   blurb:   "A 3U CubeSat primary structure designed from the CubeSat Design Specification outward, through trade studies, CNC-driven detail design, and FEA, toward machined hardware.",
   tagline: "Taking a spacecraft primary structure from written requirements to machinable, analyzed, assemblable hardware.",
