@@ -15,7 +15,7 @@ window.Portfolio["continuous-fiber-retrofit"] = {
 
   title:   "Continuous Fiber Retrofit System",
   kicker:  "Mechanical Design and Research",
-  featured: true,
+  featured: false,
 
   blurb:   "A system I am designing that converts a standard 3D printer into a continuous carbon-fiber printer. I own the full mechanical design, from flow behavior through tolerance stack-up and material selection.",
   tagline: "Turning any standard 3D printer into a continuous carbon-fiber machine, designed from the ground up.",
