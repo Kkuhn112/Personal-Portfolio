@@ -7,7 +7,6 @@
       placeholder. Replace it as the design establishes the real
       value. Nothing here is invented, so the page never claims a
       result you have not produced.
-
    2. PHOTOS AND RENDERS. Drop image files in this folder, then
       set "cover" and "hero" below, and uncomment the "figures"
       blocks inside the sections. Suggested order of importance:
