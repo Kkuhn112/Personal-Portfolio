@@ -33,8 +33,8 @@ window.Portfolio["crius-cubesat"] = {
   blurb:   "A 3U CubeSat primary structure designed from the CubeSat Design Specification outward, through trade studies, CNC-driven detail design, and FEA, toward machined hardware.",
   tagline: "Taking a spacecraft primary structure from written requirements to machinable, analyzed, assemblable hardware.",
 
-  cover:   "",
-  hero:    "",
+  cover:   "Cius_1.0_SpaceShot_Glow.png",
+  hero:    "Cius_1.0_SpaceShot_Glow.png",
 
   tags:    ["Structural Design", "DFM", "FEA", "Aerospace"],
 
