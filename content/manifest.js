@@ -13,8 +13,8 @@
    To REORDER: change the order of the lines below.
    ============================================================ */
 window.PORTFOLIO_ORDER = [
-  "continuous-fiber-retrofit",
   "crius-cubesat",
+  "continuous-fiber-retrofit",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   "fiber-reinforced-printing",
