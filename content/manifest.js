@@ -15,6 +15,7 @@
 window.PORTFOLIO_ORDER = [
   "crius-cubesat",
   "continuous-fiber-retrofit",
+  "topology-optimized-subwoofer",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   "fiber-reinforced-printing",
