@@ -1,15 +1,15 @@
 /* ============================================================
    PROJECT: Topology-Optimized Subwoofer
    ------------------------------------------------------------
-   Values written as [INSERT ...] are placeholders. Fill them in
-   with the real numbers when you have them. Nothing here claims
-   a result that has not been established.
+   This page describes the design without quoting specific
+   numbers. If you want to add measured values later (driver
+   size, internal volume, impedance, wall thickness, dimensions),
+   drop them into the relevant sentence or add a spec row.
 
    More photos: drop files in this folder and uncomment the
    "figures" blocks below. Worth adding if you have them:
    the SolidWorks design space, the topology optimization result,
-   the salvaged drivers before the rebuild, the internal wiring,
-   and the finished pair.
+   the salvaged drivers before the rebuild, and the internal wiring.
    ============================================================ */
 window.Portfolio = window.Portfolio || {};
 window.Portfolio["topology-optimized-subwoofer"] = {
@@ -29,9 +29,8 @@ window.Portfolio["topology-optimized-subwoofer"] = {
   spec: [
     ["Type",    "Custom subwoofer enclosure"],
     ["Role",    "Design, wiring, and integration"],
-    ["Drivers", "Salvaged Bose, [INSERT DRIVER SIZE]"],
+    ["Drivers", "Salvaged Bose, rewired to a standard impedance"],
     ["Method",  "SolidWorks topology optimization"],
-    ["Process", "[INSERT MATERIAL AND PROCESS]"],
     ["Status",  "Complete"]
   ],
 
@@ -61,8 +60,8 @@ window.Portfolio["topology-optimized-subwoofer"] = {
           ["Driver frame bolt pattern", "Mounting holes could not be moved or resized", "Baffle bosses located directly from the measured driver, not from a convenient grid"],
           ["Cone and surround diameter", "Baffle opening fixed by the driver, not chosen", "Opening cut to the driver dimension with clearance for excursion"],
           ["Magnet and basket depth", "Minimum clear depth required behind each baffle", "Internal structure routed around the motor assembly"],
-          ["Driver displacement volume", "Reduced the usable air volume inside the box", "Net internal volume sized after subtracting the drivers, [INSERT NET INTERNAL VOLUME]"],
-          ["Voice coil impedance", "Limited how the two drivers could be wired together", "[INSERT WIRING CONFIGURATION AND RESULTING LOAD IMPEDANCE]"],
+          ["Driver displacement volume", "Reduced the usable air volume inside the box", "Internal volume sized after subtracting the space the drivers themselves occupy"],
+          ["Proprietary Bose impedance", "Drivers did not present a standard amplifier load", "Two drivers wired in series to raise the total to a standard impedance"],
           ["Terminal location on the driver", "Leads had to exit without contacting the motor", "Wire routing designed into the internal ribs rather than added afterward"]
         ]
       }
@@ -89,13 +88,13 @@ window.Portfolio["topology-optimized-subwoofer"] = {
       heading: "Enclosure Design",
       body: [
         "A topology result is a starting point, not a part. The raw output was rebuilt into clean, manufacturable geometry with real wall thicknesses, sealing faces, and fastener provisions.",
-        "The acoustic requirements were kept separate from the structural ones and had to hold at the same time. The enclosure had to seal, hold [INSERT ENCLOSURE ALIGNMENT, SEALED OR PORTED] behavior, and keep its own panel resonances away from the band the drivers work in. Stiffening the panels serves both goals at once, since a panel that does not flex also does not radiate sound of its own."
+        "The acoustic requirements were kept separate from the structural ones and had to hold at the same time. The enclosure had to seal, and it had to keep its own panel resonances away from the band the drivers work in. Stiffening the panels serves both goals at once, since a panel that does not flex also does not radiate sound of its own."
       ],
       list: [
-        "Wall thickness set to [INSERT WALL THICKNESS] after the optimization was rebuilt as solid geometry.",
+        "Wall sections carried through from the optimization result rather than set to one uniform thickness.",
         "Sealing faces added at every joint so the enclosure holds pressure.",
-        "Dual drivers stacked on a single baffle to keep the footprint narrow.",
-        "Overall size [INSERT FINAL DIMENSIONS], mass [INSERT FINAL MASS]."
+        "Both drivers stacked on a single baffle to keep the footprint narrow.",
+        "Fastener provisions placed so the drivers can be removed without disturbing the structure."
       ]
     },
 
@@ -103,12 +102,14 @@ window.Portfolio["topology-optimized-subwoofer"] = {
       id: "electronics",
       heading: "Electronics and Wiring",
       body: [
-        "The salvaged drivers came with no usable electronics, so the entire signal chain had to be specified and assembled from scratch. I sourced the amplification to suit the drivers rather than buying first and hoping the match worked.",
+        "The salvaged drivers came with no usable electronics, so the entire signal chain had to be specified and assembled from scratch. The harder problem was that Bose does not use a standard driver impedance, which is a large part of why these drivers cannot simply be connected to a generic amplifier when the original electronics fail.",
+        "Rewiring solved it. Putting the two drivers in series adds their impedances, which brings the proprietary Bose value up to a standard load that an off-the-shelf amplifier can drive safely. Parallel would have done the opposite, dividing the impedance and moving further from standard while presenting a harder load to the amplifier. That single wiring decision is what made commodity amplification possible.",
         "The chain runs from a USB source into an Audioengine D1 digital to analog converter, then into a Pyle amplifier driving the enclosure. I did all of the internal wiring and the terminations."
       ],
       list: [
-        "Amplifier selected against the driver load and power handling, [INSERT AMPLIFIER POWER AND DRIVER RATING].",
-        "Drivers wired [INSERT SERIES OR PARALLEL] to present a load the amplifier is comfortable driving.",
+        "Drivers wired in series, raising the proprietary Bose impedance to a standard amplifier load.",
+        "Series chosen over parallel deliberately, since parallel would have halved the impedance instead of raising it.",
+        "Amplification sourced to match the resulting load rather than bought first and matched afterward.",
         "Internal leads routed through the structure, away from the motor assemblies.",
         "Terminations and strain relief done so the drivers can be removed without cutting wire."
       ]
