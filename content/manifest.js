@@ -14,6 +14,7 @@
    ============================================================ */
 window.PORTFOLIO_ORDER = [
   "crius-cubesat",
+  "topology-optimized-subwoofer",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   /*"Machined-Gas-Flow-Device",*/
