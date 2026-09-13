@@ -14,10 +14,10 @@
    ============================================================ */
 window.PORTFOLIO_ORDER = [
   "crius-cubesat",
-  "continuous-fiber-retrofit",
-  "topology-optimized-subwoofer",
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
+  "topology-optimized-subwoofer",
+  "continuous-fiber-retrofit",
   "fiber-reinforced-printing",
   /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
