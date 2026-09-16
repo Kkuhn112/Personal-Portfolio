@@ -49,16 +49,24 @@
         badge = '<span class="motion-badge" aria-hidden="true">' +
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>';
       }
+      // The placeholder sits behind the photo. If the image file is missing or
+      // misnamed, the photo hides itself and the placeholder shows through,
+      // so a bad file name never leaves a broken image on the page.
       return '<div class="cover' + (p.coverVideo ? ' has-video' : '') + '">' + flag +
-        '<img src="' + esc(assetPath(slug, p.cover)) + '" alt="' + esc(p.title) + '" loading="lazy">' +
+        placeholderMarkup(p) +
+        '<img src="' + esc(assetPath(slug, p.cover)) + '" alt="' + esc(p.title) +
+          '" loading="lazy" onerror="this.hidden=true">' +
         video + badge + '</div>';
     }
     // No photo yet: clean placeholder. Drop a photo in the folder and set "cover".
-    return '<div class="cover">' + flag +
-      '<div class="cover--placeholder">' +
-        '<span class="pill">' + esc(p.kicker || 'Project') + '</span>' +
-        '<span class="ttl">' + esc(p.title) + '</span>' +
-      '</div></div>';
+    return '<div class="cover">' + flag + placeholderMarkup(p) + '</div>';
+  }
+
+  function placeholderMarkup(p) {
+    return '<div class="cover--placeholder">' +
+      '<span class="pill">' + esc(p.kicker || 'Project') + '</span>' +
+      '<span class="ttl">' + esc(p.title) + '</span>' +
+    '</div>';
   }
 
   function tagsMarkup(tags) {
@@ -105,7 +113,10 @@
   }
   function figureMarkup(slug, fig) {
     var cap = fig.caption ? '<figcaption>' + esc(fig.caption) + '</figcaption>' : '';
-    return '<figure class="figure"><img src="' + esc(assetPath(slug, fig.src)) + '" alt="' + esc(fig.caption || '') + '" loading="lazy" data-zoom>' + cap + '</figure>';
+    // A missing or misnamed image hides its whole figure, caption included,
+    // rather than leaving a broken image on the page.
+    return '<figure class="figure"><img src="' + esc(assetPath(slug, fig.src)) + '" alt="' + esc(fig.caption || '') +
+      '" loading="lazy" data-zoom onerror="this.closest(\'figure\').hidden=true">' + cap + '</figure>';
   }
   /* Optional table:  table: { head: ["A","B"], rows: [["1","2"]] }
      Wrapped so a wide table scrolls on its own instead of the page. */
