@@ -21,6 +21,7 @@ window.PORTFOLIO_ORDER = [
   "fiber-reinforced-printing",
   /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
+  "reverse-engineered-micrometer",
   "NimbusOne",
   "naca-4-digit-airfoil-generator",
   "custom-slitting-saw-arbor"
