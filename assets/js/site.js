@@ -98,12 +98,33 @@
       if (!video) return;
       var card = cover.closest('.work-card') || cover;
 
+      // If no source can be decoded, stop advertising motion the card cannot
+      // deliver, and say so in the console rather than failing invisibly.
+      function unavailable(why) {
+        cover.classList.remove('is-playing');
+        cover.classList.add('video-unavailable');
+        if (window.console && console.warn) {
+          console.warn('[portfolio] cover video could not play (' + why + '):',
+                       video.currentSrc || 'no playable source');
+        }
+      }
+      // With <source> children the error event fires on the sources, not on the
+      // video, and video.error stays null. The reliable signal that every
+      // candidate failed is networkState NETWORK_NO_SOURCE (3).
+      function checkNoSource() {
+        if (video.networkState === 3) unavailable('no decodable source');
+      }
+      video.addEventListener('error', function () { unavailable('load error'); });
+      Array.prototype.forEach.call(video.querySelectorAll('source'), function (s) {
+        s.addEventListener('error', function () { setTimeout(checkNoSource, 0); });
+      });
+
       card.addEventListener('mouseenter', function () {
+        if (cover.classList.contains('video-unavailable')) return;
         cover.classList.add('is-playing');
         var playing = video.play();
-        // Browsers can reject play(); fall back to the poster silently.
         if (playing && typeof playing.catch === 'function') {
-          playing.catch(function () { cover.classList.remove('is-playing'); });
+          playing.catch(function (e) { unavailable(e && e.name ? e.name : 'play rejected'); });
         }
       });
 
