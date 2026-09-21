@@ -17,6 +17,7 @@ window.PORTFOLIO_ORDER = [
   "parol6-robotic-arm",
   "automated-cnc-part-extraction",
   "topology-optimized-subwoofer",
+  "pa12-cf-tensile-testing",
   /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
   "reverse-engineered-micrometer",
