@@ -19,6 +19,7 @@ window.PORTFOLIO_ORDER = [
   "topology-optimized-subwoofer",
   "continuous-fiber-retrofit",
   "fiber-reinforced-printing",
+  "pa12-cf-tensile-testing",
   /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
   "reverse-engineered-micrometer",
