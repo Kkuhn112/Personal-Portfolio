@@ -44,8 +44,7 @@
       // start on hover without downloading the whole file up front.
       var video = '', badge = '';
       if (p.coverVideo) {
-        video = '<video class="cover-video" src="' + esc(assetPath(slug, p.coverVideo)) +
-                '" muted loop playsinline preload="metadata" tabindex="-1" aria-hidden="true"></video>';
+        video = videoMarkup(slug, p.coverVideo);
         badge = '<span class="motion-badge" aria-hidden="true">' +
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>';
       }
@@ -60,6 +59,22 @@
     }
     // No photo yet: clean placeholder. Drop a photo in the folder and set "cover".
     return '<div class="cover">' + flag + placeholderMarkup(p) + '</div>';
+  }
+
+  /* coverVideo may be one file name or a list of them. Listing several lets the
+     browser pick a codec it can actually decode, which matters because no single
+     video format plays everywhere: Safari needs H.264 in MP4, while WebM is the
+     reliable path elsewhere. The browser downloads only the source it chooses. */
+  function videoMarkup(slug, coverVideo) {
+    var sources = toArray(coverVideo).map(function (file) {
+      var type = /\.webm$/i.test(file) ? 'video/webm'
+               : /\.mp4$/i.test(file) ? 'video/mp4'
+               : /\.ogv$/i.test(file) ? 'video/ogg' : '';
+      return '<source src="' + esc(assetPath(slug, file)) + '"' +
+             (type ? ' type="' + type + '"' : '') + '>';
+    }).join('');
+    return '<video class="cover-video" muted loop playsinline preload="metadata" ' +
+           'tabindex="-1" aria-hidden="true">' + sources + '</video>';
   }
 
   function placeholderMarkup(p) {

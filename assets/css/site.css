@@ -405,6 +405,8 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 }
 .motion-badge svg { width: 12px; height: 12px; margin-left: 1px; }
 .cover.is-playing .motion-badge { opacity: 0; }
+/* No decodable source: do not advertise motion the card cannot play */
+.cover.video-unavailable .motion-badge { display: none; }
 
 /* Project hero image: slow, subtle zoom on hover */
 .proj-hero-img { position: relative; }
