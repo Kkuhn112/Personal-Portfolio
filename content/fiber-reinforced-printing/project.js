@@ -8,9 +8,15 @@
      file name here to use it.
    - "featured: true" makes this the large card on the home page.
    - To hide a link button, leave its "href" empty ("").
-   - A "section" becomes one titled block on the project page.
-     "body" is one or more paragraphs. "list" is optional bullets.
-     "figures" is optional images (one shows large, two show side by side).
+
+   NEW SCREENSHOTS. Four slots are already wired for the FiberSlic3r
+   interface. Drop these files in this folder and they appear:
+     fiberslic3r-prepare.jpg    parts on the build plate
+     fiberslic3r-fiber.jpg      the fiber design view
+     fiberslic3r-preview.jpg    sliced toolpaths with fiber in the channel
+     fiberslic3r-3d.jpg         the layup in 3D
+   A figure whose file is missing hides itself, so nothing looks
+   broken before the images are added.
    ============================================================ */
 window.Portfolio = window.Portfolio || {};
 window.Portfolio["fiber-reinforced-printing"] = {
@@ -20,10 +26,10 @@ window.Portfolio["fiber-reinforced-printing"] = {
   featured: false,
 
   // Home-page card summary (keep this to one or two sentences)
-  blurb:   "A software system that plans continuous carbon-fiber toolpaths and generates machine-ready G-code, developed as part of peer-reviewed composites research at CU Denver.",
+  blurb:   "FiberSlic3r, a complete slicer built for continuous carbon fiber, developed alongside peer-reviewed composites research at CU Denver. It slices the plastic and the fiber together and writes one machine-ready program.",
 
   // Project-page subtitle (one sentence)
-  tagline: "Planning where carbon fiber goes inside a printed part, so reinforcement follows the load rather than a uniform infill pattern.",
+  tagline: "A slicer that treats carbon fiber as part of the part, not as an afterthought bolted onto plastic.",
 
   cover:   "printing-nozzle.jpg",
   hero:    "printing-nozzle.jpg",
@@ -32,11 +38,12 @@ window.Portfolio["fiber-reinforced-printing"] = {
 
   // Facts shown in the box at the top of the project page
   spec: [
-    ["Role",        "Undergraduate Researcher"],
-    ["Advisor",     "Dr. Guoying Dong, CU Denver"],
-    ["Timeline",    "2025 to Present"],
-    ["Tools",       "Python, OpenCASCADE, G-code"],
-    ["Status",      "Ongoing"]
+    ["Role",     "Undergraduate Researcher"],
+    ["Advisor",  "Dr. Guoying Dong, CU Denver"],
+    ["Timeline", "2025 to Present"],
+    ["Software", "FiberSlic3r"],
+    ["Built in", "Python, OpenCASCADE, Clipper"],
+    ["Status",   "Ongoing"]
   ],
 
   // Buttons at the top of the project page (empty href hides the button)
@@ -51,9 +58,10 @@ window.Portfolio["fiber-reinforced-printing"] = {
       heading: "Overview",
       body: [
         "Continuous carbon fiber (CCF) additive manufacturing deposits carbon fiber strands into a polymer as a part is printed. The strength gained from that fiber depends heavily on how well it is aligned with the principal stress directions in the part, which makes toolpath generation the deciding factor in structural performance.",
-        "This project is a software system that plans those fiber paths from the part geometry and outputs machine-ready G-code. The goal is to bridge the gap between fully manual G-code editing and general-purpose slicing software that was never built for fiber."
+        "This project is FiberSlic3r, a slicer written specifically for that problem. It began as a fiber path planner whose output had to be spliced into another slicer's G-code. It is now a complete slicer in its own right: it slices the plastic as well, prints it around the fiber, and exports a single program."
       ]
     },
+
     {
       id: "problem",
       heading: "The Problem",
@@ -67,24 +75,49 @@ window.Portfolio["fiber-reinforced-printing"] = {
         "Advanced control requires writing G-code by hand."
       ]
     },
+
     {
       id: "software",
-      heading: "Software System",
+      heading: "FiberSlic3r",
       body: [
-        "The system works like a purpose-built CAM program for fiber. It imports part geometry, slices it into layers, identifies where fiber can be placed, and plans continuous paths that respect the physical limits of the print head."
+        "The earlier version planned fiber paths and left the plastic to someone else's slicer, which meant every job ended in merging two sets of G-code by hand. That is now gone. FiberSlic3r slices the plastic itself, so fiber is a native input rather than something added after the fact.",
+        "The two are solved together. Each layer's fiber is designed first, and the plastic is then printed around it: the walls close around the fiber as a channel, the infill and skins stop at those walls, and the layers above and below are printed solid so the strand is laid on plastic and covered by it. The result is one program with the plastic and the fiber interleaved layer by layer."
       ],
       list: [
-        "Geometry import from STEP files using OpenCASCADE.",
-        "Layer generation through Z-axis slicing.",
-        "Region identification to find valid fiber-placement zones.",
-        "Adaptive path planning that maximizes path length, enforces a minimum bend radius, and avoids collisions.",
-        "Path optimization for continuity and alignment.",
-        "G-code generation that coordinates fiber deposition and cutting."
+        "STEP parts imported, placed, oriented and arranged on the build plate.",
+        "Fiber drawn by hand, with a pen tool, or generated automatically as continuous strands.",
+        "A full plastic slicer underneath: walls, infill, solid skins, bridges, supports and brims.",
+        "Fiber channels formed as walled cavities with solid floor and roof layers.",
+        "Printer-aware strand preview showing where the cutter fires and which strands are too short to cut.",
+        "One exported program per job, with plastic and fiber tool changes interleaved."
       ],
       figures: [
-        { src: "fiber-slicer-software.jpg", caption: "The fiber slicer prototype, defining continuous fiber paths over a sliced layer." }
+        { src: "fiberslic3r-prepare.jpg", caption: "Prepare: STEP parts placed on the build plate." },
+        { src: "fiberslic3r-fiber.jpg",   caption: "Fiber design view, strands drawn at true width on the current layer." }
       ]
     },
+
+    {
+      id: "slicing",
+      heading: "Slicing and Preview",
+      body: [
+        "Bringing the plastic in-house meant writing the parts of a slicer that normally get taken for granted, and holding them to the standard of the tools researchers already use. Toolpaths can be inspected before anything is printed, which matters more here than usual: a fiber strand that cannot be cut, or a channel that does not close, is only obvious once you can see it."
+      ],
+      figures: [
+        { src: "fiberslic3r-preview.jpg", caption: "Preview: sliced toolpaths with the fiber laid into the channel the infill leaves free." },
+        { src: "fiberslic3r-3d.jpg",      caption: "The full layup previewed in 3D inside the part." }
+      ]
+    },
+
+    {
+      id: "significance",
+      heading: "Why the Tooling Matters",
+      body: [
+        "Continuous fiber research is limited as much by software as by hardware. A lab that wants to test a specific layup usually has to hand-write G-code or splice fiber paths into the output of a slicer that knows nothing about fiber, and that overhead quietly decides which experiments are worth attempting.",
+        "A slicer that takes fiber as a first-class input removes that step. A layup becomes something you design and print the same day, which means the question being tested can change as quickly as the hypothesis does. Shared tooling of this kind would save every CCF group the work of rebuilding the same toolchain before they can start their actual research."
+      ]
+    },
+
     {
       id: "manufacturing",
       heading: "Printing and Testing",
@@ -96,6 +129,7 @@ window.Portfolio["fiber-reinforced-printing"] = {
         { src: "tensile-test.jpg",      caption: "Tensile testing a printed specimen to failure." }
       ]
     },
+
     {
       id: "results",
       heading: "Results",
@@ -112,6 +146,7 @@ window.Portfolio["fiber-reinforced-printing"] = {
         { src: "force-displacement.png",  caption: "Force versus crosshead displacement, comparing a specimen with fiber against one without." }
       ]
     },
+
     {
       id: "publication",
       heading: "Publication",
@@ -120,16 +155,17 @@ window.Portfolio["fiber-reinforced-printing"] = {
         "Authors: Halston Sandford, Brian Lim, Nikola Hilderbrand, Kestin Kuhn, and Guoying Dong. DOI: 10.1080/15376494.2026.2702552."
       ]
     },
+
     {
       id: "future",
       heading: "Future Work",
       body: [
-        "Development continues toward a more complete design-to-print workflow."
+        "With the slicer complete end to end, the work moves from building the toolchain to using it."
       ],
       list: [
         "FEA-driven optimization of fiber placement.",
         "Direct STL support alongside STEP.",
-        "Real-time simulation of toolpaths before printing."
+        "Wider printer support through additional post-processors."
       ]
     }
   ]
