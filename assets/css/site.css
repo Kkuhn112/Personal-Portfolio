@@ -311,6 +311,27 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 650; letter-spacing: -0.02em; l
 .proj-section ul li { position: relative; padding-left: 1.3rem; color: var(--ink-2); }
 .proj-section ul li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border: 1.4px solid var(--accent); transform: rotate(45deg); }
 
+/* ---------- Interactive 3D model (3MF) ---------- */
+/* Styled like a figure, not a widget: a light viewer and a caption. */
+.model-block { margin: 1.6rem 0; }
+.model-stage {
+  position: relative; aspect-ratio: 16 / 10;
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  background: var(--surface); touch-action: pan-y;
+}
+.model-stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.model-stage canvas:active { cursor: grabbing; }
+.model-status {
+  position: absolute; inset: 0; display: grid; place-content: center;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--faint);
+}
+.model-block figcaption {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.03em;
+  color: var(--faint); margin-top: 0.6rem; line-height: 1.5;
+}
+@media (max-width: 680px) { .model-stage { aspect-ratio: 4 / 3; } }
+
 /* ---------- Tables (requirements, trade studies, before/after) ---------- */
 /* Grid and flex children default to min-width:auto, so a wide table would
    push the whole column open and scroll the page. This keeps the scroll

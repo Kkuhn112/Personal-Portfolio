@@ -240,6 +240,10 @@
         out += '<ul>' + sec.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
       }
       out += tableMarkup(sec.table);
+      // A PDF cannot show an interactive model, so note that it exists.
+      if (sec.model && sec.model.src) {
+        out += '<p class="model-note">Interactive 3D model of the current build state is available on the website.</p>';
+      }
       var figs = toArray(sec.figures);
       if (figs.length === 1) out += figureMarkup(slug, figs[0]);
       else if (figs.length > 1) {

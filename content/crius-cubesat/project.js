@@ -11,6 +11,12 @@
    before and after, FEA results, the lightweighting progression,
    drawings, and machined hardware.
 
+   LIVE 3D MODEL. The Current Build State section shows
+   Crius-Current.3mf from this folder. To update it, export the
+   current assembly as 3MF and save it over that file with the same
+   name. Nothing else needs to change.
+   If the file is missing the whole block hides itself.
+
    A "table" is optional on any section:
       table: { head: ["A","B"], rows: [["1","2"], ["3","4"]] }
    ============================================================ */
@@ -54,6 +60,18 @@ window.Portfolio["crius-cubesat"] = {
         "The interesting part of a CubeSat structure is not the outline, which the specification largely fixes. It is everything downstream of that: how the envelope is divided into parts a machine shop can actually cut, where load travels, where material can be removed without losing stiffness, and whether a person can assemble and disassemble it without fighting the design."
       ]
       // figures: [ { src: "crius-final-render.jpg", caption: "Final structural assembly." } ]
+    },
+
+    {
+      id: "current-model",
+      heading: "Current Build State",
+      body: [
+        "The model below is the assembly as it stands right now, not a finished render. It is replaced as the design progresses, so what you are rotating is the current revision rather than a snapshot from whenever this page was written."
+      ],
+      model: {
+        src: "Crius-Current.3mf",
+        caption: "The current assembly, updated as the build progresses. Drag to rotate."
+      }
     },
 
     {
