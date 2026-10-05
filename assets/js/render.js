@@ -148,6 +148,20 @@
     return out;
   }
 
+  /* Optional interactive 3D model:
+       model: { src: "part.3mf", caption: "..." }
+     Deliberately plain: a viewer and a one-line subtitle, no badges or
+     status chrome. The container is emitted empty; model-viewer.js loads the
+     3D libraries only when it scrolls into view, and hides the whole block if
+     the file or the libraries cannot load. */
+  function modelMarkup(slug, model) {
+    if (!model || !model.src) return '';
+    return '<figure class="model-block" data-model="' + esc(assetPath(slug, model.src)) + '">' +
+      '<div class="model-stage"><span class="model-status">Loading model</span></div>' +
+      (model.caption ? '<figcaption>' + esc(model.caption) + '</figcaption>' : '') +
+    '</figure>';
+  }
+
   function sectionMarkup(slug, sec) {
     var out = '<section class="proj-section reveal" id="' + esc(sec.id || '') + '">';
     out += '<h2>' + esc(sec.heading) + '</h2>';
@@ -156,6 +170,7 @@
       out += '<ul>' + sec.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
     }
     out += tableMarkup(sec.table);
+    out += modelMarkup(slug, sec.model);
     var figs = toArray(sec.figures);
     if (figs.length === 1) { out += figureMarkup(slug, figs[0]); }
     else if (figs.length > 1) {
@@ -206,6 +221,8 @@
       window.Site.bindZoom(root);
       window.Site.initSpy('#projToc');
     }
+    // Lets modules loaded separately (the 3D viewer) know the page exists now.
+    doc.dispatchEvent(new CustomEvent('portfolio:rendered'));
   }
 
   /* ---------- boot ---------- */

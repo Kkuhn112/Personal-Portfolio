@@ -156,6 +156,12 @@ figure, .fig, .spec, .exp-item, .edu-card, .tool-group {
 .proj .block { margin-bottom: 5mm; }
 .proj p { max-width: 165mm; }
 
+.model-note {
+  font-family: var(--mono); font-size: 7.6pt; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 1.5mm;
+  padding: 2mm 2.6mm; margin: 3mm 0; break-inside: avoid;
+}
+
 /* Tables (requirements, trade studies, before/after) */
 /* A long table must be allowed to span pages. Forcing break-inside:avoid on
    the table makes anything taller than a page get clipped, so instead the
