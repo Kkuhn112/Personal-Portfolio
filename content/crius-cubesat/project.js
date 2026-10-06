@@ -69,7 +69,7 @@ window.Portfolio["crius-cubesat"] = {
         "The model below is the assembly as it stands right now, not a finished render. It is replaced as the design progresses, so what you are rotating is the current revision rather than a snapshot from whenever this page was written."
       ],
       model: {
-        src: "Crius-Current.3mf",
+        src: "Crius-Current.3MF",
         caption: "The current assembly, updated as the build progresses. Drag to rotate."
       }
     },
