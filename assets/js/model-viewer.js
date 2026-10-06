@@ -47,12 +47,12 @@ async function mount(block) {
     return fail(block, 'file unreachable', src);
   }
 
-  let THREE, ThreeMFLoader, OrbitControls;
+  let THREE, ThreeMFLoader, TrackballControls;
   try {
-    [THREE, { ThreeMFLoader }, { OrbitControls }] = await Promise.all([
+    [THREE, { ThreeMFLoader }, { TrackballControls }] = await Promise.all([
       import('../vendor/three/three.module.min.js'),
       import('../vendor/three/3MFLoader.js'),
-      import('../vendor/three/OrbitControls.js')
+      import('../vendor/three/TrackballControls.js')
     ]);
   } catch (e) {
     return fail(block, '3D libraries unavailable', String(e));
@@ -72,13 +72,17 @@ async function mount(block) {
   status && status.remove();
 
   const scene = new THREE.Scene();
-  // Slightly darker than the page so untextured white CAD geometry still
-  // reads against it.
-  scene.background = new THREE.Color(0xe7e9ed);
+  // Dark ground so untextured CAD geometry, which arrives white, reads
+  // clearly against it.
+  scene.background = new THREE.Color(0x333944);
 
-  // 3MF is Z-up; three.js is Y-up.
+  // 3MF is Z-up; three.js is Y-up. The model sits inside a pivot so the idle
+  // spin is applied to the pivot, leaving the camera free to be tumbled
+  // anywhere without the two fighting each other.
   model.rotation.x = -Math.PI / 2;
-  scene.add(model);
+  const pivot = new THREE.Group();
+  pivot.add(model);
+  scene.add(pivot);
 
   // Kept dim enough that shading gradients survive. A 3MF usually arrives
   // with no material, so a blown-out key light turns the part into a
@@ -95,7 +99,7 @@ async function mount(block) {
   scene.add(rim);
 
   // Frame the part regardless of its modelled size or origin.
-  const box = new THREE.Box3().setFromObject(model);
+  const box = new THREE.Box3().setFromObject(pivot);
   if (box.isEmpty()) return fail(block, 'model has no geometry', src);
   const size = box.getSize(new THREE.Vector3());
   const center = box.getCenter(new THREE.Vector3());
@@ -108,22 +112,61 @@ async function mount(block) {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   stage.appendChild(renderer.domElement);
 
-  // Fit the bounding sphere to whichever field of view is tighter, so a tall
-  // thin part like a 3U frame fills the frame instead of floating in it.
-  const sphere = box.getBoundingSphere(new THREE.Sphere());
-  const radius = sphere.radius || 1;
+  // Fit the actual bounding box rather than its sphere. A sphere fit reserves
+  // the longest dimension in every direction, which leaves a wide object like
+  // a deployed solar array floating in the middle of the frame.
+  const radius = box.getBoundingSphere(new THREE.Sphere()).radius || 1;
+  const VIEW_DIR = new THREE.Vector3(0.62, 0.46, 0.74).normalize();
+  const half = size.clone().multiplyScalar(0.5);
+
   function frame() {
-    const vFov = (camera.fov * Math.PI) / 180;
-    const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
-    return (radius / Math.sin(Math.min(vFov, hFov) / 2)) * 1.06;
+    const tanV = Math.tan((camera.fov * Math.PI) / 360);
+    const tanH = tanV * camera.aspect;
+
+    // Camera basis looking from VIEW_DIR back at the centred model.
+    const up = new THREE.Vector3(0, 1, 0);
+    const right = new THREE.Vector3().crossVectors(up, VIEW_DIR).normalize();
+    const camUp = new THREE.Vector3().crossVectors(VIEW_DIR, right).normalize();
+
+    // Distance that keeps every corner of the box inside both fields of view.
+    let dist = 0;
+    for (let i = 0; i < 8; i++) {
+      const corner = new THREE.Vector3(
+        (i & 1 ? 1 : -1) * half.x,
+        (i & 2 ? 1 : -1) * half.y,
+        (i & 4 ? 1 : -1) * half.z
+      );
+      const along = corner.dot(VIEW_DIR);
+      dist = Math.max(
+        dist,
+        along + Math.abs(corner.dot(right)) / tanH,
+        along + Math.abs(corner.dot(camUp)) / tanV
+      );
+    }
+    return dist * 1.05;
   }
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.enablePan = false;
-  controls.autoRotate = !REDUCED;
-  controls.autoRotateSpeed = 0.9;
-  controls.addEventListener('start', () => { controls.autoRotate = false; });
+  // TrackballControls rather than OrbitControls: orbit keeps a fixed up
+  // vector, so dragging past vertical stops dead at the poles. Trackball has
+  // no up vector, so the part tumbles freely in any direction.
+  const controls = new TrackballControls(camera, renderer.domElement);
+  controls.rotateSpeed = 3.0;
+  controls.zoomSpeed = 1.1;
+  controls.noPan = true;
+  controls.staticMoving = false;
+  controls.dynamicDampingFactor = 0.12;
+
+  // Zoom is off until the viewer is deliberately clicked, and off again once
+  // the pointer leaves. Otherwise the wheel is captured whenever the cursor
+  // happens to pass over the model and the page stops scrolling.
+  controls.noZoom = true;
+  renderer.domElement.addEventListener('pointerdown', () => { controls.noZoom = false; });
+  renderer.domElement.addEventListener('pointerleave', () => { controls.noZoom = true; });
+
+  let spin = !REDUCED;
+  const stopSpin = () => { spin = false; };
+  renderer.domElement.addEventListener('pointerdown', stopSpin);
+  renderer.domElement.addEventListener('wheel', stopSpin, { passive: true });
 
   let placed = false;
   function resize() {
@@ -134,12 +177,13 @@ async function mount(block) {
     renderer.setSize(w, h, false);
     const dist = frame();
     if (!placed) {
-      camera.position.set(dist * 0.62, dist * 0.46, dist * 0.74).setLength(dist);
+      camera.position.copy(VIEW_DIR).multiplyScalar(dist);
       controls.update();
       placed = true;
     }
     controls.minDistance = radius * 0.5;
     controls.maxDistance = dist * 3;
+    controls.handleResize();
   }
 
   resize();
@@ -150,6 +194,7 @@ async function mount(block) {
   new IntersectionObserver((e) => { visible = e[0].isIntersecting; }).observe(stage);
   renderer.setAnimationLoop(() => {
     if (!visible) return;
+    if (spin) pivot.rotation.y += 0.0035;
     controls.update();
     renderer.render(scene, camera);
   });
