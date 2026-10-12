@@ -20,7 +20,7 @@ window.Portfolio["continuous-fiber-retrofit"] = {
   blurb:   "A system I am designing that converts a standard 3D printer into a continuous carbon-fiber printer. I own the full mechanical design, from flow behavior through tolerance stack-up and material selection.",
   tagline: "Turning any standard 3D printer into a continuous carbon-fiber machine, designed from the ground up.",
 
-  cover:   "Fiber Printing Single Nozzle Prototype.jpeg",
+  cover:   "Fiber_Printer.jpeg",
   hero:    "Fiber Printing Single Nozzle Prototype2.jpeg",
 
   tags:    ["Mechanical Design", "Fluid Dynamics", "Tolerance Analysis", "Research"],
