@@ -18,6 +18,7 @@ window.PORTFOLIO_ORDER = [
   "automated-cnc-part-extraction",
   "topology-optimized-subwoofer",
   "pa12-cf-tensile-testing",
+  "early-fiber-toolpath-software",
   /*"Machined-Gas-Flow-Device",*/
   "custom-macro-pad",
   "reverse-engineered-micrometer",
