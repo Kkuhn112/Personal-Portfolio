@@ -29,8 +29,8 @@ window.Portfolio["early-fiber-toolpath-software"] = {
 
   tagline: "The first working version, built before the tooling had a name or a plan.",
 
-  cover:   "",
-  hero:    "",
+  cover:   "IMG_8786.jpeg",
+  hero:    "IMG_8786.jpeg",
 
   tags:    ["Undergraduate Research", "Software Prototype", "G-code", "Additive Manufacturing"],
 
