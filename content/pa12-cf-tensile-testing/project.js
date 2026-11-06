@@ -48,7 +48,7 @@ window.Portfolio["pa12-cf-tensile-testing"] = {
       heading: "Overview",
       body: [
         "Carbon-fiber reinforced nylon is marketed as an engineering material, and it is increasingly used for real load-bearing parts. The strength values engineers design against, though, usually come from the filament datasheet, and those numbers are not measured on a printed part. That leaves a gap between the published property and the part that actually comes off the machine.",
-        "I produced ASTM D638 tensile specimens in Sunlu Nylon PA12-CF for a professor so that gap can be measured rather than estimated. The work supports two outcomes at once: a physical teaching aid for mechanical engineering students learning test methods, and a dataset aimed at more trustworthy strength values for this material."
+        "I produced ASTM D638 tensile specimens in Sunlu Nylon PA12-CF for a professor so that gap can be measured instead of estimated. The work supports two outcomes at once: a physical teaching aid for mechanical engineering students learning test methods, and a dataset aimed at more trustworthy strength values for this material."
       ]
     },
 
@@ -72,7 +72,7 @@ window.Portfolio["pa12-cf-tensile-testing"] = {
       id: "specimens",
       heading: "Specimen Preparation to ASTM D638",
       body: [
-        "ASTM D638 is the standard test method for tensile properties of plastics. It fixes the dogbone specimen geometry, the dimensional requirements, and how the test is run, which is what makes results comparable to anyone else's rather than being an isolated measurement.",
+        "ASTM D638 is the standard test method for tensile properties of plastics. It fixes the dogbone specimen geometry, the dimensional requirements, and how the test is run, so results are comparable to anyone else's instead of being an isolated measurement.",
         "The value of a test like this lives in repeatability. A batch of specimens has to be effectively identical, because any variation between them shows up in the data as material scatter and becomes indistinguishable from real material behavior. Producing a consistent set was the core of the job."
       ],
       figures: [
@@ -90,7 +90,7 @@ window.Portfolio["pa12-cf-tensile-testing"] = {
       list: [
         "Print orientation held constant across the batch so the layer interfaces sit the same way relative to the load.",
         "Filament kept dry, since moisture in nylon degrades interlayer bonding and skews the result.",
-        "Process parameters fixed across all specimens so the batch represents one condition rather than several.",
+        "Process parameters fixed across all specimens so the batch represents one condition, not several.",
         "Abrasive carbon-filled filament accounted for in the hardware used to print it.",
         "Specimens inspected for defects that would cause a premature failure unrelated to the material."
       ]
@@ -101,7 +101,7 @@ window.Portfolio["pa12-cf-tensile-testing"] = {
       heading: "Teaching Application",
       body: [
         "The specimens are also used to teach mechanical engineering students how tensile testing is actually performed: how a standard defines a test, how a specimen is prepared and measured, how it is loaded to failure, and how the resulting curve is read.",
-        "A broken coupon is a useful teaching object in its own right. The fracture surface shows where the part gave way, and for a printed specimen that is immediately informative, since failure at a layer interface looks different from failure through the material. Students get to see the consequence of build direction rather than just being told about it."
+        "A broken coupon is a useful teaching object in its own right. The fracture surface shows where the part gave way, and for a printed specimen that is immediately informative, since failure at a layer interface looks different from failure through the material. Students see the consequence of build direction instead of just being told about it."
       ],
       figures: [
         { src: "pa12-cf-fracture.jpg", caption: "A specimen pulled to failure, showing the fracture surface." }

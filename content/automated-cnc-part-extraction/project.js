@@ -68,7 +68,7 @@ window.Portfolio["automated-cnc-part-extraction"] = {
       id: "result",
       heading: "Result",
       body: [
-        "The attachment removed operator intervention from the cycle, reduced idle time between parts, and improved production consistency. It ran on a real production line rather than a bench."
+        "The attachment removed operator intervention from the cycle, reduced idle time between parts, and improved production consistency. It ran on a real production line, not a bench."
       ]
     }
   ]

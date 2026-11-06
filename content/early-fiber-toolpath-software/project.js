@@ -27,7 +27,7 @@ window.Portfolio["early-fiber-toolpath-software"] = {
 
   blurb:   "A first-attempt program that produced fiber toolpath G-code for composite 3D printing, merged by hand into the G-code a normal printing workflow already generated.",
 
-  tagline: "The first working version, built before the tooling had a name or a plan.",
+  tagline: "The first version that worked, written before the tooling had a name.",
 
   cover:   "IMG_8786.jpeg",
   hero:    "IMG_8786.jpeg",
@@ -104,7 +104,7 @@ window.Portfolio["early-fiber-toolpath-software"] = {
       heading: "What I Took From It",
       body: [
         "This was the first time I built a tool because the work in front of me could not proceed without one. It is also where the limits of a prototype became obvious: the program did the hard part correctly and still left a manual step in the middle, which is what decided the shape of everything I built afterward.",
-        "Writing software that emits machine code taught me to think about a part as a sequence of real motions rather than as geometry alone."
+        "Writing software that emits machine code taught me to think about a part as a sequence of real motions instead of as geometry alone."
       ]
     }
   ]

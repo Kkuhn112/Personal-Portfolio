@@ -66,7 +66,7 @@ window.Portfolio["crius-cubesat"] = {
       id: "current-model",
       heading: "Current Build State",
       body: [
-        "The model below is the assembly as it stands right now, not a finished render. It is replaced as the design progresses, so what you are rotating is the current revision rather than a snapshot from whenever this page was written."
+        "The model below is the assembly as it stands right now, not a finished render. It is replaced as the design progresses, so what you are rotating is the current revision, not a snapshot from whenever this page was written."
       ],
       model: {
         src: "Crius-Current.3MF",
@@ -78,13 +78,13 @@ window.Portfolio["crius-cubesat"] = {
       id: "requirements",
       heading: "Requirements",
       body: [
-        "The geometry starts from requirements rather than from a CAD sketch. The specification, the launch environment, and the machine shop each impose constraints, and every one of them has a design response and a way to verify it."
+        "The geometry starts from requirements, not from a CAD sketch. The specification, the launch environment, and the machine shop each impose constraints, and every one of them has a design response and a way to verify it."
       ],
       table: {
         head: ["ID", "Requirement", "Design response", "Verification"],
         rows: [
           ["STR-01", "3U external envelope per CubeSat Design Spec Rev. 14", "Controlled outer geometry driven by a master sketch", "Dimensional inspection"],
-          ["STR-02", "Continuous deployment rail contact along the long axis", "Rails integrated into the corner structure rather than bolted on", "CAD verification and inspection"],
+          ["STR-02", "Continuous deployment rail contact along the long axis", "Rails integrated into the corner structure, not bolted on", "CAD verification and inspection"],
           ["STR-03", "Rail and standoff contact surfaces meet minimum dimensions", "Dedicated machined contact faces on the rails", "Dimensional inspection of the contact faces"],
           ["STR-04", "Structure survives launch-equivalent quasi-static loading", "Load path carried corner to corner through the rails", "SolidWorks static analysis, working factor of safety 1.4"],
           ["STR-05", "No structural resonance excited by the launch environment", "Panel and bracing stiffness sized against the dynamic results", "SolidWorks dynamic analysis across 20 to 2000 Hz"],
@@ -137,7 +137,7 @@ window.Portfolio["crius-cubesat"] = {
       id: "architecture",
       heading: "Structural Architecture",
       body: [
-        "The structure is divided so that each part is simple to hold, simple to cut, and simple to inspect, while keeping the primary load path as continuous as possible along the rails, which are integrated into the corner structure rather than bolted on.",
+        "The structure is divided so that each part is simple to hold, simple to cut, and simple to inspect, while keeping the primary load path as continuous as possible along the rails, which are integrated into the corner structure instead of bolted on.",
         "It uses two materials, each where it earns its place. The panels are 6061 aluminum, which carries the envelope and the rails at low mass and machines predictably. The internal bracing is 304 stainless, used specifically where the structure has to be stiff in a thin section: it frames the internal volume reserved for the antenna and the solar panels. Meeting that stiffness in aluminum would have required a thicker member, and the thickness would have come directly out of payload space, so the heavier material is the lighter answer once the volume is accounted for."
       ],
       list: [
@@ -145,7 +145,7 @@ window.Portfolio["crius-cubesat"] = {
         "6061 aluminum side panels stiffen the structure in shear and carry the internal mounting provisions.",
         "304 stainless bracing frames the internal volume reserved for the antenna and solar panels.",
         "End structures close the stack and provide the interfaces at each end.",
-        "Every structural joint uses one 2-56 screw size, threaded into custom nut plates rather than into the panels themselves.",
+        "Every structural joint uses one 2-56 screw size, threaded into custom nut plates, never into the panels themselves.",
         "Fasteners are concentrated at the corners, where the panels meet the rails."
       ]
       // figures: [
@@ -164,7 +164,7 @@ window.Portfolio["crius-cubesat"] = {
       list: [
         "One screw size, 2-56, across the whole structure, so assembly needs a single driver and the bill of materials stays short.",
         "Custom nut plates sized to spread fastener load into thin panel material.",
-        "Full thread engagement set by the nut plate rather than by panel thickness.",
+        "Full thread engagement set by the nut plate, not by panel thickness.",
         "Repeated assembly and disassembly without degrading the threads."
       ]
     },
@@ -173,7 +173,7 @@ window.Portfolio["crius-cubesat"] = {
       id: "dfm",
       heading: "Design for Manufacturing",
       body: [
-        "Every feature on this structure has to be cut by a real machine with real tooling. These are the specific geometry changes made after reviewing the design as a machining problem rather than a CAD model."
+        "Every feature on this structure has to be cut by a real machine with real tooling. These are the specific geometry changes made after reviewing the design as a machining problem instead of a CAD model."
       ],
       table: {
         head: ["Original geometry", "Manufacturing problem", "Design change", "Result"],
@@ -253,11 +253,11 @@ window.Portfolio["crius-cubesat"] = {
       id: "decisions",
       heading: "What Analysis and Manufacturing Changed",
       body: [
-        "The final geometry is the result of analysis and manufacturing feedback rather than a first attempt that happened to work. These are the decisions those two inputs forced."
+        "The final geometry came out of analysis and manufacturing feedback. It is not a first attempt that happened to work. These are the decisions those two inputs forced."
       ],
       list: [
-        "Threads moved off the panels and into custom nut plates, because a 2-56 screw in thin aluminum is a fastener-limited joint rather than a structure-limited one.",
-        "Internal bracing specified in 304 stainless rather than a thicker aluminum member, so the antenna and solar panel volume was not spent buying stiffness.",
+        "Threads moved off the panels and into custom nut plates, because a 2-56 screw in thin aluminum is a fastener-limited joint, not a structure-limited one.",
+        "Internal bracing specified in 304 stainless instead of a thicker aluminum member, so the antenna and solar panel volume was not spent buying stiffness.",
         "Fastener selection standardized to one 2-56 size, trading a small mass penalty at the lightly loaded joints for a shorter bill of materials and an assembly that cannot be done wrong.",
         "Pocket geometry regularized and internal radii opened, accepting slightly less mass saving in exchange for a part that cuts with standard tooling.",
         "Panel material returned along the load paths the static analysis identified, after the first pocketing pass removed stiffness where the structure actually needed it."
@@ -269,7 +269,7 @@ window.Portfolio["crius-cubesat"] = {
       id: "manufacturing",
       heading: "Manufacturing",
       body: [
-        "The design is carried to the point where it could be cut. Drawings, material, workholding, and inspection are part of the deliverable rather than an afterthought."
+        "The design is carried to the point where it could be cut. Drawings, material, workholding, and inspection are part of the deliverable, not an afterthought."
       ],
       list: [
         "Drawings with GD&T applied where function requires it, not applied everywhere by default.",
@@ -291,7 +291,7 @@ window.Portfolio["crius-cubesat"] = {
       body: [
         "What is established and what is still assumed are kept separate on purpose.",
         "Established: the structural architecture, the material split between 6061 aluminum panels and 304 stainless bracing, the 2-56 fastener and nut plate scheme, and the static and dynamic analysis in SolidWorks against a 1.4 working factor of safety with a simulation factor of 2 applied on top.",
-        "Still open: physical build and any environmental testing. The 20 to 2000 Hz band used for the dynamic analysis is representative of a launch environment rather than a specific launch vehicle requirement, so it tells you the structure has no resonance in a realistic range, not that it has been qualified to fly.",
+        "Still open: physical build and any environmental testing. The 20 to 2000 Hz band used for the dynamic analysis is representative of a launch environment, not a specific launch vehicle requirement, so it tells you the structure has no resonance in a realistic range, not that it has been qualified to fly.",
         "Crius is a ground demonstrator. The requirements it is designed against are real, the analysis assumptions are stated, and no qualification or flight heritage is claimed."
       ]
       // figures: [ { src: "assembled.jpg", caption: "Assembled structure." } ]

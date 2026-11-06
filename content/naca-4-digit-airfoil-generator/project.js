@@ -60,7 +60,7 @@ window.Portfolio["naca-4-digit-airfoil-generator"] = {
       id: "solidworks",
       heading: "SolidWorks Import",
       body: [
-        "SolidWorks can build a curve from a list of points, but the result is only as good as the point order and spacing. The output here is written for that workflow: a continuous, non-self-intersecting loop with enough resolution at the leading edge to avoid kinks, so the imported curve is smooth and watertight and ready to loft or extrude."
+        "SolidWorks can build a curve from a list of points, but the result depends on the point order and spacing. The output here is written for that workflow: a continuous, non-self-intersecting loop with enough resolution at the leading edge to avoid kinks, so the imported curve is smooth and watertight and ready to loft or extrude."
       ]
     },
     {

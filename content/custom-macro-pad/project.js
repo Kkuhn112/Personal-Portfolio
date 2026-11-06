@@ -10,7 +10,7 @@ window.Portfolio["custom-macro-pad"] = {
   featured: false,
 
   blurb:   "A compact input device designed around real print constraints, then built, wired, and put to daily use.",
-  tagline: "A tidy example of taking an electronics enclosure from CAD to a finished, printed product.",
+  tagline: "An electronics enclosure taken from CAD through printing to a device I use every day.",
 
   cover:   "macropad.jpg",
   hero:    "macropad.jpg",

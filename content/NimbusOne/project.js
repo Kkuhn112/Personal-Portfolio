@@ -42,7 +42,7 @@ window.Portfolio["NimbusOne"] = {
       id: "overview",
       heading: "Overview",
       body: [
-        "Nimbus One was a freshman engineering design project focused on developing a conceptual autonomous urban air vehicle. Rather than beginning with a predetermined technical solution, our team used a structured design process to identify stakeholder needs, define design priorities, evaluate competing concepts, and develop a physical demonstrator."
+        "Nimbus One was a freshman engineering design project focused on developing a conceptual autonomous urban air vehicle. Instead of beginning with a predetermined technical solution, our team used a structured design process to identify stakeholder needs, define design priorities, evaluate competing concepts, and develop a physical demonstrator."
       ]
     },
 
@@ -114,7 +114,7 @@ window.Portfolio["NimbusOne"] = {
       id: "result",
       heading: "Takeaways",
       body: [
-        "Nimbus One introduced me to engineering as a requirements-driven process rather than simply a CAD exercise. The most valuable part of the project was working from stakeholder needs through concept selection, prototyping, manufacturing, and integration while seeing how constraints discovered during hardware development feed back into the design."
+        "Nimbus One introduced me to engineering as a requirements-driven process, not simply a CAD exercise. The most valuable part of the project was working from stakeholder needs through concept selection, prototyping, manufacturing, and integration while seeing how constraints discovered during hardware development feed back into the design."
       ]
     }
   ]

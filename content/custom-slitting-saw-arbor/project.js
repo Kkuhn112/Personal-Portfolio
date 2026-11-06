@@ -36,7 +36,7 @@ window.Portfolio["custom-slitting-saw-arbor"] = {
       id: "overview",
       heading: "Overview",
       body: [
-        "Slitting precision parts is only as good as the tool holding the blade. Deflection and runout in the arbor show up directly in the cut, so I designed and made an arbor built for stiffness and concentricity."
+        "Slitting precision parts depends on the tool holding the blade. Deflection and runout in the arbor show up directly in the cut, so I designed and made an arbor built for stiffness and concentricity."
       ]
     },
     {

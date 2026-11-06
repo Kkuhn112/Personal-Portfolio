@@ -21,7 +21,7 @@ window.Portfolio["reverse-engineered-micrometer"] = {
   featured: false,
 
   blurb:   "A working micrometer reverse engineered and rebuilt as a fully 3D-printable assembly, including a functional ratchet, repeatable to within 0.005 inches.",
-  tagline: "Rebuilding a precision instrument in a process that has none of the precision it was designed around.",
+  tagline: "Rebuilding a precision instrument on a printer that holds none of the tolerances it was designed around.",
 
   cover:   "micrometer-assembly.jpg",
   hero:    "micrometer-assembly.jpg",
@@ -58,8 +58,8 @@ window.Portfolio["reverse-engineered-micrometer"] = {
       id: "reverse-engineering",
       heading: "Reverse Engineering",
       body: [
-        "The original instrument was disassembled and measured part by part, and each one was modeled in SolidWorks from those measurements rather than from eyeballed proportions. Mating features were captured first, since those are what decide whether an assembly goes together at all.",
-        "Working from a physical object rather than a drawing means the design intent has to be inferred. The useful question at every feature was not what the dimension measures, but what the feature is for. A chamfer that exists to guide a part into a bore has to be kept. A cosmetic radius does not."
+        "The original instrument was disassembled and measured part by part, and each one was modeled in SolidWorks from those measurements, not from eyeballed proportions. Mating features were captured first, since those are what decide whether an assembly goes together at all.",
+        "Working from a physical object instead of a drawing means the design intent has to be inferred. The useful question at every feature was not what the dimension measures, but what the feature is for. A chamfer that exists to guide a part into a bore has to be kept. A cosmetic radius does not."
       ]
     },
 
@@ -67,15 +67,15 @@ window.Portfolio["reverse-engineered-micrometer"] = {
       id: "dfm",
       heading: "Designing for the Printer",
       body: [
-        "An FDM printer builds in layers, prefers not to print in mid air, and has a minimum feature size set by the nozzle. Every part was reworked around those facts rather than copied from the original geometry.",
+        "An FDM printer builds in layers, prefers not to print in mid air, and has a minimum feature size set by the nozzle. Every part was reworked around those facts instead of being copied from the original geometry.",
         "The most significant change was the thread. A micrometer thread is fine and precise, which is exactly what a printer is worst at, so the thread was reproportioned to a pitch the process can resolve while keeping enough turns engaged to stay stable in the bore."
       ],
       list: [
-        "Print orientation chosen per part so that loaded features run across layers rather than along the layer split.",
+        "Print orientation chosen per part so that loaded features run across layers, not along the layer split.",
         "Thread pitch and depth opened up to what the nozzle can actually form.",
         "Overhangs kept within the angle the printer can bridge, so parts print without support inside functional bores.",
         "Wall sections thickened where the original relied on the strength of metal.",
-        "The spring printed as a coil in plastic rather than substituted with hardware, so the assembly stayed entirely printed."
+        "The spring printed as a coil in plastic, with no hardware substituted, so the assembly stayed entirely printed."
       ],
       figures: [
         { src: "micrometer-parts.jpg", caption: "Disassembled internals: spindle, printed coil spring, ratchet components, and a printed screw." }
@@ -87,7 +87,7 @@ window.Portfolio["reverse-engineered-micrometer"] = {
       heading: "Tolerancing",
       body: [
         "This was the real problem. A printed part comes off the bed with process variation from shrinkage, elephant foot at the first layers, and the nozzle tracing slightly outside or inside the intended path. Modeling a nominal fit and printing it produces either a seized assembly or a loose one.",
-        "So the fits were designed rather than copied. Every mating pair was given a clearance chosen for what that joint has to do: a running fit where the spindle has to turn freely, a closer fit where alignment sets the reading, and an interference fit where two parts should never move relative to each other. The clearances were tuned against test prints instead of assumed, since the correct number depends on the specific printer and material."
+        "So the fits were designed, not copied. Every mating pair was given a clearance chosen for what that joint has to do: a running fit where the spindle has to turn freely, a closer fit where alignment sets the reading, and an interference fit where two parts should never move relative to each other. The clearances were tuned against test prints instead of assumed, since the correct number depends on the specific printer and material."
       ]
     },
 
@@ -115,7 +115,7 @@ window.Portfolio["reverse-engineered-micrometer"] = {
       body: [
         "The finished micrometer assembles, actuates, ratchets, and reads, and it repeats to within 0.005 inches.",
         "That number deserves an honest comparison. A real micrometer resolves to a ten thousandth of an inch, so this is roughly fifty times coarser and is not a substitute for the instrument it was copied from. What it does show is how far a process with no inherent precision can be pushed when the fits, the print orientation, and the feature sizes are all designed around its limitations instead of against them.",
-        "As a first-year project, the useful lesson was that tolerancing is a design activity rather than a note added to a drawing at the end. The parts that worked were the ones where the clearance was decided on purpose."
+        "As a first-year project, the useful lesson was that tolerancing is a design activity and not a note added to a drawing at the end. The parts that worked were the ones where the clearance was decided on purpose."
       ]
     }
   ]
