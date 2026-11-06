@@ -15,7 +15,14 @@ import { extname, join, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
-const OUT = resolve(process.argv[2] || join(ROOT, 'Kestin-Kuhn-Portfolio.pdf'));
+
+/* Which document to render. `--page brief.html` produces the short one. */
+const args = process.argv.slice(2);
+const pageIndex = args.indexOf('--page');
+const PAGE = pageIndex === -1 ? 'export.html' : args[pageIndex + 1];
+const rest = pageIndex === -1 ? args : args.filter((a, i) => i !== pageIndex && i !== pageIndex + 1);
+const DEFAULT_OUT = PAGE === 'brief.html' ? 'Kestin-Kuhn-Brief.pdf' : 'Kestin-Kuhn-Portfolio.pdf';
+const OUT = resolve(rest[0] || join(ROOT, DEFAULT_OUT));
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -64,7 +71,7 @@ const problems = [];
 page.on('pageerror', (e) => problems.push(`page error: ${e}`));
 page.on('response', (r) => { if (r.status() >= 400) problems.push(`${r.status()} ${r.url()}`); });
 
-await page.goto(`http://127.0.0.1:${port}/export.html`, { waitUntil: 'networkidle' });
+await page.goto(`http://127.0.0.1:${port}/${PAGE}`, { waitUntil: 'networkidle' });
 
 // The renderer sets this only after every image has decoded.
 await page.waitForFunction(() => document.documentElement.dataset.exportReady === '1', null, { timeout: 60000 });
@@ -84,7 +91,7 @@ await page.pdf({
   margin: { top: '15mm', right: '15mm', bottom: '17mm', left: '15mm' }
 });
 
-const pages = await page.evaluate(() => document.querySelectorAll('.page').length);
+const pages = await page.evaluate(() => document.querySelectorAll('.page, .brief-project').length);
 await browser.close();
 server.close();
 

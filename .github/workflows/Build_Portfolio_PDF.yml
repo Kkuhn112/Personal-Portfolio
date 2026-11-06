@@ -1,12 +1,14 @@
 name: Build Portfolio PDF
 
-# Run this by hand from the Actions tab. It renders export.html, which is the
-# unlisted print version of the site, and produces a high-quality PDF.
+# Run this by hand from the Actions tab. It renders the two unlisted print
+# pages and produces high-quality PDFs:
+#   export.html -> the full portfolio
+#   brief.html  -> the short one, three projects on two pages
 on:
   workflow_dispatch:
     inputs:
       commit:
-        description: "Commit the PDF back to this branch"
+        description: "Commit the PDFs back to this branch"
         type: boolean
         default: true
 
@@ -31,25 +33,30 @@ jobs:
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
 
-      - name: Render portfolio to PDF
+      - name: Render full portfolio to PDF
         run: npm run pdf -- Kestin-Kuhn-Portfolio.pdf
 
-      - name: Upload PDF as a downloadable artifact
+      - name: Render brief portfolio to PDF
+        run: npm run pdf:brief -- Kestin-Kuhn-Brief.pdf
+
+      - name: Upload PDFs as downloadable artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: portfolio-pdf
-          path: Kestin-Kuhn-Portfolio.pdf
+          name: portfolio-pdfs
+          path: |
+            Kestin-Kuhn-Portfolio.pdf
+            Kestin-Kuhn-Brief.pdf
           if-no-files-found: error
 
-      - name: Commit updated PDF
+      - name: Commit updated PDFs
         if: ${{ inputs.commit }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- Kestin-Kuhn-Portfolio.pdf; then
-            echo "PDF unchanged, nothing to commit."
+          if git diff --quiet -- Kestin-Kuhn-Portfolio.pdf Kestin-Kuhn-Brief.pdf; then
+            echo "PDFs unchanged, nothing to commit."
           else
-            git add Kestin-Kuhn-Portfolio.pdf
-            git commit -m "Automatically update portfolio PDF"
+            git add Kestin-Kuhn-Portfolio.pdf Kestin-Kuhn-Brief.pdf
+            git commit -m "Automatically update portfolio PDFs"
             git push
           fi
