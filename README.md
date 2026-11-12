@@ -28,6 +28,7 @@ content/
     project.js        All of that project's text and settings
     *.jpg / *.png     That project's images
 tools/export-pdf.mjs  Renders export.html, or brief.html with --page, to a PDF
+tools/check-3mf.mjs   Checks every 3MF loads the way the site loads it
 Kestin-Kuhn-Resume.pdf
 ```
 
@@ -83,6 +84,27 @@ window.Portfolio["my-project"] = {
   ]
 };
 ```
+
+## 3D models
+
+The Crius page shows a 3MF that is swapped out as the build progresses. Drop a
+new export over `content/crius-cubesat/Crius-Current.3MF` and the page picks it
+up, then check it before pushing:
+
+```bash
+npm run check:3mf
+```
+
+This matters more than it sounds. The viewer reads 3MF with fflate, which trusts
+the offsets recorded in the zip instead of repairing them, so a file that opens
+perfectly in SolidWorks, Windows or 7-Zip can still be unreadable in a browser.
+When that happens the model block hides itself and the whole section disappears
+from the page, with nothing but a console warning. The check catches it in a
+second, and the **Check 3MF models** action runs it on every push that touches a
+model.
+
+If a file fails, re-export it. Opening and re-saving it with another tool also
+rewrites the zip and usually fixes it.
 
 ## Export the portfolio as a PDF
 

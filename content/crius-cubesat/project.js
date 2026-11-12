@@ -12,10 +12,17 @@
    drawings, and machined hardware.
 
    LIVE 3D MODEL. The Current Build State section shows
-   Crius-Current.3mf from this folder. To update it, export the
+   Crius-Current.3MF from this folder. To update it, export the
    current assembly as 3MF and save it over that file with the same
-   name. Nothing else needs to change.
-   If the file is missing the whole block hides itself.
+   name, matching the uppercase .3MF exactly. Nothing else changes.
+
+   AFTER REPLACING IT, CHECK IT:  npm run check:3mf
+   The browser is stricter about 3MF than Windows or SolidWorks are.
+   A file that opens fine on your machine can still be unreadable on
+   the site, and when that happens this whole section hides itself
+   with no visible error. Three uploads in a row were broken that way
+   before anyone noticed. The check takes a second and says plainly
+   whether the site can display the file. It also runs on push.
 
    A "table" is optional on any section:
       table: { head: ["A","B"], rows: [["1","2"], ["3","4"]] }

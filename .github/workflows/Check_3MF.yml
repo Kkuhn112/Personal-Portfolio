@@ -1,0 +1,28 @@
+name: Check 3MF models
+
+# A 3MF can open fine in Windows or SolidWorks and still be unreadable in the
+# browser, in which case the model block hides itself and the section quietly
+# disappears from the page. This checks every model the same way the site does,
+# so a bad upload fails here instead of going unnoticed.
+on:
+  push:
+    paths:
+      - "content/**/*.3mf"
+      - "content/**/*.3MF"
+      - "tools/check-3mf.mjs"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate every 3MF
+        run: node tools/check-3mf.mjs
